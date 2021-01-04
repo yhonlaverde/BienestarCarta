@@ -44,7 +44,11 @@
     <ion-toolbar>
         <ion-searchbar (ionInput)="filterList($event)"></ion-searchbar>
     </ion-toolbar>
-    <ion-content [fullscreen]="true">
+    <a class="seccion" [ngClass]="strEstiloBoton" [ngStyle]="{background:strEstiloCuadro}">
+        <img src="../../assets/img/tiempo-int.svg" alt="">
+        <p>{{nombreCategoria}}</p>
+    </a>
+    <!-- <ion-content [fullscreen]="true">
         <a class="seccion" [ngClass]="strEstiloBoton" [ngStyle]="{background:strEstiloCuadro}">
             <img src="../../assets/img/tiempo-int.svg" alt="">
             <p>{{nombreCategoria}}</p>
@@ -90,12 +94,58 @@
                     </div>
                 </article>
             </ion-col>
-            <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-                <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
-                </ion-infinite-scroll-content>
-            </ion-infinite-scroll>
+           
         </ion-row>
+
+        
+    </ion-content> -->
+
+    <ion-content>
+        <ion-card *ngFor="let item of itemsProduct; let i = index">
+            <ion-card-header>
+                <ion-card-title>{{item.strDescripcion}}</ion-card-title>
+            </ion-card-header>
+            <div class="puntos">
+                <div class="puntaje">
+                    <img class="center" src="../../assets/img/like-b.svg" alt="">
+                    <p class="text-center">{{item.intNroPuntosReq}} PUNTOS</p>
+                </div>
+                <img class="w-100" [src]="item.strImagenProducto64" alt="">
+            </div>
+            <ion-card-content>
+                <div class="stars">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                </div>
+                <p *ngIf="item.logIlimitado"><strong>Existencias:</strong><br> Ilimitado</p>
+                <p *ngIf="!item.logIlimitado"><strong>Existencias:</strong><br> limitado</p>
+                <!-- <ion-label position="floating">Cantidad</ion-label>
+                <ion-input type="number" maxlength="10"></ion-input> -->
+            </ion-card-content>
+            <ion-footer>
+                <ion-row>
+                    <ion-col center text-center>
+                        <ion-button color="success" expand="full" (click)="agregarAlCarro(item)">
+                            ADICIONAR <img class="float-right" src="../../assets/img/carro.svg" width="18%" height="auto" alt="">
+                        </ion-button>
+                    </ion-col>
+                    <ion-col center text-center>
+                        <ion-button expand="full" class="bg-sky w-100" (click)="abrirModal(item)">
+                            VER DETALLES
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-footer>
+        </ion-card>
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Cargando...">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
     </ion-content>
+
     <ion-footer class="ion-no-border">
         <ion-toolbar>
             <img class="w-50 mg-top-30 center" src="../../assets/img/compensar.svg" width="50%" height="auto" alt="Compensar">

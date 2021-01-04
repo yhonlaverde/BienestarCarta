@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblBFEmpresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreEmpresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strSiglas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strNit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intPersonas" Type="Int32" />
+    <Property Name="strZona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strTipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LogSedeUnica" Type="Boolean" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="strUrlLogo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="strUrlBanner" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="strSiglaEmpresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strColorEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strLogo64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strColorSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strLogoHerramientaEmpresa" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblCHEmpleado" Relationship="Self.FK_tblCHEmpleado_tblBFEmpresa" FromRole="tblBFEmpresa" ToRole="tblCHEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFEmpresas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="strSiglas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strNit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="intPersonas" Type="Int32" Nullable="false" />
+    <Property Name="strZona" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strCiudad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strTipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogSedeUnica" Type="Boolean" Nullable="false" />
+    <Property Name="LogActivo" Type="Boolean" Nullable="false" />
+    <Property Name="strUrlLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strUrlBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strSiglaEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strColorEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strLogo64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strColorSecundario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strLogoHerramientaEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCHEmpleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strNombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdProfesion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strProfesion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strCargo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdRol" Type="Int32" />
+    <Property Name="IdBarrio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strBarrio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdUnidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strUnidad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdSubProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strSubProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strNombreJefe" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRetiro" Type="DateTime" Precision="3" />
+    <Property Name="LogClienteProveedor" Type="Boolean" />
+    <Property Name="LogGerenteRecursosH" Type="Boolean" />
+    <Property Name="intSecuencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogEvaluar" Type="Boolean" />
+    <Property Name="strUsuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strContrasena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="logObjetivosLegalizados" Type="Boolean" />
+    <Property Name="logHabilitarIngresoObjPeriodoCerrado" Type="Boolean" />
+    <Property Name="logSuperUsuario" Type="Boolean" />
+    <Property Name="strGrupoPago" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="strUbicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="intNivel" Type="Int32" />
+    <Property Name="strSexo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="strRutaImagenEmpleado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="intPuntosCaritas" Type="Int32" />
+    <Property Name="logObjetivosAprobadosJefe" Type="Boolean" />
+    <Property Name="strUsuarioRed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoContrato" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strTipoAfiliacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="logPermisoEntrega" Type="Boolean" />
+    <Property Name="intPuntosKilo" Type="Int32" />
+    <Property Name="LogAdministrarEcoPuntos" Type="Boolean" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="strCorreo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strNumeroMovil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoAdministrador" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="dtmFechaIngreso" Type="DateTime" Precision="3" />
+    <Property Name="intPuntosCorazones" Type="Int32" />
+    <Property Name="intPuntosBombillo" Type="Int32" />
+    <Property Name="strImagenEmpleado64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogEsJefe" Type="Boolean" />
+    <Property Name="LogPresidencia" Type="Boolean" />
+    <Property Name="LogApruebaTerminos" Type="Boolean" />
+    <NavigationProperty Name="tblBFEmpresa" Relationship="Self.FK_tblCHEmpleado_tblBFEmpresa" FromRole="tblCHEmpleado" ToRole="tblBFEmpresa" />
+  </EntityType>
+  <Association Name="FK_tblCHEmpleado_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblBFEmpresa" EntityType="Self.tblBFEmpresa" />
+    <EntitySet Name="tblBFEmpresas" EntityType="Self.tblBFEmpresas" />
+    <EntitySet Name="tblCHEmpleado" EntityType="Self.tblCHEmpleado" />
+    <AssociationSet Name="FK_tblCHEmpleado_tblBFEmpresa" Association="Self.FK_tblCHEmpleado_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

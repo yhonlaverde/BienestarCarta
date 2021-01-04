@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="modeloStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="tblBFEmpresa">
+      <EntityTypeMapping TypeName="modelo.tblBFEmpresa">
+        <MappingFragment StoreEntitySet="tblBFEmpresa">
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strNombreEmpresa" ColumnName="strNombreEmpresa" />
+          <ScalarProperty Name="strSiglas" ColumnName="strSiglas" />
+          <ScalarProperty Name="strNit" ColumnName="strNit" />
+          <ScalarProperty Name="intPersonas" ColumnName="intPersonas" />
+          <ScalarProperty Name="strZona" ColumnName="strZona" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+          <ScalarProperty Name="strTipo" ColumnName="strTipo" />
+          <ScalarProperty Name="LogSedeUnica" ColumnName="LogSedeUnica" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strUrlLogo" ColumnName="strUrlLogo" />
+          <ScalarProperty Name="strUrlBanner" ColumnName="strUrlBanner" />
+          <ScalarProperty Name="strSiglaEmpresa" ColumnName="strSiglaEmpresa" />
+          <ScalarProperty Name="strColorEmpresa" ColumnName="strColorEmpresa" />
+          <ScalarProperty Name="strLogo64" ColumnName="strLogo64" />
+          <ScalarProperty Name="strColorSecundario" ColumnName="strColorSecundario" />
+          <ScalarProperty Name="strLogoHerramientaEmpresa" ColumnName="strLogoHerramientaEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEmpresas">
+      <EntityTypeMapping TypeName="modelo.tblBFEmpresas">
+        <MappingFragment StoreEntitySet="tblBFEmpresas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strSiglas" ColumnName="strSiglas" />
+          <ScalarProperty Name="strNit" ColumnName="strNit" />
+          <ScalarProperty Name="intPersonas" ColumnName="intPersonas" />
+          <ScalarProperty Name="strZona" ColumnName="strZona" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+          <ScalarProperty Name="strTipo" ColumnName="strTipo" />
+          <ScalarProperty Name="LogSedeUnica" ColumnName="LogSedeUnica" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strUrlLogo" ColumnName="strUrlLogo" />
+          <ScalarProperty Name="strUrlBanner" ColumnName="strUrlBanner" />
+          <ScalarProperty Name="strSiglaEmpresa" ColumnName="strSiglaEmpresa" />
+          <ScalarProperty Name="strColorEmpresa" ColumnName="strColorEmpresa" />
+          <ScalarProperty Name="strLogo64" ColumnName="strLogo64" />
+          <ScalarProperty Name="strColorSecundario" ColumnName="strColorSecundario" />
+          <ScalarProperty Name="strLogoHerramientaEmpresa" ColumnName="strLogoHerramientaEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCHEmpleado">
+      <EntityTypeMapping TypeName="modelo.tblCHEmpleado">
+        <MappingFragment StoreEntitySet="tblCHEmpleado">
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="IdProfesion" ColumnName="IdProfesion" />
+          <ScalarProperty Name="strProfesion" ColumnName="strProfesion" />
+          <ScalarProperty Name="strCargo" ColumnName="strCargo" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="IdBarrio" ColumnName="IdBarrio" />
+          <ScalarProperty Name="strBarrio" ColumnName="strBarrio" />
+          <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+          <ScalarProperty Name="strUnidad" ColumnName="strUnidad" />
+          <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
+          <ScalarProperty Name="strRegional" ColumnName="strRegional" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="strProceso" ColumnName="strProceso" />
+          <ScalarProperty Name="IdSubProceso" ColumnName="IdSubProceso" />
+          <ScalarProperty Name="strSubProceso" ColumnName="strSubProceso" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+          <ScalarProperty Name="strNombreJefe" ColumnName="strNombreJefe" />
+          <ScalarProperty Name="dtmFechaRetiro" ColumnName="dtmFechaRetiro" />
+          <ScalarProperty Name="LogClienteProveedor" ColumnName="LogClienteProveedor" />
+          <ScalarProperty Name="LogGerenteRecursosH" ColumnName="LogGerenteRecursosH" />
+          <ScalarProperty Name="intSecuencia" ColumnName="intSecuencia" />
+          <ScalarProperty Name="LogEvaluar" ColumnName="LogEvaluar" />
+          <ScalarProperty Name="strUsuario" ColumnName="strUsuario" />
+          <ScalarProperty Name="strContrasena" ColumnName="strContrasena" />
+          <ScalarProperty Name="logObjetivosLegalizados" ColumnName="logObjetivosLegalizados" />
+          <ScalarProperty Name="logHabilitarIngresoObjPeriodoCerrado" ColumnName="logHabilitarIngresoObjPeriodoCerrado" />
+          <ScalarProperty Name="logSuperUsuario" ColumnName="logSuperUsuario" />
+          <ScalarProperty Name="strGrupoPago" ColumnName="strGrupoPago" />
+          <ScalarProperty Name="strUbicacion" ColumnName="strUbicacion" />
+          <ScalarProperty Name="intNivel" ColumnName="intNivel" />
+          <ScalarProperty Name="strSexo" ColumnName="strSexo" />
+          <ScalarProperty Name="strRutaImagenEmpleado" ColumnName="strRutaImagenEmpleado" />
+          <ScalarProperty Name="intPuntosCaritas" ColumnName="intPuntosCaritas" />
+          <ScalarProperty Name="logObjetivosAprobadosJefe" ColumnName="logObjetivosAprobadosJefe" />
+          <ScalarProperty Name="strUsuarioRed" ColumnName="strUsuarioRed" />
+          <ScalarProperty Name="tipoContrato" ColumnName="tipoContrato" />
+          <ScalarProperty Name="strTipoAfiliacion" ColumnName="strTipoAfiliacion" />
+          <ScalarProperty Name="logPermisoEntrega" ColumnName="logPermisoEntrega" />
+          <ScalarProperty Name="intPuntosKilo" ColumnName="intPuntosKilo" />
+          <ScalarProperty Name="LogAdministrarEcoPuntos" ColumnName="LogAdministrarEcoPuntos" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strCorreo" ColumnName="strCorreo" />
+          <ScalarProperty Name="strNumeroMovil" ColumnName="strNumeroMovil" />
+          <ScalarProperty Name="IdTipoAdministrador" ColumnName="IdTipoAdministrador" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="dtmFechaIngreso" ColumnName="dtmFechaIngreso" />
+          <ScalarProperty Name="intPuntosCorazones" ColumnName="intPuntosCorazones" />
+          <ScalarProperty Name="intPuntosBombillo" ColumnName="intPuntosBombillo" />
+          <ScalarProperty Name="strImagenEmpleado64" ColumnName="strImagenEmpleado64" />
+          <ScalarProperty Name="LogEsJefe" ColumnName="LogEsJefe" />
+          <ScalarProperty Name="LogPresidencia" ColumnName="LogPresidencia" />
+          <ScalarProperty Name="LogApruebaTerminos" ColumnName="LogApruebaTerminos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

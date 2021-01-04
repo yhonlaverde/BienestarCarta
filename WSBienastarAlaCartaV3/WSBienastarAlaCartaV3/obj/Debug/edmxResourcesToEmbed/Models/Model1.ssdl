@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBFEmpresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreEmpresa" Type="varchar" MaxLength="100" />
+    <Property Name="strSiglas" Type="varchar" MaxLength="10" />
+    <Property Name="strNit" Type="varchar" MaxLength="50" />
+    <Property Name="intPersonas" Type="int" />
+    <Property Name="strZona" Type="varchar" MaxLength="50" />
+    <Property Name="strCiudad" Type="varchar" MaxLength="50" />
+    <Property Name="strTipo" Type="varchar" MaxLength="10" />
+    <Property Name="LogSedeUnica" Type="bit" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="strUrlLogo" Type="varchar" MaxLength="1000" />
+    <Property Name="strUrlBanner" Type="varchar" MaxLength="1000" />
+    <Property Name="strSiglaEmpresa" Type="varchar" MaxLength="10" />
+    <Property Name="strColorEmpresa" Type="varchar" MaxLength="50" />
+    <Property Name="strLogo64" Type="nvarchar(max)" />
+    <Property Name="strColorSecundario" Type="varchar" MaxLength="50" />
+    <Property Name="strLogoHerramientaEmpresa" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tblBFEmpresas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" Nullable="false" />
+    <Property Name="strSiglas" Type="nvarchar(max)" />
+    <Property Name="strNit" Type="nvarchar(max)" />
+    <Property Name="intPersonas" Type="int" Nullable="false" />
+    <Property Name="strZona" Type="nvarchar(max)" />
+    <Property Name="strCiudad" Type="nvarchar(max)" />
+    <Property Name="strTipo" Type="nvarchar(max)" />
+    <Property Name="LogSedeUnica" Type="bit" Nullable="false" />
+    <Property Name="LogActivo" Type="bit" Nullable="false" />
+    <Property Name="strUrlLogo" Type="nvarchar(max)" />
+    <Property Name="strUrlBanner" Type="nvarchar(max)" />
+    <Property Name="strSiglaEmpresa" Type="nvarchar(max)" />
+    <Property Name="strColorEmpresa" Type="nvarchar(max)" />
+    <Property Name="strLogo64" Type="nvarchar(max)" />
+    <Property Name="strColorSecundario" Type="nvarchar(max)" />
+    <Property Name="strLogoHerramientaEmpresa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblCHEmpleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="500" />
+    <Property Name="IdProfesion" Type="varchar" MaxLength="10" />
+    <Property Name="strProfesion" Type="varchar" MaxLength="500" />
+    <Property Name="strCargo" Type="varchar" MaxLength="500" />
+    <Property Name="IdRol" Type="int" />
+    <Property Name="IdBarrio" Type="varchar" MaxLength="10" />
+    <Property Name="strBarrio" Type="varchar" MaxLength="200" />
+    <Property Name="IdUnidad" Type="varchar" MaxLength="10" />
+    <Property Name="strUnidad" Type="varchar" MaxLength="200" />
+    <Property Name="IdRegional" Type="varchar" MaxLength="50" />
+    <Property Name="strRegional" Type="varchar" MaxLength="50" />
+    <Property Name="IdProceso" Type="varchar" MaxLength="10" />
+    <Property Name="strProceso" Type="varchar" MaxLength="200" />
+    <Property Name="IdSubProceso" Type="varchar" MaxLength="10" />
+    <Property Name="strSubProceso" Type="varchar" MaxLength="200" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+    <Property Name="strNombreJefe" Type="varchar" MaxLength="500" />
+    <Property Name="dtmFechaRetiro" Type="datetime" />
+    <Property Name="LogClienteProveedor" Type="bit" />
+    <Property Name="LogGerenteRecursosH" Type="bit" />
+    <Property Name="intSecuencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogEvaluar" Type="bit" />
+    <Property Name="strUsuario" Type="varchar" MaxLength="100" />
+    <Property Name="strContrasena" Type="varchar" MaxLength="100" />
+    <Property Name="logObjetivosLegalizados" Type="bit" />
+    <Property Name="logHabilitarIngresoObjPeriodoCerrado" Type="bit" />
+    <Property Name="logSuperUsuario" Type="bit" />
+    <Property Name="strGrupoPago" Type="nvarchar" MaxLength="500" />
+    <Property Name="strUbicacion" Type="varchar" MaxLength="500" />
+    <Property Name="intNivel" Type="int" />
+    <Property Name="strSexo" Type="char" MaxLength="2" />
+    <Property Name="strRutaImagenEmpleado" Type="varchar" MaxLength="200" />
+    <Property Name="intPuntosCaritas" Type="int" />
+    <Property Name="logObjetivosAprobadosJefe" Type="bit" />
+    <Property Name="strUsuarioRed" Type="varchar" MaxLength="50" />
+    <Property Name="tipoContrato" Type="varchar" MaxLength="20" />
+    <Property Name="strTipoAfiliacion" Type="varchar" MaxLength="50" />
+    <Property Name="logPermisoEntrega" Type="bit" />
+    <Property Name="intPuntosKilo" Type="int" />
+    <Property Name="LogAdministrarEcoPuntos" Type="bit" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="strCorreo" Type="varchar" MaxLength="500" />
+    <Property Name="strNumeroMovil" Type="varchar" MaxLength="50" />
+    <Property Name="IdTipoAdministrador" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="dtmFechaIngreso" Type="datetime" />
+    <Property Name="intPuntosCorazones" Type="int" />
+    <Property Name="intPuntosBombillo" Type="int" />
+    <Property Name="strImagenEmpleado64" Type="nvarchar(max)" />
+    <Property Name="LogEsJefe" Type="bit" />
+    <Property Name="LogPresidencia" Type="bit" />
+    <Property Name="LogApruebaTerminos" Type="bit" />
+  </EntityType>
+  <Association Name="FK_tblCHEmpleado_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="modeloStoreContainer">
+    <EntitySet Name="tblBFEmpresa" EntityType="Self.tblBFEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEmpresas" EntityType="Self.tblBFEmpresas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCHEmpleado" EntityType="Self.tblCHEmpleado" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblCHEmpleado_tblBFEmpresa" Association="Self.FK_tblCHEmpleado_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

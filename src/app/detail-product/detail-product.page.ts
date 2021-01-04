@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {Producto} from 'src/Modelos/Producto'
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -20,7 +21,8 @@ export class DetailProductPage implements OnInit {
   imagenProducto: any;
   detalleProducto: any;
   productoLimite: boolean;
-  constructor( private modalCtrl: ModalController) { }
+  cantidad:number = 1;
+  constructor( private modalCtrl: ModalController, private Servicio: DataServiceService) { }
 
   ngOnInit() {
     console.log(this.Producto)
@@ -35,6 +37,14 @@ export class DetailProductPage implements OnInit {
     this.imagenProducto = this.Producto.strImagenProducto64;
     this.detalleProducto = this.Producto.strDetalle;
     this.productoLimite = this.Producto.logIlimitado;
+  }
+
+  bajarCantidad(product){
+    this.Servicio.bajarCantidadProducto(product);
+  }
+
+  aunmentarCantidad(product){
+    this.Servicio.agregarProducto(product);
   }
 
   Salir(){

@@ -1,0 +1,1431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Modelos" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Lotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblBFAcumAntiguedad">
+    <Key>
+      <PropertyRef Name="IdAntiguedad" />
+    </Key>
+    <Property Name="IdAntiguedad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intNroMesesRangoInicial" Type="Int32" Nullable="false" />
+    <Property Name="intNroMesesRangoFinal" Type="Int32" Nullable="false" />
+    <Property Name="intNroPuntosAcumula" Type="Double" Nullable="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFAsignacionPuntosJefe">
+    <Key>
+      <PropertyRef Name="IdAsignacion" />
+    </Key>
+    <Property Name="IdAsignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPostulado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdReconocimiento" Type="Int32" />
+    <Property Name="intPuntos" Type="Int32" />
+    <Property Name="IdPeriodo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFCalificacionProducto">
+    <Key>
+      <PropertyRef Name="IdCalificacionProducto" />
+    </Key>
+    <Property Name="IdCalificacionProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="intCalificacion" Type="Int32" />
+    <Property Name="IdEmpleadoCalifica" Type="Int32" />
+    <Property Name="dtmFechaCalificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK_tblBFCalificacionProducto_tblBFProducto" FromRole="tblBFCalificacionProducto" ToRole="tblBFProducto" />
+  </EntityType>
+  <EntityType Name="tblBFCantidadReconocimiento">
+    <Key>
+      <PropertyRef Name="IdCantidadReonocimiento" />
+    </Key>
+    <Property Name="IdCantidadReonocimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCantidadReconocimiento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="valorCantidad" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFCategoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCategoria" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strImagenCategoria" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" />
+    <Property Name="strDescripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strEstiloCuadro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strEstiloBoton" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strEstiloPuntos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK_tblBFProducto_tblBFCategoria" FromRole="tblBFCategoria" ToRole="tblBFProducto" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaProducto">
+    <Key>
+      <PropertyRef Name="IdCategoriaP" />
+    </Key>
+    <Property Name="IdCategoriaP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="strClaseEstilo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionCategoria" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="strClaseEstiloTitulo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipo" Type="Int32" />
+    <Property Name="LogActivoInactivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaRecompensa">
+    <Key>
+      <PropertyRef Name="IdCategoriaRecompensa" />
+    </Key>
+    <Property Name="IdCategoriaRecompensa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCategoriaRecompensa" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaReconocimiento">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCategoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="strImagenCategoria" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFCiudad">
+    <Key>
+      <PropertyRef Name="IdCiudad" />
+    </Key>
+    <Property Name="IdCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCiudad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFCodigoProducto">
+    <Key>
+      <PropertyRef Name="IdCodigo" />
+    </Key>
+    <Property Name="IdCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strCodigo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpleadoCompra" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="dtmFechaFin" Type="DateTime" Precision="3" />
+    <Property Name="strObservaciones" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="dtmFechaAsignacion" Type="DateTime" Precision="3" />
+    <Property Name="strNombreArchivo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdCompra" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFConceptoReduccion">
+    <Key>
+      <PropertyRef Name="IdConceptoReduccion" />
+    </Key>
+    <Property Name="IdConceptoReduccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strConceptoReduccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dblPuntajeReducido" Type="Double" Nullable="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdTipoPunto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFDetallePresupuestoMes">
+    <Key>
+      <PropertyRef Name="IdDetallePresupuesto" />
+    </Key>
+    <Property Name="IdDetallePresupuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdMes" Type="Int32" />
+    <Property Name="dtmFecha" Type="DateTime" Precision="3" />
+    <Property Name="strDetalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFECCategoriaProducto">
+    <Key>
+      <PropertyRef Name="IdCategoriaP" />
+    </Key>
+    <Property Name="IdCategoriaP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionCategoria" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="bitEstadoVisual" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFEHistoricoPuntosAcumEmpleado">
+    <Key>
+      <PropertyRef Name="IdHistoricoPuntosAcumEmpleado" />
+    </Key>
+    <Property Name="IdHistoricoPuntosAcumEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="intNroEcoPuntosAcumulados" Type="Int32" />
+    <Property Name="intNroPuntosBienestarAcumulados" Type="Int32" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="logUltRegistro" Type="Boolean" Nullable="false" />
+    <Property Name="intMes" Type="Int32" />
+    <Property Name="intAnno" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFEmpresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreEmpresa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strSiglas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strNit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intPersonas" Type="Int32" />
+    <Property Name="strZona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strTipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LogSedeUnica" Type="Boolean" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="strUrlLogo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="strUrlBanner" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="strSiglaEmpresa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strColorEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strLogo64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strColorSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strLogoHerramientaEmpresa" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblBFInventarioProducto" Relationship="Self.FK_tblBFInventarioProducto_tblBFEmpresa" FromRole="tblBFEmpresa" ToRole="tblBFInventarioProducto" />
+    <NavigationProperty Name="tblBFPoliticaEmpresa" Relationship="Self.FK_tblBFPoliticaEmpresa_tblBFEmpresa" FromRole="tblBFEmpresa" ToRole="tblBFPoliticaEmpresa" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK_tblBFProducto_tblBFEmpresa" FromRole="tblBFEmpresa" ToRole="tblBFProducto" />
+    <NavigationProperty Name="tblCHEmpleado" Relationship="Self.FK_tblCHEmpleado_tblBFEmpresa" FromRole="tblBFEmpresa" ToRole="tblCHEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFEvento">
+    <Key>
+      <PropertyRef Name="IdEvento" />
+    </Key>
+    <Property Name="IdEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreEvento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcion" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="strRutaEvento" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="dtmFechaFinzalizacion" Type="DateTime" Precision="3" />
+    <Property Name="strDescripcionCorta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="bInscribirInvitados" Type="Boolean" />
+    <Property Name="intNroInventadosEvento" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFEventoPreguntaInscripcion">
+    <Key>
+      <PropertyRef Name="IdEventoPreguntaInscripcion" />
+    </Key>
+    <Property Name="IdEventoPreguntaInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="Pregunta" Type="String" MaxLength="650" FixedLength="false" Unicode="false" />
+    <Property Name="logActiva" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFExperienciaEvento">
+    <Key>
+      <PropertyRef Name="IdPublicacion" />
+    </Key>
+    <Property Name="IdPublicacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="strRutaImagen" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="IdAutor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaPublicacion" Type="DateTime" Precision="3" />
+    <Property Name="LogAprobrado" Type="Boolean" />
+    <Property Name="strExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strComentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFFechaCorteReduccion">
+    <Key>
+      <PropertyRef Name="IdCorte" />
+    </Key>
+    <Property Name="IdCorte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="dtmFechaFinal" Type="DateTime" Precision="3" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFFrases">
+    <Key>
+      <PropertyRef Name="IdFrase" />
+    </Key>
+    <Property Name="IdFrase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTitulo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strFrase" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="strImagenFrase" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFGrupoCompra">
+    <Key>
+      <PropertyRef Name="IdGrupoCompra" />
+    </Key>
+    <Property Name="IdGrupoCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="IdEmpleadoAdmon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dtmFechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="intTiempoActualDias" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="dtmFechaCierre" Type="DateTime" Precision="3" />
+    <Property Name="intPuntosAcumuladosActual" Type="Int32" Nullable="false" />
+    <Property Name="logCompraCompleta" Type="Boolean" Nullable="false" />
+    <Property Name="logCancelado" Type="Boolean" Nullable="false" />
+    <Property Name="intPuntoRequeridosProducto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFHistorialAntiguedad">
+    <Key>
+      <PropertyRef Name="IdHistorial" />
+    </Key>
+    <Property Name="IdHistorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdAntiguedad" Type="Int32" />
+    <Property Name="IdEmpleado" Type="Int32" />
+    <Property Name="intPuntos" Type="Int32" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFHistorialRecargas">
+    <Key>
+      <PropertyRef Name="IdHistorialRecargas" />
+    </Key>
+    <Property Name="IdHistorialRecargas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFechaRecarga" Type="DateTime" Precision="3" />
+    <Property Name="IdAdministrador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdColaborador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valorRecarga" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="tipoCarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoPunto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFHistorialReduccion">
+    <Key>
+      <PropertyRef Name="IdHistorial" />
+    </Key>
+    <Property Name="IdHistorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPolitica" Type="Int32" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strObservaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="intCantidad" Type="Int32" />
+    <Property Name="IdFechaCorte" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFImagenProducto">
+    <Key>
+      <PropertyRef Name="IdImagen" />
+    </Key>
+    <Property Name="IdImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="strRutaImagen" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFInscripcionEventos">
+    <Key>
+      <PropertyRef Name="IdInscripcion" />
+    </Key>
+    <Property Name="IdInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaInscripcion" Type="DateTime" Precision="3" />
+    <Property Name="strAspiraciones" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFInventario">
+    <Key>
+      <PropertyRef Name="IdInventario" />
+    </Key>
+    <Property Name="IdInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="strDescripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="intCantidadesActuales" Type="Int32" />
+    <Property Name="intCantidadesEntregadas" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFInventarioProducto">
+    <Key>
+      <PropertyRef Name="IdInventario" />
+    </Key>
+    <Property Name="IdInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="intUnidades" Type="Int32" />
+    <Property Name="intTipoTransaccion" Type="Int32" />
+    <Property Name="strDescripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaTransaccion" Type="DateTime" Precision="3" />
+    <Property Name="intNroUnidadesActuales" Type="Int32" />
+    <Property Name="intNroUnidadesEntregadas" Type="Int32" />
+    <Property Name="dtmFechaUltimaEntrega" Type="DateTime" Precision="3" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <NavigationProperty Name="tblBFEmpresa" Relationship="Self.FK_tblBFInventarioProducto_tblBFEmpresa" FromRole="tblBFInventarioProducto" ToRole="tblBFEmpresa" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK__tblBFInve__IdPro__753864A1" FromRole="tblBFInventarioProducto" ToRole="tblBFProducto" />
+  </EntityType>
+  <EntityType Name="tblBFInvitadoExternoEvento">
+    <Key>
+      <PropertyRef Name="IdInscritoExternoEvento" />
+    </Key>
+    <Property Name="IdInscritoExternoEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="IdEmpleadoInvita" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdentificacionInvitado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strNombreInvitado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="intEdad" Type="Int32" />
+    <Property Name="strEdad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strParantesco" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strIntereses" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="strCorreoElectronico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaInvitado" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBFLogAdministrador">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdAdministrador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strFormulario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strAccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaAccion" Type="DateTime" Precision="3" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdTipoAdministrador" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFMetodoAcumulacionPuntos">
+    <Key>
+      <PropertyRef Name="IdMetodoAcumulacion" />
+    </Key>
+    <Property Name="IdMetodoAcumulacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strMetodoAcumulacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strDescripcionDelMetodo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFMetodoEmpresa">
+    <Key>
+      <PropertyRef Name="IdAsignacion" />
+    </Key>
+    <Property Name="IdAsignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdMetodo" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFMultipleRespuestaPregunta">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPregunta" Type="Int32" />
+    <Property Name="strRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFOpciones">
+    <Key>
+      <PropertyRef Name="IdOpcion" />
+    </Key>
+    <Property Name="IdOpcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LogVisible" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFPermisoAdministrador">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTipoAdministrador" Type="Int32" />
+    <Property Name="frmFormulario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaEmpresa">
+    <Key>
+      <PropertyRef Name="IdRelacion" />
+    </Key>
+    <Property Name="IdRelacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdPolitica" Type="Int32" />
+    <Property Name="dtmFechaEstablecimiento" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblBFEmpresa" Relationship="Self.FK_tblBFPoliticaEmpresa_tblBFEmpresa" FromRole="tblBFPoliticaEmpresa" ToRole="tblBFEmpresa" />
+    <NavigationProperty Name="tblBFPoliticaPuntos" Relationship="Self.FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos" FromRole="tblBFPoliticaEmpresa" ToRole="tblBFPoliticaPuntos" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaPuntos">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcionPolitica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LogActiva" Type="Boolean" />
+    <NavigationProperty Name="tblBFPoliticaEmpresa" Relationship="Self.FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos" FromRole="tblBFPoliticaPuntos" ToRole="tblBFPoliticaEmpresa" />
+    <NavigationProperty Name="tblBFPuntosDispEmpleado" Relationship="Self.FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos" FromRole="tblBFPoliticaPuntos" ToRole="tblBFPuntosDispEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaPuntosAntiguedad">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombrePolitica" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="intMesesInicio" Type="Int32" />
+    <Property Name="intMesesFin" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="intPuntos" Type="Int32" />
+    <Property Name="IdTipo" Type="Int32" />
+    <Property Name="strTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFPostulacionEmpleado">
+    <Key>
+      <PropertyRef Name="IdPostulacionEmpleado" />
+    </Key>
+    <Property Name="IdPostulacionEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdVariable" Type="Int32" />
+    <Property Name="IdEmpleadoRefiere" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strDetallePostula" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaPostulacion" Type="DateTime" Precision="3" />
+    <Property Name="logPostulacionActiva" Type="Boolean" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="strArea" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoReconocimiento" Type="Int32" />
+    <Property Name="logAprobadoComite" Type="Boolean" />
+    <Property Name="dtmFechaAprobacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBFPreguntaReconocimiento" Relationship="Self.FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado" FromRole="tblBFPostulacionEmpleado" ToRole="tblBFPreguntaReconocimiento" />
+  </EntityType>
+  <EntityType Name="tblBFPQRSEmpleado">
+    <Key>
+      <PropertyRef Name="IdPQRS" />
+    </Key>
+    <Property Name="IdPQRS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoSolicitud" Type="Int32" />
+    <Property Name="strTituloSolicitud" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcion" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="strRespuestaSolicitud" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRespuesta" Type="DateTime" Precision="3" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaCategoria">
+    <Key>
+      <PropertyRef Name="IdPreguntaCategoria" />
+    </Key>
+    <Property Name="IdPreguntaCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="strPreguntaCategoria" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaEvento">
+    <Key>
+      <PropertyRef Name="IdPregunta" />
+    </Key>
+    <Property Name="IdPregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="strPregunta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoActivo" Type="Boolean" />
+    <Property Name="IdTipoPregunta" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaReconocimiento">
+    <Key>
+      <PropertyRef Name="IdPreguntaReconocimiento" />
+    </Key>
+    <Property Name="IdPreguntaReconocimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdReconocimiento" Type="Int32" Nullable="false" />
+    <Property Name="IdPregunta" Type="Int32" Nullable="false" />
+    <Property Name="strRespuesta" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dtmFechaRespuesta" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblBFPostulacionEmpleado" Relationship="Self.FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado" FromRole="tblBFPreguntaReconocimiento" ToRole="tblBFPostulacionEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFPremio">
+    <Key>
+      <PropertyRef Name="IdPremio" />
+    </Key>
+    <Property Name="IdPremio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="intOrden" Type="Int32" />
+    <Property Name="IdTipo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFPresupuestoMes">
+    <Key>
+      <PropertyRef Name="intIdPresupuestoMes" />
+    </Key>
+    <Property Name="intIdPresupuestoMes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strAnio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strMes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intPresupuesto" Type="Int32" />
+    <Property Name="intSaldo" Type="Int32" />
+    <Property Name="intSaldoPuntos" Type="Int32" />
+    <Property Name="intMes" Type="Int32" />
+    <Property Name="intPresupuestoReconocimiento" Type="Int32" />
+    <Property Name="intPptoTotal" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFProducto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intNroPuntosReq" Type="Int32" />
+    <Property Name="strImagenProducto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" />
+    <Property Name="intNroCompras" Type="Int32" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="strDetalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strLink" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strArchivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="strTipoAfiliacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="logIlimitado" Type="Boolean" />
+    <Property Name="fCalificacionProm" Type="Double" />
+    <Property Name="logApruebaJefe" Type="Boolean" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="logTiempo" Type="Boolean" />
+    <Property Name="intDiasPromesaEntrega" Type="Int32" />
+    <Property Name="strImagenProducto64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logRequiereInscripcion" Type="Boolean" />
+    <Property Name="logHoras" Type="Boolean" />
+    <Property Name="IntTopeHoras" Type="Int32" />
+    <Property Name="IdTipoPuntos" Type="Int32" />
+    <Property Name="LogCodigo" Type="Boolean" />
+    <Property Name="strRutaFormato" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="LogVistaCodigo" Type="Boolean" />
+    <Property Name="logEsGrupal" Type="Boolean" />
+    <Property Name="intTiempoVigenciaProductoGrupal" Type="Int32" />
+    <Property Name="strFormatoCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblBFCalificacionProducto" Relationship="Self.FK_tblBFCalificacionProducto_tblBFProducto" FromRole="tblBFProducto" ToRole="tblBFCalificacionProducto" />
+    <NavigationProperty Name="tblBFCategoria" Relationship="Self.FK_tblBFProducto_tblBFCategoria" FromRole="tblBFProducto" ToRole="tblBFCategoria" />
+    <NavigationProperty Name="tblBFEmpresa" Relationship="Self.FK_tblBFProducto_tblBFEmpresa" FromRole="tblBFProducto" ToRole="tblBFEmpresa" />
+    <NavigationProperty Name="tblBFInventarioProducto" Relationship="Self.FK__tblBFInve__IdPro__753864A1" FromRole="tblBFProducto" ToRole="tblBFInventarioProducto" />
+    <NavigationProperty Name="tblBFProductoCompraEmpleado" Relationship="Self.FK_tblBFProductoCompraEmpleado_tblBFProducto" FromRole="tblBFProducto" ToRole="tblBFProductoCompraEmpleado" />
+    <NavigationProperty Name="tblProveedor" Relationship="Self.FK_tblProveedor_tblBFProducto" FromRole="tblBFProducto" ToRole="tblProveedor" />
+  </EntityType>
+  <EntityType Name="tblBFProductoCiudad">
+    <Key>
+      <PropertyRef Name="idProductoCiudad" />
+    </Key>
+    <Property Name="idProductoCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProducto" Type="Int32" />
+    <Property Name="idCiudad" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFProductoCompraEmpleado">
+    <Key>
+      <PropertyRef Name="IdProductoCompraEmpleado" />
+    </Key>
+    <Property Name="IdProductoCompraEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="intValorCompra" Type="Int32" Nullable="false" />
+    <Property Name="dtmFechaCompra" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="logEntregado" Type="Boolean" />
+    <Property Name="dtmFechaEntrega" Type="DateTime" Precision="3" />
+    <Property Name="dtmFechaNotificacionProveedor" Type="DateTime" Precision="3" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="intCantidadComprada" Type="Int32" />
+    <Property Name="strIdCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdSede" Type="Int32" />
+    <Property Name="IdTipoPuntos" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdGrupo" Type="Int32" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK_tblBFProductoCompraEmpleado_tblBFProducto" FromRole="tblBFProductoCompraEmpleado" ToRole="tblBFProducto" />
+    <NavigationProperty Name="tblCHEmpleado" Relationship="Self.FK_tblBFProductoCompraEmpleado_tblCHEmpleado" FromRole="tblBFProductoCompraEmpleado" ToRole="tblCHEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFProductoProveedor">
+    <Key>
+      <PropertyRef Name="IdProductoProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="IdProductoProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tblBFProveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strCorreo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strTelefonoContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="strLink" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFPuntoEntregaProveedor">
+    <Key>
+      <PropertyRef Name="IdPunto" />
+    </Key>
+    <Property Name="IdPunto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombrePunto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strNumeroUbicacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="strLetraUbicacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="strSegundoNumero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="strTercerNumero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="strPais" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosCargadosReconocimiento">
+    <Key>
+      <PropertyRef Name="IdPuntos" />
+    </Key>
+    <Property Name="IdPuntos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTipoReconocimiento" Type="Int32" />
+    <Property Name="intPuntosPostulador" Type="Int32" />
+    <Property Name="intPuntosPostulado" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdTipoPunto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosDispEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosEmpleado" />
+    </Key>
+    <Property Name="IdPuntosEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="intPuntosDisponibles" Type="Int32" />
+    <Property Name="intPuntosAsignados" Type="Int32" />
+    <Property Name="intMes" Type="Int32" />
+    <Property Name="intAnno" Type="Int32" />
+    <Property Name="intReconocimientoGrupal" Type="Int32" />
+    <Property Name="dtmFechaReconocimientoGrupal" Type="DateTime" Precision="3" />
+    <Property Name="intPuntosDisponiblesECO" Type="Int32" />
+    <Property Name="IdPoliticaAplicada" Type="Int32" />
+    <Property Name="LogAsignado" Type="Boolean" />
+    <Property Name="IdTipoPunto" Type="Int32" />
+    <Property Name="intPuntosDeBaja" Type="Int32" />
+    <NavigationProperty Name="tblBFPoliticaPuntos" Relationship="Self.FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos" FromRole="tblBFPuntosDispEmpleado" ToRole="tblBFPoliticaPuntos" />
+    <NavigationProperty Name="tblCHEmpleado" Relationship="Self.FK_tblBFPuntosDispEmpleado_tblCHEmpleado" FromRole="tblBFPuntosDispEmpleado" ToRole="tblCHEmpleado" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRemanentesEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosRemanente" />
+    </Key>
+    <Property Name="IdPuntosRemanente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="intPuntosRemanentes" Type="Int32" />
+    <Property Name="IdFechaCierre" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRemanentesJefe">
+    <Key>
+      <PropertyRef Name="IdPuntos" />
+    </Key>
+    <Property Name="IdPuntos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="intPuntos" Type="Int32" />
+    <Property Name="IdPeriodo" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRolMes">
+    <Key>
+      <PropertyRef Name="IdPuntosMes" />
+    </Key>
+    <Property Name="IdPuntosMes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRol" Type="Int32" />
+    <Property Name="IntMes" Type="Int32" />
+    <Property Name="intAnno" Type="Int32" />
+    <Property Name="intPuntos" Type="Int32" />
+    <Property Name="intPuntosDisponibles" Type="Int32" />
+    <Property Name="intPuntosAsignados" Type="Int32" />
+    <Property Name="intPesoPunto" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFReconocimientoArea">
+    <Key>
+      <PropertyRef Name="IdReconocimientoArea" />
+    </Key>
+    <Property Name="IdReconocimientoArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Area" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpleadoReconoce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaReconocimiento" Type="DateTime" Precision="3" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="IdVariable" Type="Int32" />
+    <Property Name="intPeso" Type="Int32" />
+    <Property Name="strJustificacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFReconocimientoEmpleado">
+    <Key>
+      <PropertyRef Name="IdReconocimientoEmpl" />
+    </Key>
+    <Property Name="IdReconocimientoEmpl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpleadoReconoce" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaReconocimiento" Type="DateTime" Precision="3" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="IdVariable" Type="Int32" />
+    <Property Name="intPeso" Type="Int32" />
+    <Property Name="strJustificacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFReporteEmpleado">
+    <Key>
+      <PropertyRef Name="IdReporte" />
+    </Key>
+    <Property Name="IdReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdConcepto" Type="Int32" />
+    <Property Name="dtmFechaReporte" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFRespuestaExperiencia">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdComentario" Type="Int32" />
+    <Property Name="strRespuesta" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRespuesta" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBFRespuestaInscripcionEmpleado">
+    <Key>
+      <PropertyRef Name="IdRespuestaEmpleado" />
+    </Key>
+    <Property Name="IdRespuestaEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdInscripcion" Type="Int32" />
+    <Property Name="IdEvento" Type="Int32" />
+    <Property Name="IdPregunta" Type="Int32" />
+    <Property Name="strRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFRol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreRol" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="logEsJefe" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFSede">
+    <Key>
+      <PropertyRef Name="IdSede" />
+    </Key>
+    <Property Name="IdSede" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strSede" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="logActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFTipoAdministrador">
+    <Key>
+      <PropertyRef Name="IdAdministrador" />
+    </Key>
+    <Property Name="IdAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTipoAdministrador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFTipoNotificacion">
+    <Key>
+      <PropertyRef Name="IdNotificacion" />
+    </Key>
+    <Property Name="IdNotificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTipoNotificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strMensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="LogSms" Type="Boolean" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFTrimestre">
+    <Key>
+      <PropertyRef Name="IdTrimestre" />
+    </Key>
+    <Property Name="IdTrimestre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="dtmFechaFinal" Type="DateTime" Precision="3" />
+    <Property Name="logActivo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblBFUsuarioProveedor">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="strUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strContrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFVariable">
+    <Key>
+      <PropertyRef Name="IdVariable" />
+    </Key>
+    <Property Name="IdVariable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strVariable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdCategoria" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFVariablePunto">
+    <Key>
+      <PropertyRef Name="IdVariable" />
+    </Key>
+    <Property Name="IdVariable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="dtmFechaFinal" Type="DateTime" Precision="3" />
+    <Property Name="strValorPunto" Type="Int32" />
+    <Property Name="IdTipoPunto" Type="Int32" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFWizard">
+    <Key>
+      <PropertyRef Name="IdWizard" />
+    </Key>
+    <Property Name="IdWizard" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="IdEmpleado" Type="Int32" />
+    <Property Name="NombrePanel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionPanel" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="logFinalizado" Type="Boolean" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tblCHComentarioEmpleadoProducto">
+    <Key>
+      <PropertyRef Name="IdComentario" />
+    </Key>
+    <Property Name="IdComentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdProducto" Type="Int32" />
+    <Property Name="dtmFechaComentario" Type="DateTime" Precision="3" />
+    <Property Name="strComentario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblCHEmpleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strNombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdProfesion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strProfesion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strCargo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdRol" Type="Int32" />
+    <Property Name="IdBarrio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strBarrio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdUnidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strUnidad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdSubProceso" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="strSubProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdJefe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strNombreJefe" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRetiro" Type="DateTime" Precision="3" />
+    <Property Name="LogClienteProveedor" Type="Boolean" />
+    <Property Name="LogGerenteRecursosH" Type="Boolean" />
+    <Property Name="intSecuencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogEvaluar" Type="Boolean" />
+    <Property Name="strUsuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strContrasena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="logObjetivosLegalizados" Type="Boolean" />
+    <Property Name="logHabilitarIngresoObjPeriodoCerrado" Type="Boolean" />
+    <Property Name="logSuperUsuario" Type="Boolean" />
+    <Property Name="strGrupoPago" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="strUbicacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="intNivel" Type="Int32" />
+    <Property Name="strSexo" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="strRutaImagenEmpleado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="intPuntosCaritas" Type="Int32" />
+    <Property Name="logObjetivosAprobadosJefe" Type="Boolean" />
+    <Property Name="strUsuarioRed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoContrato" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strTipoAfiliacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="logPermisoEntrega" Type="Boolean" />
+    <Property Name="intPuntosKilo" Type="Int32" />
+    <Property Name="LogAdministrarEcoPuntos" Type="Boolean" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="strCorreo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strNumeroMovil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoAdministrador" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="dtmFechaIngreso" Type="DateTime" Precision="3" />
+    <Property Name="intPuntosCorazones" Type="Int32" />
+    <Property Name="intPuntosBombillo" Type="Int32" />
+    <Property Name="strImagenEmpleado64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogEsJefe" Type="Boolean" />
+    <Property Name="LogPresidencia" Type="Boolean" />
+    <Property Name="LogApruebaTerminos" Type="Boolean" />
+    <NavigationProperty Name="tblBFEmpresa" Relationship="Self.FK_tblCHEmpleado_tblBFEmpresa" FromRole="tblCHEmpleado" ToRole="tblBFEmpresa" />
+    <NavigationProperty Name="tblBFProductoCompraEmpleado" Relationship="Self.FK_tblBFProductoCompraEmpleado_tblCHEmpleado" FromRole="tblCHEmpleado" ToRole="tblBFProductoCompraEmpleado" />
+    <NavigationProperty Name="tblBFPuntosDispEmpleado" Relationship="Self.FK_tblBFPuntosDispEmpleado_tblCHEmpleado" FromRole="tblCHEmpleado" ToRole="tblBFPuntosDispEmpleado" />
+  </EntityType>
+  <EntityType Name="tblCHNoticia">
+    <Key>
+      <PropertyRef Name="IdNoticia" />
+    </Key>
+    <Property Name="IdNoticia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strRutaImagenNoticia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strDescripcionNoticia" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="strTituloNoticia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strRutaImagenVideo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblCHTipoNotificacion">
+    <Key>
+      <PropertyRef Name="IdTipoNotificacion" />
+    </Key>
+    <Property Name="IdTipoNotificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTipoNotificacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="strMensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logTipoActivo" Type="Boolean" />
+    <Property Name="strPlantilla" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblRespuestaSms">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFechaRespuesta" Type="DateTime" Precision="3" />
+    <Property Name="strRespuesta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="strNumeroEnviado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LogEnviado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ResultadoDesempeno">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="IdObjetivo" />
+      <PropertyRef Name="strObjetivo" />
+      <PropertyRef Name="strLogro" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="strNombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strUnidad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strCargo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strSubProceso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdObjetivo" Type="Int32" Nullable="false" />
+    <Property Name="strObjetivo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strMeta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dblPesoObjetivo" Type="Double" />
+    <Property Name="dblCalificacionObjetivo" Type="Double" />
+    <Property Name="strLogro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="strMedida" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dblValoracionObjetivo" Type="Double" />
+    <Property Name="ResultadoDesempenno" Type="Double" />
+  </EntityType>
+  <EntityType Name="ResumenEvaluacion">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="IdVariable" />
+      <PropertyRef Name="strNombreVariable" />
+      <PropertyRef Name="intEje" />
+      <PropertyRef Name="strNombreComponente" />
+      <PropertyRef Name="intNroPregunta" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="strNombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdVariable" Type="Int32" Nullable="false" />
+    <Property Name="strNombreVariable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="intEje" Type="Int32" Nullable="false" />
+    <Property Name="IdComponente" Type="Int32" />
+    <Property Name="strNombreComponente" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="intNroPregunta" Type="Int32" Nullable="false" />
+    <Property Name="strDescripcionPregunta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CalAutoEval" Type="Double" />
+    <Property Name="CalPersonasAcargo" Type="Double" />
+    <Property Name="CalCompas" Type="Double" />
+    <Property Name="CalJefe" Type="Double" />
+    <Property Name="CalCliente" Type="Double" />
+    <Property Name="CalPromGeneral" Type="Double" />
+    <Property Name="CalGenEval" Type="Double" />
+    <Property Name="CalGenAuto" Type="Double" />
+    <Property Name="CalGenACargo" Type="Double" />
+    <Property Name="CalGenCompas" Type="Double" />
+    <Property Name="CalGenJefe" Type="Double" />
+    <Property Name="CalGenCliente" Type="Double" />
+    <Property Name="PesoAuto" Type="Double" />
+    <Property Name="PesoJefe" Type="Double" />
+    <Property Name="PesoCompas" Type="Double" />
+    <Property Name="PesoClientes" Type="Double" />
+    <Property Name="PesoACargo" Type="Double" />
+    <Property Name="CalPromedio" Type="Double" />
+    <Property Name="CalEvalEqui" Type="Double" />
+  </EntityType>
+  <EntityType Name="tblBFAdministradores">
+    <Key>
+      <PropertyRef Name="IdAdministrador" />
+    </Key>
+    <Property Name="IdAdministrador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdTipoAdministrador" Type="Int32" />
+    <Property Name="LogActivo" Type="Boolean" />
+    <Property Name="IdEmpresa" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFAreasEcopuntos">
+    <Key>
+      <PropertyRef Name="IdAreaEcopuntos" />
+      <PropertyRef Name="strUnidad" />
+      <PropertyRef Name="logPermiteVisualizar" />
+    </Key>
+    <Property Name="IdAreaEcopuntos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strUnidad" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="logPermiteVisualizar" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFECPuntosDispEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosEmpleado" />
+    </Key>
+    <Property Name="IdPuntosEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionReconocimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="strNumeroEcopuntos" Type="Int32" />
+    <Property Name="strMes" Type="Int32" />
+    <Property Name="strAnno" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblBFImagenSlider">
+    <Key>
+      <PropertyRef Name="IdImagen" />
+    </Key>
+    <Property Name="IdImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreImagen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="strTextoImagen" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionImagen" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="strNombreImagenBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblBFIntegrantesGrupoCompra">
+    <Key>
+      <PropertyRef Name="IdGrupoCompra" />
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="dtmFechaInvitacion" />
+    </Key>
+    <Property Name="IdGrupoCompra" Type="Int32" Nullable="false" />
+    <Property Name="IdEmpleado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="logEsAdmon" Type="Boolean" />
+    <Property Name="logApruebaConformarGrupo" Type="Boolean" />
+    <Property Name="dtmFechaInvitacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="intPuntosAportados" Type="Int32" />
+    <Property Name="dtmFechaAportePuntos" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBFNoticia">
+    <Key>
+      <PropertyRef Name="IdNoticia" />
+    </Key>
+    <Property Name="IdNoticia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strRuta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionNoticia" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="dtmFechaRegistro" Type="DateTime" Precision="3" />
+    <Property Name="strTituloNoticia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpresa" Type="Int32" />
+    <Property Name="strExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="strDescripcionCorta" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaDatos">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strPolitica" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblECBloqueoDias">
+    <Key>
+      <PropertyRef Name="IdBloqueo" />
+    </Key>
+    <Property Name="IdBloqueo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtmFecha" Type="DateTime" Precision="3" />
+    <Property Name="logActivo" Type="Boolean" />
+    <Property Name="strDiaBloqueado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intMes" Type="Int32" />
+    <Property Name="intAnno" Type="Int32" />
+    <Property Name="intDia" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblProveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strNombreProveedor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblBFProducto" Relationship="Self.FK_tblProveedor_tblBFProducto" FromRole="tblProveedor" ToRole="tblBFProducto" />
+  </EntityType>
+  <Association Name="FK_tblBFCalificacionProducto_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="0..1" />
+    <End Role="tblBFCalificacionProducto" Type="Self.tblBFCalificacionProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFCalificacionProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProducto_tblBFCategoria">
+    <End Role="tblBFCategoria" Type="Self.tblBFCategoria" Multiplicity="0..1" />
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFCategoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tblBFProducto">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFInventarioProducto_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFInventarioProducto" Type="Self.tblBFInventarioProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFInventarioProducto">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPoliticaEmpresa_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFPoliticaEmpresa" Type="Self.tblBFPoliticaEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFPoliticaEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProducto_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFProducto">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCHEmpleado_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBFInve__IdPro__753864A1">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblBFInventarioProducto" Type="Self.tblBFInventarioProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFInventarioProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos">
+    <End Role="tblBFPoliticaPuntos" Type="Self.tblBFPoliticaPuntos" Multiplicity="0..1" />
+    <End Role="tblBFPoliticaEmpresa" Type="Self.tblBFPoliticaEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPoliticaPuntos">
+        <PropertyRef Name="IdPolitica" />
+      </Principal>
+      <Dependent Role="tblBFPoliticaEmpresa">
+        <PropertyRef Name="IdPolitica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos">
+    <End Role="tblBFPoliticaPuntos" Type="Self.tblBFPoliticaPuntos" Multiplicity="0..1" />
+    <End Role="tblBFPuntosDispEmpleado" Type="Self.tblBFPuntosDispEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPoliticaPuntos">
+        <PropertyRef Name="IdPolitica" />
+      </Principal>
+      <Dependent Role="tblBFPuntosDispEmpleado">
+        <PropertyRef Name="IdPoliticaAplicada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado">
+    <End Role="tblBFPostulacionEmpleado" Type="Self.tblBFPostulacionEmpleado" Multiplicity="1" />
+    <End Role="tblBFPreguntaReconocimiento" Type="Self.tblBFPreguntaReconocimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPostulacionEmpleado">
+        <PropertyRef Name="IdPostulacionEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFPreguntaReconocimiento">
+        <PropertyRef Name="IdReconocimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProductoCompraEmpleado_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblBFProductoCompraEmpleado" Type="Self.tblBFProductoCompraEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFProductoCompraEmpleado">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProveedor_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblProveedor" Type="Self.tblProveedor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblProveedor">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProductoCompraEmpleado_tblCHEmpleado">
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="1" />
+    <End Role="tblBFProductoCompraEmpleado" Type="Self.tblBFProductoCompraEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFProductoCompraEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPuntosDispEmpleado_tblCHEmpleado">
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="0..1" />
+    <End Role="tblBFPuntosDispEmpleado" Type="Self.tblBFPuntosDispEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFPuntosDispEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BienestarAlaCartaMultiEmpresaDesarrollo" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Lotes" EntityType="Self.Lotes" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tblBFAcumAntiguedad" EntityType="Self.tblBFAcumAntiguedad" />
+    <EntitySet Name="tblBFAsignacionPuntosJefe" EntityType="Self.tblBFAsignacionPuntosJefe" />
+    <EntitySet Name="tblBFCalificacionProducto" EntityType="Self.tblBFCalificacionProducto" />
+    <EntitySet Name="tblBFCantidadReconocimiento" EntityType="Self.tblBFCantidadReconocimiento" />
+    <EntitySet Name="tblBFCategoria" EntityType="Self.tblBFCategoria" />
+    <EntitySet Name="tblBFCategoriaProducto" EntityType="Self.tblBFCategoriaProducto" />
+    <EntitySet Name="tblBFCategoriaRecompensa" EntityType="Self.tblBFCategoriaRecompensa" />
+    <EntitySet Name="tblBFCategoriaReconocimiento" EntityType="Self.tblBFCategoriaReconocimiento" />
+    <EntitySet Name="tblBFCiudad" EntityType="Self.tblBFCiudad" />
+    <EntitySet Name="tblBFCodigoProducto" EntityType="Self.tblBFCodigoProducto" />
+    <EntitySet Name="tblBFConceptoReduccion" EntityType="Self.tblBFConceptoReduccion" />
+    <EntitySet Name="tblBFDetallePresupuestoMes" EntityType="Self.tblBFDetallePresupuestoMes" />
+    <EntitySet Name="tblBFECCategoriaProducto" EntityType="Self.tblBFECCategoriaProducto" />
+    <EntitySet Name="tblBFEHistoricoPuntosAcumEmpleado" EntityType="Self.tblBFEHistoricoPuntosAcumEmpleado" />
+    <EntitySet Name="tblBFEmpresa" EntityType="Self.tblBFEmpresa" />
+    <EntitySet Name="tblBFEvento" EntityType="Self.tblBFEvento" />
+    <EntitySet Name="tblBFEventoPreguntaInscripcion" EntityType="Self.tblBFEventoPreguntaInscripcion" />
+    <EntitySet Name="tblBFExperienciaEvento" EntityType="Self.tblBFExperienciaEvento" />
+    <EntitySet Name="tblBFFechaCorteReduccion" EntityType="Self.tblBFFechaCorteReduccion" />
+    <EntitySet Name="tblBFFrases" EntityType="Self.tblBFFrases" />
+    <EntitySet Name="tblBFGrupoCompra" EntityType="Self.tblBFGrupoCompra" />
+    <EntitySet Name="tblBFHistorialAntiguedad" EntityType="Self.tblBFHistorialAntiguedad" />
+    <EntitySet Name="tblBFHistorialRecargas" EntityType="Self.tblBFHistorialRecargas" />
+    <EntitySet Name="tblBFHistorialReduccion" EntityType="Self.tblBFHistorialReduccion" />
+    <EntitySet Name="tblBFImagenProducto" EntityType="Self.tblBFImagenProducto" />
+    <EntitySet Name="tblBFInscripcionEventos" EntityType="Self.tblBFInscripcionEventos" />
+    <EntitySet Name="tblBFInventario" EntityType="Self.tblBFInventario" />
+    <EntitySet Name="tblBFInventarioProducto" EntityType="Self.tblBFInventarioProducto" />
+    <EntitySet Name="tblBFInvitadoExternoEvento" EntityType="Self.tblBFInvitadoExternoEvento" />
+    <EntitySet Name="tblBFLogAdministrador" EntityType="Self.tblBFLogAdministrador" />
+    <EntitySet Name="tblBFMetodoAcumulacionPuntos" EntityType="Self.tblBFMetodoAcumulacionPuntos" />
+    <EntitySet Name="tblBFMetodoEmpresa" EntityType="Self.tblBFMetodoEmpresa" />
+    <EntitySet Name="tblBFMultipleRespuestaPregunta" EntityType="Self.tblBFMultipleRespuestaPregunta" />
+    <EntitySet Name="tblBFOpciones" EntityType="Self.tblBFOpciones" />
+    <EntitySet Name="tblBFPermisoAdministrador" EntityType="Self.tblBFPermisoAdministrador" />
+    <EntitySet Name="tblBFPoliticaEmpresa" EntityType="Self.tblBFPoliticaEmpresa" />
+    <EntitySet Name="tblBFPoliticaPuntos" EntityType="Self.tblBFPoliticaPuntos" />
+    <EntitySet Name="tblBFPoliticaPuntosAntiguedad" EntityType="Self.tblBFPoliticaPuntosAntiguedad" />
+    <EntitySet Name="tblBFPostulacionEmpleado" EntityType="Self.tblBFPostulacionEmpleado" />
+    <EntitySet Name="tblBFPQRSEmpleado" EntityType="Self.tblBFPQRSEmpleado" />
+    <EntitySet Name="tblBFPreguntaCategoria" EntityType="Self.tblBFPreguntaCategoria" />
+    <EntitySet Name="tblBFPreguntaEvento" EntityType="Self.tblBFPreguntaEvento" />
+    <EntitySet Name="tblBFPreguntaReconocimiento" EntityType="Self.tblBFPreguntaReconocimiento" />
+    <EntitySet Name="tblBFPremio" EntityType="Self.tblBFPremio" />
+    <EntitySet Name="tblBFPresupuestoMes" EntityType="Self.tblBFPresupuestoMes" />
+    <EntitySet Name="tblBFProducto" EntityType="Self.tblBFProducto" />
+    <EntitySet Name="tblBFProductoCiudad" EntityType="Self.tblBFProductoCiudad" />
+    <EntitySet Name="tblBFProductoCompraEmpleado" EntityType="Self.tblBFProductoCompraEmpleado" />
+    <EntitySet Name="tblBFProductoProveedor" EntityType="Self.tblBFProductoProveedor" />
+    <EntitySet Name="tblBFProveedor" EntityType="Self.tblBFProveedor" />
+    <EntitySet Name="tblBFPuntoEntregaProveedor" EntityType="Self.tblBFPuntoEntregaProveedor" />
+    <EntitySet Name="tblBFPuntosCargadosReconocimiento" EntityType="Self.tblBFPuntosCargadosReconocimiento" />
+    <EntitySet Name="tblBFPuntosDispEmpleado" EntityType="Self.tblBFPuntosDispEmpleado" />
+    <EntitySet Name="tblBFPuntosRemanentesEmpleado" EntityType="Self.tblBFPuntosRemanentesEmpleado" />
+    <EntitySet Name="tblBFPuntosRemanentesJefe" EntityType="Self.tblBFPuntosRemanentesJefe" />
+    <EntitySet Name="tblBFPuntosRolMes" EntityType="Self.tblBFPuntosRolMes" />
+    <EntitySet Name="tblBFReconocimientoArea" EntityType="Self.tblBFReconocimientoArea" />
+    <EntitySet Name="tblBFReconocimientoEmpleado" EntityType="Self.tblBFReconocimientoEmpleado" />
+    <EntitySet Name="tblBFReporteEmpleado" EntityType="Self.tblBFReporteEmpleado" />
+    <EntitySet Name="tblBFRespuestaExperiencia" EntityType="Self.tblBFRespuestaExperiencia" />
+    <EntitySet Name="tblBFRespuestaInscripcionEmpleado" EntityType="Self.tblBFRespuestaInscripcionEmpleado" />
+    <EntitySet Name="tblBFRol" EntityType="Self.tblBFRol" />
+    <EntitySet Name="tblBFSede" EntityType="Self.tblBFSede" />
+    <EntitySet Name="tblBFTipoAdministrador" EntityType="Self.tblBFTipoAdministrador" />
+    <EntitySet Name="tblBFTipoNotificacion" EntityType="Self.tblBFTipoNotificacion" />
+    <EntitySet Name="tblBFTrimestre" EntityType="Self.tblBFTrimestre" />
+    <EntitySet Name="tblBFUsuarioProveedor" EntityType="Self.tblBFUsuarioProveedor" />
+    <EntitySet Name="tblBFVariable" EntityType="Self.tblBFVariable" />
+    <EntitySet Name="tblBFVariablePunto" EntityType="Self.tblBFVariablePunto" />
+    <EntitySet Name="tblBFWizard" EntityType="Self.tblBFWizard" />
+    <EntitySet Name="tblCHComentarioEmpleadoProducto" EntityType="Self.tblCHComentarioEmpleadoProducto" />
+    <EntitySet Name="tblCHEmpleado" EntityType="Self.tblCHEmpleado" />
+    <EntitySet Name="tblCHNoticia" EntityType="Self.tblCHNoticia" />
+    <EntitySet Name="tblCHTipoNotificacion" EntityType="Self.tblCHTipoNotificacion" />
+    <EntitySet Name="tblRespuestaSms" EntityType="Self.tblRespuestaSms" />
+    <EntitySet Name="ResultadoDesempeno" EntityType="Self.ResultadoDesempeno" />
+    <EntitySet Name="ResumenEvaluacion" EntityType="Self.ResumenEvaluacion" />
+    <EntitySet Name="tblBFAdministradores" EntityType="Self.tblBFAdministradores" />
+    <EntitySet Name="tblBFAreasEcopuntos" EntityType="Self.tblBFAreasEcopuntos" />
+    <EntitySet Name="tblBFECPuntosDispEmpleado" EntityType="Self.tblBFECPuntosDispEmpleado" />
+    <EntitySet Name="tblBFImagenSlider" EntityType="Self.tblBFImagenSlider" />
+    <EntitySet Name="tblBFIntegrantesGrupoCompra" EntityType="Self.tblBFIntegrantesGrupoCompra" />
+    <EntitySet Name="tblBFNoticia" EntityType="Self.tblBFNoticia" />
+    <EntitySet Name="tblBFPoliticaDatos" EntityType="Self.tblBFPoliticaDatos" />
+    <EntitySet Name="tblECBloqueoDias" EntityType="Self.tblECBloqueoDias" />
+    <EntitySet Name="tblProveedor" EntityType="Self.tblProveedor" />
+    <AssociationSet Name="FK_tblBFCalificacionProducto_tblBFProducto" Association="Self.FK_tblBFCalificacionProducto_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFCalificacionProducto" EntitySet="tblBFCalificacionProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProducto_tblBFCategoria" Association="Self.FK_tblBFProducto_tblBFCategoria">
+      <End Role="tblBFCategoria" EntitySet="tblBFCategoria" />
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFInventarioProducto_tblBFEmpresa" Association="Self.FK_tblBFInventarioProducto_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFInventarioProducto" EntitySet="tblBFInventarioProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPoliticaEmpresa_tblBFEmpresa" Association="Self.FK_tblBFPoliticaEmpresa_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFPoliticaEmpresa" EntitySet="tblBFPoliticaEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProducto_tblBFEmpresa" Association="Self.FK_tblBFProducto_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCHEmpleado_tblBFEmpresa" Association="Self.FK_tblCHEmpleado_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBFInve__IdPro__753864A1" Association="Self.FK__tblBFInve__IdPro__753864A1">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFInventarioProducto" EntitySet="tblBFInventarioProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos" Association="Self.FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos">
+      <End Role="tblBFPoliticaPuntos" EntitySet="tblBFPoliticaPuntos" />
+      <End Role="tblBFPoliticaEmpresa" EntitySet="tblBFPoliticaEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos" Association="Self.FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos">
+      <End Role="tblBFPoliticaPuntos" EntitySet="tblBFPoliticaPuntos" />
+      <End Role="tblBFPuntosDispEmpleado" EntitySet="tblBFPuntosDispEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado" Association="Self.FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado">
+      <End Role="tblBFPostulacionEmpleado" EntitySet="tblBFPostulacionEmpleado" />
+      <End Role="tblBFPreguntaReconocimiento" EntitySet="tblBFPreguntaReconocimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProductoCompraEmpleado_tblBFProducto" Association="Self.FK_tblBFProductoCompraEmpleado_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFProductoCompraEmpleado" EntitySet="tblBFProductoCompraEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProveedor_tblBFProducto" Association="Self.FK_tblProveedor_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblProveedor" EntitySet="tblProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProductoCompraEmpleado_tblCHEmpleado" Association="Self.FK_tblBFProductoCompraEmpleado_tblCHEmpleado">
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+      <End Role="tblBFProductoCompraEmpleado" EntitySet="tblBFProductoCompraEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPuntosDispEmpleado_tblCHEmpleado" Association="Self.FK_tblBFPuntosDispEmpleado_tblCHEmpleado">
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+      <End Role="tblBFPuntosDispEmpleado" EntitySet="tblBFPuntosDispEmpleado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,6 +1,13 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
 *~
 *.sw[mnpcod]
 .tmp
@@ -29,3 +36,9 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+
+
+# System Files
+.DS_Store
+Thumbs.db
+/WSBienastarAlaCartaV3/.vs/WSBienastarAlaCartaV3/v16/Server/sqlite3

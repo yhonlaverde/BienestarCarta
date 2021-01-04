@@ -1,0 +1,1622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BienestarAlaCartaMultiEmpresaDesarrolloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cantidad" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.ResultadoDesempeno' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ResultadoDesempeno">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="IdObjetivo" />
+      <PropertyRef Name="strObjetivo" />
+      <PropertyRef Name="strLogro" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="500" />
+    <Property Name="strUnidad" Type="varchar" MaxLength="200" />
+    <Property Name="strCargo" Type="varchar" MaxLength="500" />
+    <Property Name="strProceso" Type="varchar" MaxLength="200" />
+    <Property Name="strSubProceso" Type="varchar" MaxLength="200" />
+    <Property Name="IdObjetivo" Type="int" Nullable="false" />
+    <Property Name="strObjetivo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="strMeta" Type="varchar" MaxLength="200" />
+    <Property Name="dblPesoObjetivo" Type="float" />
+    <Property Name="dblCalificacionObjetivo" Type="float" />
+    <Property Name="strLogro" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="strMedida" Type="varchar" MaxLength="200" />
+    <Property Name="dblValoracionObjetivo" Type="float" />
+    <Property Name="ResultadoDesempenno" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.ResumenEvaluacion' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ResumenEvaluacion">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="IdVariable" />
+      <PropertyRef Name="strNombreVariable" />
+      <PropertyRef Name="intEje" />
+      <PropertyRef Name="strNombreComponente" />
+      <PropertyRef Name="intNroPregunta" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="500" />
+    <Property Name="IdVariable" Type="int" Nullable="false" />
+    <Property Name="strNombreVariable" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="intEje" Type="int" Nullable="false" />
+    <Property Name="IdComponente" Type="int" />
+    <Property Name="strNombreComponente" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="intNroPregunta" Type="int" Nullable="false" />
+    <Property Name="strDescripcionPregunta" Type="varchar" MaxLength="500" />
+    <Property Name="CalAutoEval" Type="float" />
+    <Property Name="CalPersonasAcargo" Type="float" />
+    <Property Name="CalCompas" Type="float" />
+    <Property Name="CalJefe" Type="float" />
+    <Property Name="CalCliente" Type="float" />
+    <Property Name="CalPromGeneral" Type="float" />
+    <Property Name="CalGenEval" Type="float" />
+    <Property Name="CalGenAuto" Type="float" />
+    <Property Name="CalGenACargo" Type="float" />
+    <Property Name="CalGenCompas" Type="float" />
+    <Property Name="CalGenJefe" Type="float" />
+    <Property Name="CalGenCliente" Type="float" />
+    <Property Name="PesoAuto" Type="float" />
+    <Property Name="PesoJefe" Type="float" />
+    <Property Name="PesoCompas" Type="float" />
+    <Property Name="PesoClientes" Type="float" />
+    <Property Name="PesoACargo" Type="float" />
+    <Property Name="CalPromedio" Type="float" />
+    <Property Name="CalEvalEqui" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblAuxiliarProducto' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="tblAuxiliarProducto">
+          <Property Name="IdCategoria" Type="int" />
+          <Property Name="strDescripcion" Type="varchar" MaxLength="100" />
+          <Property Name="strUrl" Type="varchar" MaxLength="500" />
+          <Property Name="strDisponible" Type="varchar" MaxLength="100" />
+          <Property Name="strDetalle" Type="nvarchar(max)" />
+          <Property Name="intPuntos" Type="int" />
+        </EntityType>-->
+  <EntityType Name="tblBFAcumAntiguedad">
+    <Key>
+      <PropertyRef Name="IdAntiguedad" />
+    </Key>
+    <Property Name="IdAntiguedad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intNroMesesRangoInicial" Type="int" Nullable="false" />
+    <Property Name="intNroMesesRangoFinal" Type="int" Nullable="false" />
+    <Property Name="intNroPuntosAcumula" Type="float" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFAdministradores' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFAdministradores">
+    <Key>
+      <PropertyRef Name="IdAdministrador" />
+    </Key>
+    <Property Name="IdAdministrador" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdTipoAdministrador" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFAreasEcopuntos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFAreasEcopuntos">
+    <Key>
+      <PropertyRef Name="IdAreaEcopuntos" />
+      <PropertyRef Name="strUnidad" />
+      <PropertyRef Name="logPermiteVisualizar" />
+    </Key>
+    <Property Name="IdAreaEcopuntos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strUnidad" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="logPermiteVisualizar" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFAsignacionPuntosJefe">
+    <Key>
+      <PropertyRef Name="IdAsignacion" />
+    </Key>
+    <Property Name="IdAsignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPostulado" Type="varchar" MaxLength="20" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+    <Property Name="IdReconocimiento" Type="int" />
+    <Property Name="intPuntos" Type="int" />
+    <Property Name="IdPeriodo" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFCalificacionProducto">
+    <Key>
+      <PropertyRef Name="IdCalificacionProducto" />
+    </Key>
+    <Property Name="IdCalificacionProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="intCalificacion" Type="int" />
+    <Property Name="IdEmpleadoCalifica" Type="int" />
+    <Property Name="dtmFechaCalificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBFCantidadReconocimiento">
+    <Key>
+      <PropertyRef Name="IdCantidadReonocimiento" />
+    </Key>
+    <Property Name="IdCantidadReonocimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCantidadReconocimiento" Type="varchar" MaxLength="500" />
+    <Property Name="valorCantidad" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFCategoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCategoria" Type="varchar" MaxLength="500" />
+    <Property Name="strImagenCategoria" Type="varchar" MaxLength="200" />
+    <Property Name="logActivo" Type="bit" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="500" />
+    <Property Name="strEstiloCuadro" Type="varchar" MaxLength="200" />
+    <Property Name="strEstiloBoton" Type="varchar" MaxLength="200" />
+    <Property Name="strEstiloPuntos" Type="varchar" MaxLength="200" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaProducto">
+    <Key>
+      <PropertyRef Name="IdCategoriaP" />
+    </Key>
+    <Property Name="IdCategoriaP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar(max)" />
+    <Property Name="strClaseEstilo" Type="varchar" MaxLength="20" />
+    <Property Name="strDescripcionCategoria" Type="varchar" MaxLength="120" />
+    <Property Name="strClaseEstiloTitulo" Type="varchar" MaxLength="20" />
+    <Property Name="IdTipo" Type="int" />
+    <Property Name="LogActivoInactivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaRecompensa">
+    <Key>
+      <PropertyRef Name="IdCategoriaRecompensa" />
+    </Key>
+    <Property Name="IdCategoriaRecompensa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCategoriaRecompensa" Type="varchar" MaxLength="500" />
+    <Property Name="logActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFCategoriaReconocimiento">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCategoria" Type="varchar" MaxLength="100" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="strImagenCategoria" Type="varchar" MaxLength="3000" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFCiudad">
+    <Key>
+      <PropertyRef Name="IdCiudad" />
+    </Key>
+    <Property Name="IdCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCiudad" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblBFCodigoProducto">
+    <Key>
+      <PropertyRef Name="IdCodigo" />
+    </Key>
+    <Property Name="IdCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strCodigo" Type="varchar" MaxLength="500" />
+    <Property Name="IdEmpleadoCompra" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaInicio" Type="datetime" />
+    <Property Name="dtmFechaFin" Type="datetime" />
+    <Property Name="strObservaciones" Type="varchar" MaxLength="3000" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="dtmFechaAsignacion" Type="datetime" />
+    <Property Name="strNombreArchivo" Type="varchar" MaxLength="500" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdCompra" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFConceptoReduccion">
+    <Key>
+      <PropertyRef Name="IdConceptoReduccion" />
+    </Key>
+    <Property Name="IdConceptoReduccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strConceptoReduccion" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="dblPuntajeReducido" Type="float" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdTipoPunto" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFDetallePresupuestoMes">
+    <Key>
+      <PropertyRef Name="IdDetallePresupuesto" />
+    </Key>
+    <Property Name="IdDetallePresupuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMes" Type="int" />
+    <Property Name="dtmFecha" Type="datetime" />
+    <Property Name="strDetalle" Type="varchar(max)" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFECCategoriaProducto">
+    <Key>
+      <PropertyRef Name="IdCategoriaP" />
+    </Key>
+    <Property Name="IdCategoriaP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar(max)" />
+    <Property Name="strDescripcionCategoria" Type="varchar" MaxLength="120" />
+    <Property Name="bitEstadoVisual" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFECPuntosDispEmpleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFECPuntosDispEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosEmpleado" />
+    </Key>
+    <Property Name="IdPuntosEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="strDescripcionReconocimiento" Type="varchar" MaxLength="100" />
+    <Property Name="strNumeroEcopuntos" Type="int" />
+    <Property Name="strMes" Type="int" />
+    <Property Name="strAnno" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFEHistoricoPuntosAcumEmpleado">
+    <Key>
+      <PropertyRef Name="IdHistoricoPuntosAcumEmpleado" />
+    </Key>
+    <Property Name="IdHistoricoPuntosAcumEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="intNroEcoPuntosAcumulados" Type="int" />
+    <Property Name="intNroPuntosBienestarAcumulados" Type="int" />
+    <Property Name="dtmFechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="logUltRegistro" Type="bit" Nullable="false" />
+    <Property Name="intMes" Type="int" />
+    <Property Name="intAnno" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFEmpresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreEmpresa" Type="varchar" MaxLength="100" />
+    <Property Name="strSiglas" Type="varchar" MaxLength="10" />
+    <Property Name="strNit" Type="varchar" MaxLength="50" />
+    <Property Name="intPersonas" Type="int" />
+    <Property Name="strZona" Type="varchar" MaxLength="50" />
+    <Property Name="strCiudad" Type="varchar" MaxLength="50" />
+    <Property Name="strTipo" Type="varchar" MaxLength="10" />
+    <Property Name="LogSedeUnica" Type="bit" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="strUrlLogo" Type="varchar" MaxLength="1000" />
+    <Property Name="strUrlBanner" Type="varchar" MaxLength="1000" />
+    <Property Name="strSiglaEmpresa" Type="varchar" MaxLength="10" />
+    <Property Name="strColorEmpresa" Type="varchar" MaxLength="50" />
+    <Property Name="strLogo64" Type="nvarchar(max)" />
+    <Property Name="strColorSecundario" Type="varchar" MaxLength="50" />
+    <Property Name="strLogoHerramientaEmpresa" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tblBFEmpresas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" Nullable="false" />
+    <Property Name="strSiglas" Type="nvarchar(max)" />
+    <Property Name="strNit" Type="nvarchar(max)" />
+    <Property Name="intPersonas" Type="int" Nullable="false" />
+    <Property Name="strZona" Type="nvarchar(max)" />
+    <Property Name="strCiudad" Type="nvarchar(max)" />
+    <Property Name="strTipo" Type="nvarchar(max)" />
+    <Property Name="LogSedeUnica" Type="bit" Nullable="false" />
+    <Property Name="LogActivo" Type="bit" Nullable="false" />
+    <Property Name="strUrlLogo" Type="nvarchar(max)" />
+    <Property Name="strUrlBanner" Type="nvarchar(max)" />
+    <Property Name="strSiglaEmpresa" Type="nvarchar(max)" />
+    <Property Name="strColorEmpresa" Type="nvarchar(max)" />
+    <Property Name="strLogo64" Type="nvarchar(max)" />
+    <Property Name="strColorSecundario" Type="nvarchar(max)" />
+    <Property Name="strLogoHerramientaEmpresa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblBFEvento">
+    <Key>
+      <PropertyRef Name="IdEvento" />
+    </Key>
+    <Property Name="IdEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreEvento" Type="varchar" MaxLength="50" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="8000" />
+    <Property Name="strRutaEvento" Type="varchar" MaxLength="3000" />
+    <Property Name="dtmFechaInicio" Type="datetime" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="dtmFechaFinzalizacion" Type="datetime" />
+    <Property Name="strDescripcionCorta" Type="varchar" MaxLength="500" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="bInscribirInvitados" Type="bit" />
+    <Property Name="intNroInventadosEvento" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFEventoPreguntaInscripcion">
+    <Key>
+      <PropertyRef Name="IdEventoPreguntaInscripcion" />
+    </Key>
+    <Property Name="IdEventoPreguntaInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="Pregunta" Type="varchar" MaxLength="650" />
+    <Property Name="logActiva" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFExperienciaEvento">
+    <Key>
+      <PropertyRef Name="IdPublicacion" />
+    </Key>
+    <Property Name="IdPublicacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="strRutaImagen" Type="varchar" MaxLength="3000" />
+    <Property Name="IdAutor" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaPublicacion" Type="datetime" />
+    <Property Name="LogAprobrado" Type="bit" />
+    <Property Name="strExtension" Type="varchar" MaxLength="50" />
+    <Property Name="strComentario" Type="text" />
+  </EntityType>
+  <EntityType Name="tblBFFechaCorteReduccion">
+    <Key>
+      <PropertyRef Name="IdCorte" />
+    </Key>
+    <Property Name="IdCorte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFechaInicio" Type="datetime" />
+    <Property Name="dtmFechaFinal" Type="datetime" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFFrases">
+    <Key>
+      <PropertyRef Name="IdFrase" />
+    </Key>
+    <Property Name="IdFrase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTitulo" Type="varchar" MaxLength="500" />
+    <Property Name="strFrase" Type="varchar" MaxLength="500" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="strImagenFrase" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblBFGrupoCompra">
+    <Key>
+      <PropertyRef Name="IdGrupoCompra" />
+    </Key>
+    <Property Name="IdGrupoCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="IdEmpleadoAdmon" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="dtmFechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="intTiempoActualDias" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="dtmFechaCierre" Type="datetime" />
+    <Property Name="intPuntosAcumuladosActual" Type="int" Nullable="false" />
+    <Property Name="logCompraCompleta" Type="bit" Nullable="false" />
+    <Property Name="logCancelado" Type="bit" Nullable="false" />
+    <Property Name="intPuntoRequeridosProducto" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFHistorialAntiguedad">
+    <Key>
+      <PropertyRef Name="IdHistorial" />
+    </Key>
+    <Property Name="IdHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdAntiguedad" Type="int" />
+    <Property Name="IdEmpleado" Type="int" />
+    <Property Name="intPuntos" Type="int" />
+    <Property Name="dtmFechaRegistro" Type="datetime" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFHistorialRecargaReduccion' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="tblBFHistorialRecargaReduccion">
+          <Property Name="IdRecarta" Type="int" />
+          <Property Name="IdEmpleado" Type="varchar" MaxLength="50" />
+          <Property Name="IdFechaCorte" Type="int" />
+          <Property Name="intPuntos" Type="int" />
+        </EntityType>-->
+  <EntityType Name="tblBFHistorialRecargas">
+    <Key>
+      <PropertyRef Name="IdHistorialRecargas" />
+    </Key>
+    <Property Name="IdHistorialRecargas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFechaRecarga" Type="datetime" />
+    <Property Name="IdAdministrador" Type="varchar" MaxLength="50" />
+    <Property Name="IdColaborador" Type="varchar" MaxLength="50" />
+    <Property Name="valorRecarga" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="tipoCarga" Type="varchar" MaxLength="50" />
+    <Property Name="IdTipoPunto" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFHistorialReduccion">
+    <Key>
+      <PropertyRef Name="IdHistorial" />
+    </Key>
+    <Property Name="IdHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPolitica" Type="int" />
+    <Property Name="dtmFechaRegistro" Type="datetime" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+    <Property Name="strObservaciones" Type="varchar" MaxLength="500" />
+    <Property Name="intCantidad" Type="int" />
+    <Property Name="IdFechaCorte" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFImagenProducto">
+    <Key>
+      <PropertyRef Name="IdImagen" />
+    </Key>
+    <Property Name="IdImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="strRutaImagen" Type="varchar" MaxLength="3000" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFImagenSlider' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFImagenSlider">
+    <Key>
+      <PropertyRef Name="IdImagen" />
+    </Key>
+    <Property Name="IdImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreImagen" Type="varchar" MaxLength="100" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="strTextoImagen" Type="varchar" MaxLength="500" />
+    <Property Name="strDescripcionImagen" Type="varchar" MaxLength="500" />
+    <Property Name="strNombreImagenBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblBFInscripcionEventos">
+    <Key>
+      <PropertyRef Name="IdInscripcion" />
+    </Key>
+    <Property Name="IdInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaInscripcion" Type="datetime" />
+    <Property Name="strAspiraciones" Type="varchar" MaxLength="3000" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFIntegrantesGrupoCompra' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFIntegrantesGrupoCompra">
+    <Key>
+      <PropertyRef Name="IdGrupoCompra" />
+      <PropertyRef Name="IdEmpleado" />
+      <PropertyRef Name="dtmFechaInvitacion" />
+    </Key>
+    <Property Name="IdGrupoCompra" Type="int" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="logEsAdmon" Type="bit" />
+    <Property Name="logApruebaConformarGrupo" Type="bit" />
+    <Property Name="dtmFechaInvitacion" Type="datetime" Nullable="false" />
+    <Property Name="intPuntosAportados" Type="int" />
+    <Property Name="dtmFechaAportePuntos" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBFInventario">
+    <Key>
+      <PropertyRef Name="IdInventario" />
+    </Key>
+    <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="200" />
+    <Property Name="intCantidadesActuales" Type="int" />
+    <Property Name="intCantidadesEntregadas" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFInventarioProducto">
+    <Key>
+      <PropertyRef Name="IdInventario" />
+    </Key>
+    <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="intUnidades" Type="int" />
+    <Property Name="intTipoTransaccion" Type="int" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="500" />
+    <Property Name="dtmFechaTransaccion" Type="datetime" />
+    <Property Name="intNroUnidadesActuales" Type="int" />
+    <Property Name="intNroUnidadesEntregadas" Type="int" />
+    <Property Name="dtmFechaUltimaEntrega" Type="datetime" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFInvitadoExternoEvento">
+    <Key>
+      <PropertyRef Name="IdInscritoExternoEvento" />
+    </Key>
+    <Property Name="IdInscritoExternoEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="IdEmpleadoInvita" Type="varchar" MaxLength="20" />
+    <Property Name="IdentificacionInvitado" Type="varchar" MaxLength="20" />
+    <Property Name="strNombreInvitado" Type="varchar" MaxLength="200" />
+    <Property Name="intEdad" Type="int" />
+    <Property Name="strEdad" Type="varchar" MaxLength="10" />
+    <Property Name="strParantesco" Type="varchar" MaxLength="200" />
+    <Property Name="strIntereses" Type="varchar" MaxLength="3000" />
+    <Property Name="strCorreoElectronico" Type="varchar" MaxLength="100" />
+    <Property Name="dtmFechaInvitado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBFLogAdministrador">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdAdministrador" Type="varchar" MaxLength="20" />
+    <Property Name="strFormulario" Type="varchar" MaxLength="100" />
+    <Property Name="strAccion" Type="varchar" MaxLength="200" />
+    <Property Name="dtmFechaAccion" Type="datetime" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdTipoAdministrador" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFMetodoAcumulacionPuntos">
+    <Key>
+      <PropertyRef Name="IdMetodoAcumulacion" />
+    </Key>
+    <Property Name="IdMetodoAcumulacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strMetodoAcumulacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="strDescripcionDelMetodo" Type="varchar" MaxLength="5000" />
+    <Property Name="logActivo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFMetodoEmpresa">
+    <Key>
+      <PropertyRef Name="IdAsignacion" />
+    </Key>
+    <Property Name="IdAsignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMetodo" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFMultipleRespuestaPregunta">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPregunta" Type="int" />
+    <Property Name="strRespuesta" Type="nvarchar(max)" />
+    <Property Name="LogActivo" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFNoticia' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFNoticia">
+    <Key>
+      <PropertyRef Name="IdNoticia" />
+    </Key>
+    <Property Name="IdNoticia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strRuta" Type="varchar" MaxLength="200" />
+    <Property Name="strDescripcionNoticia" Type="varchar" MaxLength="3000" />
+    <Property Name="dtmFechaRegistro" Type="datetime" />
+    <Property Name="strTituloNoticia" Type="varchar" MaxLength="500" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="strExtension" Type="varchar" MaxLength="50" />
+    <Property Name="strDescripcionCorta" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblBFOpciones">
+    <Key>
+      <PropertyRef Name="IdOpcion" />
+    </Key>
+    <Property Name="IdOpcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="200" />
+    <Property Name="LogVisible" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFPermisoAdministrador">
+    <Key>
+      <PropertyRef Name="IdPermiso" />
+    </Key>
+    <Property Name="IdPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoAdministrador" Type="int" />
+    <Property Name="frmFormulario" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFPoliticaDatos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblBFPoliticaDatos">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strPolitica" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaEmpresa">
+    <Key>
+      <PropertyRef Name="IdRelacion" />
+    </Key>
+    <Property Name="IdRelacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdPolitica" Type="int" />
+    <Property Name="dtmFechaEstablecimiento" Type="date" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaPuntos">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcionPolitica" Type="varchar" MaxLength="50" />
+    <Property Name="LogActiva" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFPoliticaPuntosAntiguedad">
+    <Key>
+      <PropertyRef Name="IdPolitica" />
+    </Key>
+    <Property Name="IdPolitica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombrePolitica" Type="varchar" MaxLength="500" />
+    <Property Name="intMesesInicio" Type="int" />
+    <Property Name="intMesesFin" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="intPuntos" Type="int" />
+    <Property Name="IdTipo" Type="int" />
+    <Property Name="strTipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblBFPostulacionEmpleado">
+    <Key>
+      <PropertyRef Name="IdPostulacionEmpleado" />
+    </Key>
+    <Property Name="IdPostulacionEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdVariable" Type="int" />
+    <Property Name="IdEmpleadoRefiere" Type="varchar" MaxLength="20" />
+    <Property Name="strDetallePostula" Type="varchar" MaxLength="500" />
+    <Property Name="dtmFechaPostulacion" Type="datetime" />
+    <Property Name="logPostulacionActiva" Type="bit" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="strArea" Type="varchar" MaxLength="200" />
+    <Property Name="IdTipoReconocimiento" Type="int" />
+    <Property Name="logAprobadoComite" Type="bit" />
+    <Property Name="dtmFechaAprobacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBFPQRSEmpleado">
+    <Key>
+      <PropertyRef Name="IdPQRS" />
+    </Key>
+    <Property Name="IdPQRS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdTipoSolicitud" Type="int" />
+    <Property Name="strTituloSolicitud" Type="varchar" MaxLength="500" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="3000" />
+    <Property Name="dtmFechaRegistro" Type="datetime" />
+    <Property Name="strRespuestaSolicitud" Type="varchar" MaxLength="3000" />
+    <Property Name="dtmFechaRespuesta" Type="datetime" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaCategoria">
+    <Key>
+      <PropertyRef Name="IdPreguntaCategoria" />
+    </Key>
+    <Property Name="IdPreguntaCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="strPreguntaCategoria" Type="varchar" MaxLength="500" />
+    <Property Name="logActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaEvento">
+    <Key>
+      <PropertyRef Name="IdPregunta" />
+    </Key>
+    <Property Name="IdPregunta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="strPregunta" Type="nvarchar(max)" />
+    <Property Name="LoActivo" Type="bit" />
+    <Property Name="IdTipoPregunta" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPreguntaReconocimiento">
+    <Key>
+      <PropertyRef Name="IdPreguntaReconocimiento" />
+    </Key>
+    <Property Name="IdPreguntaReconocimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdReconocimiento" Type="int" Nullable="false" />
+    <Property Name="IdPregunta" Type="int" Nullable="false" />
+    <Property Name="strRespuesta" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="dtmFechaRespuesta" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFPremio">
+    <Key>
+      <PropertyRef Name="IdPremio" />
+    </Key>
+    <Property Name="IdPremio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="100" />
+    <Property Name="intOrden" Type="int" />
+    <Property Name="IdTipo" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFPresupuestoAnual' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="tblBFPresupuestoAnual">
+          <Property Name="Annio" Type="int" />
+          <Property Name="PresupuestoTotal" Type="varchar" MaxLength="500" />
+          <Property Name="PresupuestoTotalPuntos" Type="varchar" MaxLength="500" />
+          <Property Name="PresupuestoSaldo" Type="varchar" MaxLength="500" />
+        </EntityType>-->
+  <EntityType Name="tblBFPresupuestoMes">
+    <Key>
+      <PropertyRef Name="intIdPresupuestoMes" />
+    </Key>
+    <Property Name="intIdPresupuestoMes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strAnio" Type="varchar" MaxLength="100" />
+    <Property Name="strMes" Type="varchar" MaxLength="50" />
+    <Property Name="intPresupuesto" Type="int" />
+    <Property Name="intSaldo" Type="int" />
+    <Property Name="intSaldoPuntos" Type="int" />
+    <Property Name="intMes" Type="int" />
+    <Property Name="intPresupuestoReconocimiento" Type="int" />
+    <Property Name="intPptoTotal" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFProducto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+    <Property Name="intNroPuntosReq" Type="int" />
+    <Property Name="strImagenProducto" Type="varchar" MaxLength="200" />
+    <Property Name="logActivo" Type="bit" />
+    <Property Name="intNroCompras" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="strDetalle" Type="nvarchar(max)" />
+    <Property Name="strLink" Type="varchar" MaxLength="500" />
+    <Property Name="strArchivo" Type="varchar(max)" />
+    <Property Name="strTipoAfiliacion" Type="varchar" MaxLength="300" />
+    <Property Name="logIlimitado" Type="bit" />
+    <Property Name="fCalificacionProm" Type="float" />
+    <Property Name="logApruebaJefe" Type="bit" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="logTiempo" Type="bit" />
+    <Property Name="intDiasPromesaEntrega" Type="int" />
+    <Property Name="strImagenProducto64" Type="nvarchar(max)" />
+    <Property Name="logRequiereInscripcion" Type="bit" />
+    <Property Name="logHoras" Type="bit" />
+    <Property Name="IntTopeHoras" Type="int" />
+    <Property Name="IdTipoPuntos" Type="int" />
+    <Property Name="LogCodigo" Type="bit" />
+    <Property Name="strRutaFormato" Type="varchar" MaxLength="3000" />
+    <Property Name="LogVistaCodigo" Type="bit" />
+    <Property Name="logEsGrupal" Type="bit" />
+    <Property Name="intTiempoVigenciaProductoGrupal" Type="int" />
+    <Property Name="strFormatoCodigo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblBFProductoCiudad">
+    <Key>
+      <PropertyRef Name="idProductoCiudad" />
+    </Key>
+    <Property Name="idProductoCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idProducto" Type="int" />
+    <Property Name="idCiudad" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFProductoCompraEmpleado">
+    <Key>
+      <PropertyRef Name="IdProductoCompraEmpleado" />
+    </Key>
+    <Property Name="IdProductoCompraEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="intValorCompra" Type="int" Nullable="false" />
+    <Property Name="dtmFechaCompra" Type="datetime" Nullable="false" />
+    <Property Name="logEntregado" Type="bit" />
+    <Property Name="dtmFechaEntrega" Type="datetime" />
+    <Property Name="dtmFechaNotificacionProveedor" Type="datetime" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="intCantidadComprada" Type="int" />
+    <Property Name="strIdCiudad" Type="varchar" MaxLength="50" />
+    <Property Name="IdSede" Type="int" />
+    <Property Name="IdTipoPuntos" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdGrupo" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFProductoProveedor">
+    <Key>
+      <PropertyRef Name="IdProductoProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="IdProductoProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBFProveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="500" />
+    <Property Name="strCorreo" Type="varchar" MaxLength="200" />
+    <Property Name="strContacto" Type="varchar" MaxLength="100" />
+    <Property Name="strTelefonoContacto" Type="varchar" MaxLength="100" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="strLink" Type="varchar" MaxLength="500" />
+    <Property Name="strIdentificacion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblBFPuntoEntregaProveedor">
+    <Key>
+      <PropertyRef Name="IdPunto" />
+    </Key>
+    <Property Name="IdPunto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombrePunto" Type="varchar" MaxLength="100" />
+    <Property Name="strUbicacion" Type="varchar" MaxLength="50" />
+    <Property Name="strNumeroUbicacion" Type="varchar" MaxLength="5" />
+    <Property Name="strLetraUbicacion" Type="varchar" MaxLength="5" />
+    <Property Name="strSegundoNumero" Type="varchar" MaxLength="5" />
+    <Property Name="strTercerNumero" Type="varchar" MaxLength="5" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="strPais" Type="varchar" MaxLength="100" />
+    <Property Name="strCiudad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosCargadosReconocimiento">
+    <Key>
+      <PropertyRef Name="IdPuntos" />
+    </Key>
+    <Property Name="IdPuntos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoReconocimiento" Type="int" />
+    <Property Name="intPuntosPostulador" Type="int" />
+    <Property Name="intPuntosPostulado" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdTipoPunto" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosDispEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosEmpleado" />
+    </Key>
+    <Property Name="IdPuntosEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="intPuntosDisponibles" Type="int" />
+    <Property Name="intPuntosAsignados" Type="int" />
+    <Property Name="intMes" Type="int" />
+    <Property Name="intAnno" Type="int" />
+    <Property Name="intReconocimientoGrupal" Type="int" />
+    <Property Name="dtmFechaReconocimientoGrupal" Type="datetime" />
+    <Property Name="intPuntosDisponiblesECO" Type="int" />
+    <Property Name="IdPoliticaAplicada" Type="int" />
+    <Property Name="LogAsignado" Type="bit" />
+    <Property Name="IdTipoPunto" Type="int" />
+    <Property Name="intPuntosDeBaja" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRemanentesEmpleado">
+    <Key>
+      <PropertyRef Name="IdPuntosRemanente" />
+    </Key>
+    <Property Name="IdPuntosRemanente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="intPuntosRemanentes" Type="int" />
+    <Property Name="IdFechaCierre" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRemanentesJefe">
+    <Key>
+      <PropertyRef Name="IdPuntos" />
+    </Key>
+    <Property Name="IdPuntos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+    <Property Name="intPuntos" Type="int" />
+    <Property Name="IdPeriodo" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFPuntosRolMes">
+    <Key>
+      <PropertyRef Name="IdPuntosMes" />
+    </Key>
+    <Property Name="IdPuntosMes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdRol" Type="int" />
+    <Property Name="IntMes" Type="int" />
+    <Property Name="intAnno" Type="int" />
+    <Property Name="intPuntos" Type="int" />
+    <Property Name="intPuntosDisponibles" Type="int" />
+    <Property Name="intPuntosAsignados" Type="int" />
+    <Property Name="intPesoPunto" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFReconocimientoArea">
+    <Key>
+      <PropertyRef Name="IdReconocimientoArea" />
+    </Key>
+    <Property Name="IdReconocimientoArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="200" />
+    <Property Name="IdEmpleadoReconoce" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaReconocimiento" Type="datetime" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="IdVariable" Type="int" />
+    <Property Name="intPeso" Type="int" />
+    <Property Name="strJustificacion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblBFReconocimientoEmpleado">
+    <Key>
+      <PropertyRef Name="IdReconocimientoEmpl" />
+    </Key>
+    <Property Name="IdReconocimientoEmpl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdEmpleadoReconoce" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaReconocimiento" Type="datetime" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="IdVariable" Type="int" />
+    <Property Name="intPeso" Type="int" />
+    <Property Name="strJustificacion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblBFReporteEmpleado">
+    <Key>
+      <PropertyRef Name="IdReporte" />
+    </Key>
+    <Property Name="IdReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdConcepto" Type="int" />
+    <Property Name="dtmFechaReporte" Type="datetime" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblBFRespuestaExperiencia">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdComentario" Type="int" />
+    <Property Name="strRespuesta" Type="varchar" MaxLength="3000" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="dtmFechaRespuesta" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblBFRespuestaInscripcionEmpleado">
+    <Key>
+      <PropertyRef Name="IdRespuestaEmpleado" />
+    </Key>
+    <Property Name="IdRespuestaEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdInscripcion" Type="int" />
+    <Property Name="IdEvento" Type="int" />
+    <Property Name="IdPregunta" Type="int" />
+    <Property Name="strRespuesta" Type="nvarchar(max)" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblBFRol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreRol" Type="varchar" MaxLength="500" />
+    <Property Name="logEsJefe" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFSede">
+    <Key>
+      <PropertyRef Name="IdSede" />
+    </Key>
+    <Property Name="IdSede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strSede" Type="varchar" MaxLength="200" />
+    <Property Name="logActivo" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFTerminos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="tblBFTerminos">
+          <Property Name="strMensaje" Type="nvarchar(max)" />
+          <Property Name="IdEmpresa" Type="int" />
+        </EntityType>-->
+  <EntityType Name="tblBFTipoAdministrador">
+    <Key>
+      <PropertyRef Name="IdAdministrador" />
+    </Key>
+    <Property Name="IdAdministrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTipoAdministrador" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblBFTipoNotificacion">
+    <Key>
+      <PropertyRef Name="IdNotificacion" />
+    </Key>
+    <Property Name="IdNotificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTipoNotificacion" Type="varchar" MaxLength="50" />
+    <Property Name="strMensaje" Type="nvarchar(max)" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="LogSms" Type="bit" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblBFTipoPuntos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="tblBFTipoPuntos">
+          <Property Name="strNombreTipo" Type="varchar" MaxLength="50" />
+          <Property Name="strUrlImagenPuntos" Type="varchar" MaxLength="3000" />
+          <Property Name="IdEmpresa" Type="int" />
+          <Property Name="logActivo" Type="bit" />
+          <Property Name="IdTipo" Type="int" />
+          <Property Name="ValorXPunto" Type="real" />
+        </EntityType>-->
+  <EntityType Name="tblBFTrimestre">
+    <Key>
+      <PropertyRef Name="IdTrimestre" />
+    </Key>
+    <Property Name="IdTrimestre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFechaInicio" Type="datetime" />
+    <Property Name="dtmFechaFinal" Type="datetime" />
+    <Property Name="logActivo" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblBFUsuarioProveedor">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="strUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="strContrasena" Type="varchar" MaxLength="50" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFVariable">
+    <Key>
+      <PropertyRef Name="IdVariable" />
+    </Key>
+    <Property Name="IdVariable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strVariable" Type="varchar" MaxLength="100" />
+    <Property Name="IdCategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFVariablePunto">
+    <Key>
+      <PropertyRef Name="IdVariable" />
+    </Key>
+    <Property Name="IdVariable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFechaInicio" Type="datetime" />
+    <Property Name="dtmFechaFinal" Type="datetime" />
+    <Property Name="strValorPunto" Type="int" />
+    <Property Name="IdTipoPunto" Type="int" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBFWizard">
+    <Key>
+      <PropertyRef Name="IdWizard" />
+    </Key>
+    <Property Name="IdWizard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="IdEmpleado" Type="int" />
+    <Property Name="NombrePanel" Type="varchar" MaxLength="250" />
+    <Property Name="DescripcionPanel" Type="varchar" MaxLength="250" />
+    <Property Name="logFinalizado" Type="bit" />
+    <Property Name="dtmFechaRegistro" Type="date" />
+  </EntityType>
+  <EntityType Name="tblCHComentarioEmpleadoProducto">
+    <Key>
+      <PropertyRef Name="IdComentario" />
+    </Key>
+    <Property Name="IdComentario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="dtmFechaComentario" Type="datetime" />
+    <Property Name="strComentario" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblCHEmpleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="500" />
+    <Property Name="IdProfesion" Type="varchar" MaxLength="10" />
+    <Property Name="strProfesion" Type="varchar" MaxLength="500" />
+    <Property Name="strCargo" Type="varchar" MaxLength="500" />
+    <Property Name="IdRol" Type="int" />
+    <Property Name="IdBarrio" Type="varchar" MaxLength="10" />
+    <Property Name="strBarrio" Type="varchar" MaxLength="200" />
+    <Property Name="IdUnidad" Type="varchar" MaxLength="10" />
+    <Property Name="strUnidad" Type="varchar" MaxLength="200" />
+    <Property Name="IdRegional" Type="varchar" MaxLength="50" />
+    <Property Name="strRegional" Type="varchar" MaxLength="50" />
+    <Property Name="IdProceso" Type="varchar" MaxLength="10" />
+    <Property Name="strProceso" Type="varchar" MaxLength="200" />
+    <Property Name="IdSubProceso" Type="varchar" MaxLength="10" />
+    <Property Name="strSubProceso" Type="varchar" MaxLength="200" />
+    <Property Name="IdJefe" Type="varchar" MaxLength="20" />
+    <Property Name="strNombreJefe" Type="varchar" MaxLength="500" />
+    <Property Name="dtmFechaRetiro" Type="datetime" />
+    <Property Name="LogClienteProveedor" Type="bit" />
+    <Property Name="LogGerenteRecursosH" Type="bit" />
+    <Property Name="intSecuencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogEvaluar" Type="bit" />
+    <Property Name="strUsuario" Type="varchar" MaxLength="100" />
+    <Property Name="strContrasena" Type="varchar" MaxLength="100" />
+    <Property Name="logObjetivosLegalizados" Type="bit" />
+    <Property Name="logHabilitarIngresoObjPeriodoCerrado" Type="bit" />
+    <Property Name="logSuperUsuario" Type="bit" />
+    <Property Name="strGrupoPago" Type="nvarchar" MaxLength="500" />
+    <Property Name="strUbicacion" Type="varchar" MaxLength="500" />
+    <Property Name="intNivel" Type="int" />
+    <Property Name="strSexo" Type="char" MaxLength="2" />
+    <Property Name="strRutaImagenEmpleado" Type="varchar" MaxLength="200" />
+    <Property Name="intPuntosCaritas" Type="int" />
+    <Property Name="logObjetivosAprobadosJefe" Type="bit" />
+    <Property Name="strUsuarioRed" Type="varchar" MaxLength="50" />
+    <Property Name="tipoContrato" Type="varchar" MaxLength="20" />
+    <Property Name="strTipoAfiliacion" Type="varchar" MaxLength="50" />
+    <Property Name="logPermisoEntrega" Type="bit" />
+    <Property Name="intPuntosKilo" Type="int" />
+    <Property Name="LogAdministrarEcoPuntos" Type="bit" />
+    <Property Name="IdEmpresa" Type="int" />
+    <Property Name="strCorreo" Type="varchar" MaxLength="500" />
+    <Property Name="strNumeroMovil" Type="varchar" MaxLength="50" />
+    <Property Name="IdTipoAdministrador" Type="int" />
+    <Property Name="LogActivo" Type="bit" />
+    <Property Name="dtmFechaIngreso" Type="datetime" />
+    <Property Name="intPuntosCorazones" Type="int" />
+    <Property Name="intPuntosBombillo" Type="int" />
+    <Property Name="strImagenEmpleado64" Type="nvarchar(max)" />
+    <Property Name="LogEsJefe" Type="bit" />
+    <Property Name="LogPresidencia" Type="bit" />
+    <Property Name="LogApruebaTerminos" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblCHNoticia">
+    <Key>
+      <PropertyRef Name="IdNoticia" />
+    </Key>
+    <Property Name="IdNoticia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strRutaImagenNoticia" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="strDescripcionNoticia" Type="varchar" MaxLength="3000" Nullable="false" />
+    <Property Name="dtmFechaRegistro" Type="datetime" />
+    <Property Name="strTituloNoticia" Type="varchar" MaxLength="500" />
+    <Property Name="strRutaImagenVideo" Type="varchar" MaxLength="200" />
+    <Property Name="IdEmpresa" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCHTipoNotificacion">
+    <Key>
+      <PropertyRef Name="IdTipoNotificacion" />
+    </Key>
+    <Property Name="IdTipoNotificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTipoNotificacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="strMensaje" Type="nvarchar(max)" />
+    <Property Name="logTipoActivo" Type="bit" />
+    <Property Name="strPlantilla" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblECBloqueoDias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblECBloqueoDias">
+    <Key>
+      <PropertyRef Name="IdBloqueo" />
+    </Key>
+    <Property Name="IdBloqueo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFecha" Type="datetime" />
+    <Property Name="logActivo" Type="bit" />
+    <Property Name="strDiaBloqueado" Type="varchar" MaxLength="50" />
+    <Property Name="intMes" Type="int" />
+    <Property Name="intAnno" Type="int" />
+    <Property Name="intDia" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BienestarAlaCartaMultiEmpresaDesarrollo.dbo.tblProveedor' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tblProveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strNombreProveedor" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblRespuestaSms">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtmFechaRespuesta" Type="datetime" />
+    <Property Name="strRespuesta" Type="nvarchar(max)" />
+    <Property Name="strNumeroEnviado" Type="varchar" MaxLength="100" />
+    <Property Name="LogEnviado" Type="bit" />
+  </EntityType>
+  <Association Name="FK__tblBFInve__IdPro__753864A1">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblBFInventarioProducto" Type="Self.tblBFInventarioProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFInventarioProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFCalificacionProducto_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="0..1" />
+    <End Role="tblBFCalificacionProducto" Type="Self.tblBFCalificacionProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFCalificacionProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFInventarioProducto_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFInventarioProducto" Type="Self.tblBFInventarioProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFInventarioProducto">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPoliticaEmpresa_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFPoliticaEmpresa" Type="Self.tblBFPoliticaEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFPoliticaEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos">
+    <End Role="tblBFPoliticaPuntos" Type="Self.tblBFPoliticaPuntos" Multiplicity="0..1" />
+    <End Role="tblBFPoliticaEmpresa" Type="Self.tblBFPoliticaEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPoliticaPuntos">
+        <PropertyRef Name="IdPolitica" />
+      </Principal>
+      <Dependent Role="tblBFPoliticaEmpresa">
+        <PropertyRef Name="IdPolitica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado">
+    <End Role="tblBFPostulacionEmpleado" Type="Self.tblBFPostulacionEmpleado" Multiplicity="1" />
+    <End Role="tblBFPreguntaReconocimiento" Type="Self.tblBFPreguntaReconocimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPostulacionEmpleado">
+        <PropertyRef Name="IdPostulacionEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFPreguntaReconocimiento">
+        <PropertyRef Name="IdReconocimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProducto_tblBFCategoria">
+    <End Role="tblBFCategoria" Type="Self.tblBFCategoria" Multiplicity="0..1" />
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFCategoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tblBFProducto">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProducto_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblBFProducto">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProductoCompraEmpleado_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblBFProductoCompraEmpleado" Type="Self.tblBFProductoCompraEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblBFProductoCompraEmpleado">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFProductoCompraEmpleado_tblCHEmpleado">
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="1" />
+    <End Role="tblBFProductoCompraEmpleado" Type="Self.tblBFProductoCompraEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFProductoCompraEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos">
+    <End Role="tblBFPoliticaPuntos" Type="Self.tblBFPoliticaPuntos" Multiplicity="0..1" />
+    <End Role="tblBFPuntosDispEmpleado" Type="Self.tblBFPuntosDispEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFPoliticaPuntos">
+        <PropertyRef Name="IdPolitica" />
+      </Principal>
+      <Dependent Role="tblBFPuntosDispEmpleado">
+        <PropertyRef Name="IdPoliticaAplicada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBFPuntosDispEmpleado_tblCHEmpleado">
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="0..1" />
+    <End Role="tblBFPuntosDispEmpleado" Type="Self.tblBFPuntosDispEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="tblBFPuntosDispEmpleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCHEmpleado_tblBFEmpresa">
+    <End Role="tblBFEmpresa" Type="Self.tblBFEmpresa" Multiplicity="0..1" />
+    <End Role="tblCHEmpleado" Type="Self.tblCHEmpleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFEmpresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="tblCHEmpleado">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProveedor_tblBFProducto">
+    <End Role="tblBFProducto" Type="Self.tblBFProducto" Multiplicity="1" />
+    <End Role="tblProveedor" Type="Self.tblProveedor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblBFProducto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tblProveedor">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BienestarAlaCartaMultiEmpresaDesarrolloModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lotes" EntityType="Self.Lotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFAcumAntiguedad" EntityType="Self.tblBFAcumAntiguedad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFAsignacionPuntosJefe" EntityType="Self.tblBFAsignacionPuntosJefe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCalificacionProducto" EntityType="Self.tblBFCalificacionProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCantidadReconocimiento" EntityType="Self.tblBFCantidadReconocimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCategoria" EntityType="Self.tblBFCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCategoriaProducto" EntityType="Self.tblBFCategoriaProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCategoriaRecompensa" EntityType="Self.tblBFCategoriaRecompensa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCategoriaReconocimiento" EntityType="Self.tblBFCategoriaReconocimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCiudad" EntityType="Self.tblBFCiudad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFCodigoProducto" EntityType="Self.tblBFCodigoProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFConceptoReduccion" EntityType="Self.tblBFConceptoReduccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFDetallePresupuestoMes" EntityType="Self.tblBFDetallePresupuestoMes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFECCategoriaProducto" EntityType="Self.tblBFECCategoriaProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEHistoricoPuntosAcumEmpleado" EntityType="Self.tblBFEHistoricoPuntosAcumEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEmpresa" EntityType="Self.tblBFEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEmpresas" EntityType="Self.tblBFEmpresas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEvento" EntityType="Self.tblBFEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFEventoPreguntaInscripcion" EntityType="Self.tblBFEventoPreguntaInscripcion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFExperienciaEvento" EntityType="Self.tblBFExperienciaEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFFechaCorteReduccion" EntityType="Self.tblBFFechaCorteReduccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFFrases" EntityType="Self.tblBFFrases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFGrupoCompra" EntityType="Self.tblBFGrupoCompra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFHistorialAntiguedad" EntityType="Self.tblBFHistorialAntiguedad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFHistorialRecargas" EntityType="Self.tblBFHistorialRecargas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFHistorialReduccion" EntityType="Self.tblBFHistorialReduccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFImagenProducto" EntityType="Self.tblBFImagenProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFInscripcionEventos" EntityType="Self.tblBFInscripcionEventos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFInventario" EntityType="Self.tblBFInventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFInventarioProducto" EntityType="Self.tblBFInventarioProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFInvitadoExternoEvento" EntityType="Self.tblBFInvitadoExternoEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFLogAdministrador" EntityType="Self.tblBFLogAdministrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFMetodoAcumulacionPuntos" EntityType="Self.tblBFMetodoAcumulacionPuntos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFMetodoEmpresa" EntityType="Self.tblBFMetodoEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFMultipleRespuestaPregunta" EntityType="Self.tblBFMultipleRespuestaPregunta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFOpciones" EntityType="Self.tblBFOpciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPermisoAdministrador" EntityType="Self.tblBFPermisoAdministrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPoliticaEmpresa" EntityType="Self.tblBFPoliticaEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPoliticaPuntos" EntityType="Self.tblBFPoliticaPuntos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPoliticaPuntosAntiguedad" EntityType="Self.tblBFPoliticaPuntosAntiguedad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPostulacionEmpleado" EntityType="Self.tblBFPostulacionEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPQRSEmpleado" EntityType="Self.tblBFPQRSEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPreguntaCategoria" EntityType="Self.tblBFPreguntaCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPreguntaEvento" EntityType="Self.tblBFPreguntaEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPreguntaReconocimiento" EntityType="Self.tblBFPreguntaReconocimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPremio" EntityType="Self.tblBFPremio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPresupuestoMes" EntityType="Self.tblBFPresupuestoMes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFProducto" EntityType="Self.tblBFProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFProductoCiudad" EntityType="Self.tblBFProductoCiudad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFProductoCompraEmpleado" EntityType="Self.tblBFProductoCompraEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFProductoProveedor" EntityType="Self.tblBFProductoProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFProveedor" EntityType="Self.tblBFProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntoEntregaProveedor" EntityType="Self.tblBFPuntoEntregaProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntosCargadosReconocimiento" EntityType="Self.tblBFPuntosCargadosReconocimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntosDispEmpleado" EntityType="Self.tblBFPuntosDispEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntosRemanentesEmpleado" EntityType="Self.tblBFPuntosRemanentesEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntosRemanentesJefe" EntityType="Self.tblBFPuntosRemanentesJefe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFPuntosRolMes" EntityType="Self.tblBFPuntosRolMes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFReconocimientoArea" EntityType="Self.tblBFReconocimientoArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFReconocimientoEmpleado" EntityType="Self.tblBFReconocimientoEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFReporteEmpleado" EntityType="Self.tblBFReporteEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFRespuestaExperiencia" EntityType="Self.tblBFRespuestaExperiencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFRespuestaInscripcionEmpleado" EntityType="Self.tblBFRespuestaInscripcionEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFRol" EntityType="Self.tblBFRol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFSede" EntityType="Self.tblBFSede" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFTipoAdministrador" EntityType="Self.tblBFTipoAdministrador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFTipoNotificacion" EntityType="Self.tblBFTipoNotificacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFTrimestre" EntityType="Self.tblBFTrimestre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFUsuarioProveedor" EntityType="Self.tblBFUsuarioProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFVariable" EntityType="Self.tblBFVariable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFVariablePunto" EntityType="Self.tblBFVariablePunto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBFWizard" EntityType="Self.tblBFWizard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCHComentarioEmpleadoProducto" EntityType="Self.tblCHComentarioEmpleadoProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCHEmpleado" EntityType="Self.tblCHEmpleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCHNoticia" EntityType="Self.tblCHNoticia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCHTipoNotificacion" EntityType="Self.tblCHTipoNotificacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRespuestaSms" EntityType="Self.tblRespuestaSms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResultadoDesempeno" EntityType="Self.ResultadoDesempeno" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ResultadoDesempeno].[IdEmpleado] AS [IdEmpleado], 
+    [ResultadoDesempeno].[strNombre] AS [strNombre], 
+    [ResultadoDesempeno].[strUnidad] AS [strUnidad], 
+    [ResultadoDesempeno].[strCargo] AS [strCargo], 
+    [ResultadoDesempeno].[strProceso] AS [strProceso], 
+    [ResultadoDesempeno].[strSubProceso] AS [strSubProceso], 
+    [ResultadoDesempeno].[IdObjetivo] AS [IdObjetivo], 
+    [ResultadoDesempeno].[strObjetivo] AS [strObjetivo], 
+    [ResultadoDesempeno].[strMeta] AS [strMeta], 
+    [ResultadoDesempeno].[dblPesoObjetivo] AS [dblPesoObjetivo], 
+    [ResultadoDesempeno].[dblCalificacionObjetivo] AS [dblCalificacionObjetivo], 
+    [ResultadoDesempeno].[strLogro] AS [strLogro], 
+    [ResultadoDesempeno].[strMedida] AS [strMedida], 
+    [ResultadoDesempeno].[dblValoracionObjetivo] AS [dblValoracionObjetivo], 
+    [ResultadoDesempeno].[ResultadoDesempenno] AS [ResultadoDesempenno]
+    FROM [dbo].[ResultadoDesempeno] AS [ResultadoDesempeno]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ResumenEvaluacion" EntityType="Self.ResumenEvaluacion" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ResumenEvaluacion].[IdEmpleado] AS [IdEmpleado], 
+    [ResumenEvaluacion].[strNombre] AS [strNombre], 
+    [ResumenEvaluacion].[IdVariable] AS [IdVariable], 
+    [ResumenEvaluacion].[strNombreVariable] AS [strNombreVariable], 
+    [ResumenEvaluacion].[intEje] AS [intEje], 
+    [ResumenEvaluacion].[IdComponente] AS [IdComponente], 
+    [ResumenEvaluacion].[strNombreComponente] AS [strNombreComponente], 
+    [ResumenEvaluacion].[intNroPregunta] AS [intNroPregunta], 
+    [ResumenEvaluacion].[strDescripcionPregunta] AS [strDescripcionPregunta], 
+    [ResumenEvaluacion].[CalAutoEval] AS [CalAutoEval], 
+    [ResumenEvaluacion].[CalPersonasAcargo] AS [CalPersonasAcargo], 
+    [ResumenEvaluacion].[CalCompas] AS [CalCompas], 
+    [ResumenEvaluacion].[CalJefe] AS [CalJefe], 
+    [ResumenEvaluacion].[CalCliente] AS [CalCliente], 
+    [ResumenEvaluacion].[CalPromGeneral] AS [CalPromGeneral], 
+    [ResumenEvaluacion].[CalGenEval] AS [CalGenEval], 
+    [ResumenEvaluacion].[CalGenAuto] AS [CalGenAuto], 
+    [ResumenEvaluacion].[CalGenACargo] AS [CalGenACargo], 
+    [ResumenEvaluacion].[CalGenCompas] AS [CalGenCompas], 
+    [ResumenEvaluacion].[CalGenJefe] AS [CalGenJefe], 
+    [ResumenEvaluacion].[CalGenCliente] AS [CalGenCliente], 
+    [ResumenEvaluacion].[PesoAuto] AS [PesoAuto], 
+    [ResumenEvaluacion].[PesoJefe] AS [PesoJefe], 
+    [ResumenEvaluacion].[PesoCompas] AS [PesoCompas], 
+    [ResumenEvaluacion].[PesoClientes] AS [PesoClientes], 
+    [ResumenEvaluacion].[PesoACargo] AS [PesoACargo], 
+    [ResumenEvaluacion].[CalPromedio] AS [CalPromedio], 
+    [ResumenEvaluacion].[CalEvalEqui] AS [CalEvalEqui]
+    FROM [dbo].[ResumenEvaluacion] AS [ResumenEvaluacion]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFAdministradores" EntityType="Self.tblBFAdministradores" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFAdministradores].[IdAdministrador] AS [IdAdministrador], 
+    [tblBFAdministradores].[IdTipoAdministrador] AS [IdTipoAdministrador], 
+    [tblBFAdministradores].[LogActivo] AS [LogActivo], 
+    [tblBFAdministradores].[IdEmpresa] AS [IdEmpresa]
+    FROM [dbo].[tblBFAdministradores] AS [tblBFAdministradores]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFAreasEcopuntos" EntityType="Self.tblBFAreasEcopuntos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFAreasEcopuntos].[IdAreaEcopuntos] AS [IdAreaEcopuntos], 
+    [tblBFAreasEcopuntos].[strUnidad] AS [strUnidad], 
+    [tblBFAreasEcopuntos].[logPermiteVisualizar] AS [logPermiteVisualizar]
+    FROM [dbo].[tblBFAreasEcopuntos] AS [tblBFAreasEcopuntos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFECPuntosDispEmpleado" EntityType="Self.tblBFECPuntosDispEmpleado" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFECPuntosDispEmpleado].[IdPuntosEmpleado] AS [IdPuntosEmpleado], 
+    [tblBFECPuntosDispEmpleado].[IdEmpleado] AS [IdEmpleado], 
+    [tblBFECPuntosDispEmpleado].[strDescripcionReconocimiento] AS [strDescripcionReconocimiento], 
+    [tblBFECPuntosDispEmpleado].[strNumeroEcopuntos] AS [strNumeroEcopuntos], 
+    [tblBFECPuntosDispEmpleado].[strMes] AS [strMes], 
+    [tblBFECPuntosDispEmpleado].[strAnno] AS [strAnno]
+    FROM [dbo].[tblBFECPuntosDispEmpleado] AS [tblBFECPuntosDispEmpleado]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFImagenSlider" EntityType="Self.tblBFImagenSlider" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFImagenSlider].[IdImagen] AS [IdImagen], 
+    [tblBFImagenSlider].[strNombreImagen] AS [strNombreImagen], 
+    [tblBFImagenSlider].[IdEmpresa] AS [IdEmpresa], 
+    [tblBFImagenSlider].[strTextoImagen] AS [strTextoImagen], 
+    [tblBFImagenSlider].[strDescripcionImagen] AS [strDescripcionImagen], 
+    [tblBFImagenSlider].[strNombreImagenBase64] AS [strNombreImagenBase64]
+    FROM [dbo].[tblBFImagenSlider] AS [tblBFImagenSlider]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFIntegrantesGrupoCompra" EntityType="Self.tblBFIntegrantesGrupoCompra" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFIntegrantesGrupoCompra].[IdGrupoCompra] AS [IdGrupoCompra], 
+    [tblBFIntegrantesGrupoCompra].[IdEmpleado] AS [IdEmpleado], 
+    [tblBFIntegrantesGrupoCompra].[logEsAdmon] AS [logEsAdmon], 
+    [tblBFIntegrantesGrupoCompra].[logApruebaConformarGrupo] AS [logApruebaConformarGrupo], 
+    [tblBFIntegrantesGrupoCompra].[dtmFechaInvitacion] AS [dtmFechaInvitacion], 
+    [tblBFIntegrantesGrupoCompra].[intPuntosAportados] AS [intPuntosAportados], 
+    [tblBFIntegrantesGrupoCompra].[dtmFechaAportePuntos] AS [dtmFechaAportePuntos]
+    FROM [dbo].[tblBFIntegrantesGrupoCompra] AS [tblBFIntegrantesGrupoCompra]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFNoticia" EntityType="Self.tblBFNoticia" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFNoticia].[IdNoticia] AS [IdNoticia], 
+    [tblBFNoticia].[strRuta] AS [strRuta], 
+    [tblBFNoticia].[strDescripcionNoticia] AS [strDescripcionNoticia], 
+    [tblBFNoticia].[dtmFechaRegistro] AS [dtmFechaRegistro], 
+    [tblBFNoticia].[strTituloNoticia] AS [strTituloNoticia], 
+    [tblBFNoticia].[IdEmpresa] AS [IdEmpresa], 
+    [tblBFNoticia].[strExtension] AS [strExtension], 
+    [tblBFNoticia].[strDescripcionCorta] AS [strDescripcionCorta]
+    FROM [dbo].[tblBFNoticia] AS [tblBFNoticia]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBFPoliticaDatos" EntityType="Self.tblBFPoliticaDatos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblBFPoliticaDatos].[IdPolitica] AS [IdPolitica], 
+    [tblBFPoliticaDatos].[strPolitica] AS [strPolitica]
+    FROM [dbo].[tblBFPoliticaDatos] AS [tblBFPoliticaDatos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblECBloqueoDias" EntityType="Self.tblECBloqueoDias" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblECBloqueoDias].[IdBloqueo] AS [IdBloqueo], 
+    [tblECBloqueoDias].[dtmFecha] AS [dtmFecha], 
+    [tblECBloqueoDias].[logActivo] AS [logActivo], 
+    [tblECBloqueoDias].[strDiaBloqueado] AS [strDiaBloqueado], 
+    [tblECBloqueoDias].[intMes] AS [intMes], 
+    [tblECBloqueoDias].[intAnno] AS [intAnno], 
+    [tblECBloqueoDias].[intDia] AS [intDia]
+    FROM [dbo].[tblECBloqueoDias] AS [tblECBloqueoDias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblProveedor" EntityType="Self.tblProveedor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblProveedor].[IdProveedor] AS [IdProveedor], 
+    [tblProveedor].[strNombreProveedor] AS [strNombreProveedor]
+    FROM [dbo].[tblProveedor] AS [tblProveedor]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tblBFInve__IdPro__753864A1" Association="Self.FK__tblBFInve__IdPro__753864A1">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFInventarioProducto" EntitySet="tblBFInventarioProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFCalificacionProducto_tblBFProducto" Association="Self.FK_tblBFCalificacionProducto_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFCalificacionProducto" EntitySet="tblBFCalificacionProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFInventarioProducto_tblBFEmpresa" Association="Self.FK_tblBFInventarioProducto_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFInventarioProducto" EntitySet="tblBFInventarioProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPoliticaEmpresa_tblBFEmpresa" Association="Self.FK_tblBFPoliticaEmpresa_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFPoliticaEmpresa" EntitySet="tblBFPoliticaEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos" Association="Self.FK_tblBFPoliticaEmpresa_tblBFPoliticaPuntos">
+      <End Role="tblBFPoliticaPuntos" EntitySet="tblBFPoliticaPuntos" />
+      <End Role="tblBFPoliticaEmpresa" EntitySet="tblBFPoliticaEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado" Association="Self.FK_tblBFPreguntaReconocimiento_tblBFPostulacionEmpleado">
+      <End Role="tblBFPostulacionEmpleado" EntitySet="tblBFPostulacionEmpleado" />
+      <End Role="tblBFPreguntaReconocimiento" EntitySet="tblBFPreguntaReconocimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProducto_tblBFCategoria" Association="Self.FK_tblBFProducto_tblBFCategoria">
+      <End Role="tblBFCategoria" EntitySet="tblBFCategoria" />
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProducto_tblBFEmpresa" Association="Self.FK_tblBFProducto_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProductoCompraEmpleado_tblBFProducto" Association="Self.FK_tblBFProductoCompraEmpleado_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblBFProductoCompraEmpleado" EntitySet="tblBFProductoCompraEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFProductoCompraEmpleado_tblCHEmpleado" Association="Self.FK_tblBFProductoCompraEmpleado_tblCHEmpleado">
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+      <End Role="tblBFProductoCompraEmpleado" EntitySet="tblBFProductoCompraEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos" Association="Self.FK_tblBFPuntosDispEmpleado_tblBFPoliticaPuntos">
+      <End Role="tblBFPoliticaPuntos" EntitySet="tblBFPoliticaPuntos" />
+      <End Role="tblBFPuntosDispEmpleado" EntitySet="tblBFPuntosDispEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBFPuntosDispEmpleado_tblCHEmpleado" Association="Self.FK_tblBFPuntosDispEmpleado_tblCHEmpleado">
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+      <End Role="tblBFPuntosDispEmpleado" EntitySet="tblBFPuntosDispEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCHEmpleado_tblBFEmpresa" Association="Self.FK_tblCHEmpleado_tblBFEmpresa">
+      <End Role="tblBFEmpresa" EntitySet="tblBFEmpresa" />
+      <End Role="tblCHEmpleado" EntitySet="tblCHEmpleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProveedor_tblBFProducto" Association="Self.FK_tblProveedor_tblBFProducto">
+      <End Role="tblBFProducto" EntitySet="tblBFProducto" />
+      <End Role="tblProveedor" EntitySet="tblProveedor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

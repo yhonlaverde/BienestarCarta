@@ -1,0 +1,1200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BienestarAlaCartaMultiEmpresaDesarrolloModelStoreContainer" CdmEntityContainer="BienestarAlaCartaMultiEmpresaDesarrolloEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotes">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.Lotes">
+        <MappingFragment StoreEntitySet="Lotes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFAcumAntiguedad">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFAcumAntiguedad">
+        <MappingFragment StoreEntitySet="tblBFAcumAntiguedad">
+          <ScalarProperty Name="IdAntiguedad" ColumnName="IdAntiguedad" />
+          <ScalarProperty Name="intNroMesesRangoInicial" ColumnName="intNroMesesRangoInicial" />
+          <ScalarProperty Name="intNroMesesRangoFinal" ColumnName="intNroMesesRangoFinal" />
+          <ScalarProperty Name="intNroPuntosAcumula" ColumnName="intNroPuntosAcumula" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFAsignacionPuntosJefe">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFAsignacionPuntosJefe">
+        <MappingFragment StoreEntitySet="tblBFAsignacionPuntosJefe">
+          <ScalarProperty Name="IdAsignacion" ColumnName="IdAsignacion" />
+          <ScalarProperty Name="IdPostulado" ColumnName="IdPostulado" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+          <ScalarProperty Name="IdReconocimiento" ColumnName="IdReconocimiento" />
+          <ScalarProperty Name="intPuntos" ColumnName="intPuntos" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCalificacionProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCalificacionProducto">
+        <MappingFragment StoreEntitySet="tblBFCalificacionProducto">
+          <ScalarProperty Name="IdCalificacionProducto" ColumnName="IdCalificacionProducto" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="intCalificacion" ColumnName="intCalificacion" />
+          <ScalarProperty Name="IdEmpleadoCalifica" ColumnName="IdEmpleadoCalifica" />
+          <ScalarProperty Name="dtmFechaCalificacion" ColumnName="dtmFechaCalificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCantidadReconocimiento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCantidadReconocimiento">
+        <MappingFragment StoreEntitySet="tblBFCantidadReconocimiento">
+          <ScalarProperty Name="IdCantidadReonocimiento" ColumnName="IdCantidadReonocimiento" />
+          <ScalarProperty Name="strCantidadReconocimiento" ColumnName="strCantidadReconocimiento" />
+          <ScalarProperty Name="valorCantidad" ColumnName="valorCantidad" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCategoria">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCategoria">
+        <MappingFragment StoreEntitySet="tblBFCategoria">
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="strCategoria" ColumnName="strCategoria" />
+          <ScalarProperty Name="strImagenCategoria" ColumnName="strImagenCategoria" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="strEstiloCuadro" ColumnName="strEstiloCuadro" />
+          <ScalarProperty Name="strEstiloBoton" ColumnName="strEstiloBoton" />
+          <ScalarProperty Name="strEstiloPuntos" ColumnName="strEstiloPuntos" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCategoriaProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCategoriaProducto">
+        <MappingFragment StoreEntitySet="tblBFCategoriaProducto">
+          <ScalarProperty Name="IdCategoriaP" ColumnName="IdCategoriaP" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="strClaseEstilo" ColumnName="strClaseEstilo" />
+          <ScalarProperty Name="strDescripcionCategoria" ColumnName="strDescripcionCategoria" />
+          <ScalarProperty Name="strClaseEstiloTitulo" ColumnName="strClaseEstiloTitulo" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="LogActivoInactivo" ColumnName="LogActivoInactivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCategoriaRecompensa">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCategoriaRecompensa">
+        <MappingFragment StoreEntitySet="tblBFCategoriaRecompensa">
+          <ScalarProperty Name="IdCategoriaRecompensa" ColumnName="IdCategoriaRecompensa" />
+          <ScalarProperty Name="strCategoriaRecompensa" ColumnName="strCategoriaRecompensa" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCategoriaReconocimiento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCategoriaReconocimiento">
+        <MappingFragment StoreEntitySet="tblBFCategoriaReconocimiento">
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="strCategoria" ColumnName="strCategoria" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strImagenCategoria" ColumnName="strImagenCategoria" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCiudad">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCiudad">
+        <MappingFragment StoreEntitySet="tblBFCiudad">
+          <ScalarProperty Name="IdCiudad" ColumnName="IdCiudad" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFCodigoProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFCodigoProducto">
+        <MappingFragment StoreEntitySet="tblBFCodigoProducto">
+          <ScalarProperty Name="IdCodigo" ColumnName="IdCodigo" />
+          <ScalarProperty Name="strCodigo" ColumnName="strCodigo" />
+          <ScalarProperty Name="IdEmpleadoCompra" ColumnName="IdEmpleadoCompra" />
+          <ScalarProperty Name="dtmFechaInicio" ColumnName="dtmFechaInicio" />
+          <ScalarProperty Name="dtmFechaFin" ColumnName="dtmFechaFin" />
+          <ScalarProperty Name="strObservaciones" ColumnName="strObservaciones" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="dtmFechaAsignacion" ColumnName="dtmFechaAsignacion" />
+          <ScalarProperty Name="strNombreArchivo" ColumnName="strNombreArchivo" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFConceptoReduccion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFConceptoReduccion">
+        <MappingFragment StoreEntitySet="tblBFConceptoReduccion">
+          <ScalarProperty Name="IdConceptoReduccion" ColumnName="IdConceptoReduccion" />
+          <ScalarProperty Name="strConceptoReduccion" ColumnName="strConceptoReduccion" />
+          <ScalarProperty Name="dblPuntajeReducido" ColumnName="dblPuntajeReducido" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdTipoPunto" ColumnName="IdTipoPunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFDetallePresupuestoMes">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFDetallePresupuestoMes">
+        <MappingFragment StoreEntitySet="tblBFDetallePresupuestoMes">
+          <ScalarProperty Name="IdDetallePresupuesto" ColumnName="IdDetallePresupuesto" />
+          <ScalarProperty Name="IdMes" ColumnName="IdMes" />
+          <ScalarProperty Name="dtmFecha" ColumnName="dtmFecha" />
+          <ScalarProperty Name="strDetalle" ColumnName="strDetalle" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFECCategoriaProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFECCategoriaProducto">
+        <MappingFragment StoreEntitySet="tblBFECCategoriaProducto">
+          <ScalarProperty Name="IdCategoriaP" ColumnName="IdCategoriaP" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="strDescripcionCategoria" ColumnName="strDescripcionCategoria" />
+          <ScalarProperty Name="bitEstadoVisual" ColumnName="bitEstadoVisual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEHistoricoPuntosAcumEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFEHistoricoPuntosAcumEmpleado">
+        <MappingFragment StoreEntitySet="tblBFEHistoricoPuntosAcumEmpleado">
+          <ScalarProperty Name="IdHistoricoPuntosAcumEmpleado" ColumnName="IdHistoricoPuntosAcumEmpleado" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="intNroEcoPuntosAcumulados" ColumnName="intNroEcoPuntosAcumulados" />
+          <ScalarProperty Name="intNroPuntosBienestarAcumulados" ColumnName="intNroPuntosBienestarAcumulados" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="logUltRegistro" ColumnName="logUltRegistro" />
+          <ScalarProperty Name="intMes" ColumnName="intMes" />
+          <ScalarProperty Name="intAnno" ColumnName="intAnno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEmpresa">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFEmpresa">
+        <MappingFragment StoreEntitySet="tblBFEmpresa">
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strNombreEmpresa" ColumnName="strNombreEmpresa" />
+          <ScalarProperty Name="strSiglas" ColumnName="strSiglas" />
+          <ScalarProperty Name="strNit" ColumnName="strNit" />
+          <ScalarProperty Name="intPersonas" ColumnName="intPersonas" />
+          <ScalarProperty Name="strZona" ColumnName="strZona" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+          <ScalarProperty Name="strTipo" ColumnName="strTipo" />
+          <ScalarProperty Name="LogSedeUnica" ColumnName="LogSedeUnica" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strUrlLogo" ColumnName="strUrlLogo" />
+          <ScalarProperty Name="strUrlBanner" ColumnName="strUrlBanner" />
+          <ScalarProperty Name="strSiglaEmpresa" ColumnName="strSiglaEmpresa" />
+          <ScalarProperty Name="strColorEmpresa" ColumnName="strColorEmpresa" />
+          <ScalarProperty Name="strLogo64" ColumnName="strLogo64" />
+          <ScalarProperty Name="strColorSecundario" ColumnName="strColorSecundario" />
+          <ScalarProperty Name="strLogoHerramientaEmpresa" ColumnName="strLogoHerramientaEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEmpresas">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFEmpresas">
+        <MappingFragment StoreEntitySet="tblBFEmpresas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strSiglas" ColumnName="strSiglas" />
+          <ScalarProperty Name="strNit" ColumnName="strNit" />
+          <ScalarProperty Name="intPersonas" ColumnName="intPersonas" />
+          <ScalarProperty Name="strZona" ColumnName="strZona" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+          <ScalarProperty Name="strTipo" ColumnName="strTipo" />
+          <ScalarProperty Name="LogSedeUnica" ColumnName="LogSedeUnica" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strUrlLogo" ColumnName="strUrlLogo" />
+          <ScalarProperty Name="strUrlBanner" ColumnName="strUrlBanner" />
+          <ScalarProperty Name="strSiglaEmpresa" ColumnName="strSiglaEmpresa" />
+          <ScalarProperty Name="strColorEmpresa" ColumnName="strColorEmpresa" />
+          <ScalarProperty Name="strLogo64" ColumnName="strLogo64" />
+          <ScalarProperty Name="strColorSecundario" ColumnName="strColorSecundario" />
+          <ScalarProperty Name="strLogoHerramientaEmpresa" ColumnName="strLogoHerramientaEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEvento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFEvento">
+        <MappingFragment StoreEntitySet="tblBFEvento">
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="strNombreEvento" ColumnName="strNombreEvento" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="strRutaEvento" ColumnName="strRutaEvento" />
+          <ScalarProperty Name="dtmFechaInicio" ColumnName="dtmFechaInicio" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="dtmFechaFinzalizacion" ColumnName="dtmFechaFinzalizacion" />
+          <ScalarProperty Name="strDescripcionCorta" ColumnName="strDescripcionCorta" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="bInscribirInvitados" ColumnName="bInscribirInvitados" />
+          <ScalarProperty Name="intNroInventadosEvento" ColumnName="intNroInventadosEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFEventoPreguntaInscripcion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFEventoPreguntaInscripcion">
+        <MappingFragment StoreEntitySet="tblBFEventoPreguntaInscripcion">
+          <ScalarProperty Name="IdEventoPreguntaInscripcion" ColumnName="IdEventoPreguntaInscripcion" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="Pregunta" ColumnName="Pregunta" />
+          <ScalarProperty Name="logActiva" ColumnName="logActiva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFExperienciaEvento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFExperienciaEvento">
+        <MappingFragment StoreEntitySet="tblBFExperienciaEvento">
+          <ScalarProperty Name="IdPublicacion" ColumnName="IdPublicacion" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="strRutaImagen" ColumnName="strRutaImagen" />
+          <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+          <ScalarProperty Name="dtmFechaPublicacion" ColumnName="dtmFechaPublicacion" />
+          <ScalarProperty Name="LogAprobrado" ColumnName="LogAprobrado" />
+          <ScalarProperty Name="strExtension" ColumnName="strExtension" />
+          <ScalarProperty Name="strComentario" ColumnName="strComentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFFechaCorteReduccion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFFechaCorteReduccion">
+        <MappingFragment StoreEntitySet="tblBFFechaCorteReduccion">
+          <ScalarProperty Name="IdCorte" ColumnName="IdCorte" />
+          <ScalarProperty Name="dtmFechaInicio" ColumnName="dtmFechaInicio" />
+          <ScalarProperty Name="dtmFechaFinal" ColumnName="dtmFechaFinal" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFFrases">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFFrases">
+        <MappingFragment StoreEntitySet="tblBFFrases">
+          <ScalarProperty Name="IdFrase" ColumnName="IdFrase" />
+          <ScalarProperty Name="strTitulo" ColumnName="strTitulo" />
+          <ScalarProperty Name="strFrase" ColumnName="strFrase" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strImagenFrase" ColumnName="strImagenFrase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFGrupoCompra">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFGrupoCompra">
+        <MappingFragment StoreEntitySet="tblBFGrupoCompra">
+          <ScalarProperty Name="IdGrupoCompra" ColumnName="IdGrupoCompra" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdEmpleadoAdmon" ColumnName="IdEmpleadoAdmon" />
+          <ScalarProperty Name="dtmFechaCreacion" ColumnName="dtmFechaCreacion" />
+          <ScalarProperty Name="intTiempoActualDias" ColumnName="intTiempoActualDias" />
+          <ScalarProperty Name="dtmFechaCierre" ColumnName="dtmFechaCierre" />
+          <ScalarProperty Name="intPuntosAcumuladosActual" ColumnName="intPuntosAcumuladosActual" />
+          <ScalarProperty Name="logCompraCompleta" ColumnName="logCompraCompleta" />
+          <ScalarProperty Name="logCancelado" ColumnName="logCancelado" />
+          <ScalarProperty Name="intPuntoRequeridosProducto" ColumnName="intPuntoRequeridosProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFHistorialAntiguedad">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFHistorialAntiguedad">
+        <MappingFragment StoreEntitySet="tblBFHistorialAntiguedad">
+          <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+          <ScalarProperty Name="IdAntiguedad" ColumnName="IdAntiguedad" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="intPuntos" ColumnName="intPuntos" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFHistorialRecargas">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFHistorialRecargas">
+        <MappingFragment StoreEntitySet="tblBFHistorialRecargas">
+          <ScalarProperty Name="IdHistorialRecargas" ColumnName="IdHistorialRecargas" />
+          <ScalarProperty Name="dtmFechaRecarga" ColumnName="dtmFechaRecarga" />
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="IdColaborador" ColumnName="IdColaborador" />
+          <ScalarProperty Name="valorRecarga" ColumnName="valorRecarga" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="tipoCarga" ColumnName="tipoCarga" />
+          <ScalarProperty Name="IdTipoPunto" ColumnName="IdTipoPunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFHistorialReduccion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFHistorialReduccion">
+        <MappingFragment StoreEntitySet="tblBFHistorialReduccion">
+          <ScalarProperty Name="IdHistorial" ColumnName="IdHistorial" />
+          <ScalarProperty Name="IdPolitica" ColumnName="IdPolitica" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+          <ScalarProperty Name="strObservaciones" ColumnName="strObservaciones" />
+          <ScalarProperty Name="intCantidad" ColumnName="intCantidad" />
+          <ScalarProperty Name="IdFechaCorte" ColumnName="IdFechaCorte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFImagenProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFImagenProducto">
+        <MappingFragment StoreEntitySet="tblBFImagenProducto">
+          <ScalarProperty Name="IdImagen" ColumnName="IdImagen" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="strRutaImagen" ColumnName="strRutaImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFInscripcionEventos">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFInscripcionEventos">
+        <MappingFragment StoreEntitySet="tblBFInscripcionEventos">
+          <ScalarProperty Name="IdInscripcion" ColumnName="IdInscripcion" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="dtmFechaInscripcion" ColumnName="dtmFechaInscripcion" />
+          <ScalarProperty Name="strAspiraciones" ColumnName="strAspiraciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFInventario">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFInventario">
+        <MappingFragment StoreEntitySet="tblBFInventario">
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="intCantidadesActuales" ColumnName="intCantidadesActuales" />
+          <ScalarProperty Name="intCantidadesEntregadas" ColumnName="intCantidadesEntregadas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFInventarioProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFInventarioProducto">
+        <MappingFragment StoreEntitySet="tblBFInventarioProducto">
+          <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="intUnidades" ColumnName="intUnidades" />
+          <ScalarProperty Name="intTipoTransaccion" ColumnName="intTipoTransaccion" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="dtmFechaTransaccion" ColumnName="dtmFechaTransaccion" />
+          <ScalarProperty Name="intNroUnidadesActuales" ColumnName="intNroUnidadesActuales" />
+          <ScalarProperty Name="intNroUnidadesEntregadas" ColumnName="intNroUnidadesEntregadas" />
+          <ScalarProperty Name="dtmFechaUltimaEntrega" ColumnName="dtmFechaUltimaEntrega" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFInvitadoExternoEvento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFInvitadoExternoEvento">
+        <MappingFragment StoreEntitySet="tblBFInvitadoExternoEvento">
+          <ScalarProperty Name="IdInscritoExternoEvento" ColumnName="IdInscritoExternoEvento" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="IdEmpleadoInvita" ColumnName="IdEmpleadoInvita" />
+          <ScalarProperty Name="IdentificacionInvitado" ColumnName="IdentificacionInvitado" />
+          <ScalarProperty Name="strNombreInvitado" ColumnName="strNombreInvitado" />
+          <ScalarProperty Name="intEdad" ColumnName="intEdad" />
+          <ScalarProperty Name="strEdad" ColumnName="strEdad" />
+          <ScalarProperty Name="strParantesco" ColumnName="strParantesco" />
+          <ScalarProperty Name="strIntereses" ColumnName="strIntereses" />
+          <ScalarProperty Name="strCorreoElectronico" ColumnName="strCorreoElectronico" />
+          <ScalarProperty Name="dtmFechaInvitado" ColumnName="dtmFechaInvitado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFLogAdministrador">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFLogAdministrador">
+        <MappingFragment StoreEntitySet="tblBFLogAdministrador">
+          <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="strFormulario" ColumnName="strFormulario" />
+          <ScalarProperty Name="strAccion" ColumnName="strAccion" />
+          <ScalarProperty Name="dtmFechaAccion" ColumnName="dtmFechaAccion" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdTipoAdministrador" ColumnName="IdTipoAdministrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFMetodoAcumulacionPuntos">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFMetodoAcumulacionPuntos">
+        <MappingFragment StoreEntitySet="tblBFMetodoAcumulacionPuntos">
+          <ScalarProperty Name="IdMetodoAcumulacion" ColumnName="IdMetodoAcumulacion" />
+          <ScalarProperty Name="strMetodoAcumulacion" ColumnName="strMetodoAcumulacion" />
+          <ScalarProperty Name="strDescripcionDelMetodo" ColumnName="strDescripcionDelMetodo" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFMetodoEmpresa">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFMetodoEmpresa">
+        <MappingFragment StoreEntitySet="tblBFMetodoEmpresa">
+          <ScalarProperty Name="IdAsignacion" ColumnName="IdAsignacion" />
+          <ScalarProperty Name="IdMetodo" ColumnName="IdMetodo" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFMultipleRespuestaPregunta">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFMultipleRespuestaPregunta">
+        <MappingFragment StoreEntitySet="tblBFMultipleRespuestaPregunta">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="strRespuesta" ColumnName="strRespuesta" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFOpciones">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFOpciones">
+        <MappingFragment StoreEntitySet="tblBFOpciones">
+          <ScalarProperty Name="IdOpcion" ColumnName="IdOpcion" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="LogVisible" ColumnName="LogVisible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPermisoAdministrador">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPermisoAdministrador">
+        <MappingFragment StoreEntitySet="tblBFPermisoAdministrador">
+          <ScalarProperty Name="IdPermiso" ColumnName="IdPermiso" />
+          <ScalarProperty Name="IdTipoAdministrador" ColumnName="IdTipoAdministrador" />
+          <ScalarProperty Name="frmFormulario" ColumnName="frmFormulario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPoliticaEmpresa">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPoliticaEmpresa">
+        <MappingFragment StoreEntitySet="tblBFPoliticaEmpresa">
+          <ScalarProperty Name="IdRelacion" ColumnName="IdRelacion" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdPolitica" ColumnName="IdPolitica" />
+          <ScalarProperty Name="dtmFechaEstablecimiento" ColumnName="dtmFechaEstablecimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPoliticaPuntos">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPoliticaPuntos">
+        <MappingFragment StoreEntitySet="tblBFPoliticaPuntos">
+          <ScalarProperty Name="IdPolitica" ColumnName="IdPolitica" />
+          <ScalarProperty Name="strDescripcionPolitica" ColumnName="strDescripcionPolitica" />
+          <ScalarProperty Name="LogActiva" ColumnName="LogActiva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPoliticaPuntosAntiguedad">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPoliticaPuntosAntiguedad">
+        <MappingFragment StoreEntitySet="tblBFPoliticaPuntosAntiguedad">
+          <ScalarProperty Name="IdPolitica" ColumnName="IdPolitica" />
+          <ScalarProperty Name="strNombrePolitica" ColumnName="strNombrePolitica" />
+          <ScalarProperty Name="intMesesInicio" ColumnName="intMesesInicio" />
+          <ScalarProperty Name="intMesesFin" ColumnName="intMesesFin" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="intPuntos" ColumnName="intPuntos" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+          <ScalarProperty Name="strTipo" ColumnName="strTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPostulacionEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPostulacionEmpleado">
+        <MappingFragment StoreEntitySet="tblBFPostulacionEmpleado">
+          <ScalarProperty Name="IdPostulacionEmpleado" ColumnName="IdPostulacionEmpleado" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="IdEmpleadoRefiere" ColumnName="IdEmpleadoRefiere" />
+          <ScalarProperty Name="strDetallePostula" ColumnName="strDetallePostula" />
+          <ScalarProperty Name="dtmFechaPostulacion" ColumnName="dtmFechaPostulacion" />
+          <ScalarProperty Name="logPostulacionActiva" ColumnName="logPostulacionActiva" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="strArea" ColumnName="strArea" />
+          <ScalarProperty Name="IdTipoReconocimiento" ColumnName="IdTipoReconocimiento" />
+          <ScalarProperty Name="logAprobadoComite" ColumnName="logAprobadoComite" />
+          <ScalarProperty Name="dtmFechaAprobacion" ColumnName="dtmFechaAprobacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPQRSEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPQRSEmpleado">
+        <MappingFragment StoreEntitySet="tblBFPQRSEmpleado">
+          <ScalarProperty Name="IdPQRS" ColumnName="IdPQRS" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdTipoSolicitud" ColumnName="IdTipoSolicitud" />
+          <ScalarProperty Name="strTituloSolicitud" ColumnName="strTituloSolicitud" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="strRespuestaSolicitud" ColumnName="strRespuestaSolicitud" />
+          <ScalarProperty Name="dtmFechaRespuesta" ColumnName="dtmFechaRespuesta" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPreguntaCategoria">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPreguntaCategoria">
+        <MappingFragment StoreEntitySet="tblBFPreguntaCategoria">
+          <ScalarProperty Name="IdPreguntaCategoria" ColumnName="IdPreguntaCategoria" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="strPreguntaCategoria" ColumnName="strPreguntaCategoria" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPreguntaEvento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPreguntaEvento">
+        <MappingFragment StoreEntitySet="tblBFPreguntaEvento">
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="strPregunta" ColumnName="strPregunta" />
+          <ScalarProperty Name="LoActivo" ColumnName="LoActivo" />
+          <ScalarProperty Name="IdTipoPregunta" ColumnName="IdTipoPregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPreguntaReconocimiento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPreguntaReconocimiento">
+        <MappingFragment StoreEntitySet="tblBFPreguntaReconocimiento">
+          <ScalarProperty Name="IdPreguntaReconocimiento" ColumnName="IdPreguntaReconocimiento" />
+          <ScalarProperty Name="IdReconocimiento" ColumnName="IdReconocimiento" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="strRespuesta" ColumnName="strRespuesta" />
+          <ScalarProperty Name="dtmFechaRespuesta" ColumnName="dtmFechaRespuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPremio">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPremio">
+        <MappingFragment StoreEntitySet="tblBFPremio">
+          <ScalarProperty Name="IdPremio" ColumnName="IdPremio" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="intOrden" ColumnName="intOrden" />
+          <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPresupuestoMes">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPresupuestoMes">
+        <MappingFragment StoreEntitySet="tblBFPresupuestoMes">
+          <ScalarProperty Name="intIdPresupuestoMes" ColumnName="intIdPresupuestoMes" />
+          <ScalarProperty Name="strAnio" ColumnName="strAnio" />
+          <ScalarProperty Name="strMes" ColumnName="strMes" />
+          <ScalarProperty Name="intPresupuesto" ColumnName="intPresupuesto" />
+          <ScalarProperty Name="intSaldo" ColumnName="intSaldo" />
+          <ScalarProperty Name="intSaldoPuntos" ColumnName="intSaldoPuntos" />
+          <ScalarProperty Name="intMes" ColumnName="intMes" />
+          <ScalarProperty Name="intPresupuestoReconocimiento" ColumnName="intPresupuestoReconocimiento" />
+          <ScalarProperty Name="intPptoTotal" ColumnName="intPptoTotal" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFProducto">
+        <MappingFragment StoreEntitySet="tblBFProducto">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+          <ScalarProperty Name="intNroPuntosReq" ColumnName="intNroPuntosReq" />
+          <ScalarProperty Name="strImagenProducto" ColumnName="strImagenProducto" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+          <ScalarProperty Name="intNroCompras" ColumnName="intNroCompras" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="strDetalle" ColumnName="strDetalle" />
+          <ScalarProperty Name="strLink" ColumnName="strLink" />
+          <ScalarProperty Name="strArchivo" ColumnName="strArchivo" />
+          <ScalarProperty Name="strTipoAfiliacion" ColumnName="strTipoAfiliacion" />
+          <ScalarProperty Name="logIlimitado" ColumnName="logIlimitado" />
+          <ScalarProperty Name="fCalificacionProm" ColumnName="fCalificacionProm" />
+          <ScalarProperty Name="logApruebaJefe" ColumnName="logApruebaJefe" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="logTiempo" ColumnName="logTiempo" />
+          <ScalarProperty Name="intDiasPromesaEntrega" ColumnName="intDiasPromesaEntrega" />
+          <ScalarProperty Name="strImagenProducto64" ColumnName="strImagenProducto64" />
+          <ScalarProperty Name="logRequiereInscripcion" ColumnName="logRequiereInscripcion" />
+          <ScalarProperty Name="logHoras" ColumnName="logHoras" />
+          <ScalarProperty Name="IntTopeHoras" ColumnName="IntTopeHoras" />
+          <ScalarProperty Name="IdTipoPuntos" ColumnName="IdTipoPuntos" />
+          <ScalarProperty Name="LogCodigo" ColumnName="LogCodigo" />
+          <ScalarProperty Name="strRutaFormato" ColumnName="strRutaFormato" />
+          <ScalarProperty Name="LogVistaCodigo" ColumnName="LogVistaCodigo" />
+          <ScalarProperty Name="logEsGrupal" ColumnName="logEsGrupal" />
+          <ScalarProperty Name="intTiempoVigenciaProductoGrupal" ColumnName="intTiempoVigenciaProductoGrupal" />
+          <ScalarProperty Name="strFormatoCodigo" ColumnName="strFormatoCodigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFProductoCiudad">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFProductoCiudad">
+        <MappingFragment StoreEntitySet="tblBFProductoCiudad">
+          <ScalarProperty Name="idProductoCiudad" ColumnName="idProductoCiudad" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFProductoCompraEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFProductoCompraEmpleado">
+        <MappingFragment StoreEntitySet="tblBFProductoCompraEmpleado">
+          <ScalarProperty Name="IdProductoCompraEmpleado" ColumnName="IdProductoCompraEmpleado" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="intValorCompra" ColumnName="intValorCompra" />
+          <ScalarProperty Name="dtmFechaCompra" ColumnName="dtmFechaCompra" />
+          <ScalarProperty Name="logEntregado" ColumnName="logEntregado" />
+          <ScalarProperty Name="dtmFechaEntrega" ColumnName="dtmFechaEntrega" />
+          <ScalarProperty Name="dtmFechaNotificacionProveedor" ColumnName="dtmFechaNotificacionProveedor" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="intCantidadComprada" ColumnName="intCantidadComprada" />
+          <ScalarProperty Name="strIdCiudad" ColumnName="strIdCiudad" />
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="IdTipoPuntos" ColumnName="IdTipoPuntos" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFProductoProveedor">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFProductoProveedor">
+        <MappingFragment StoreEntitySet="tblBFProductoProveedor">
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="IdProductoProveedor" ColumnName="IdProductoProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFProveedor">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFProveedor">
+        <MappingFragment StoreEntitySet="tblBFProveedor">
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="strCorreo" ColumnName="strCorreo" />
+          <ScalarProperty Name="strContacto" ColumnName="strContacto" />
+          <ScalarProperty Name="strTelefonoContacto" ColumnName="strTelefonoContacto" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="strLink" ColumnName="strLink" />
+          <ScalarProperty Name="strIdentificacion" ColumnName="strIdentificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntoEntregaProveedor">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntoEntregaProveedor">
+        <MappingFragment StoreEntitySet="tblBFPuntoEntregaProveedor">
+          <ScalarProperty Name="IdPunto" ColumnName="IdPunto" />
+          <ScalarProperty Name="strNombrePunto" ColumnName="strNombrePunto" />
+          <ScalarProperty Name="strUbicacion" ColumnName="strUbicacion" />
+          <ScalarProperty Name="strNumeroUbicacion" ColumnName="strNumeroUbicacion" />
+          <ScalarProperty Name="strLetraUbicacion" ColumnName="strLetraUbicacion" />
+          <ScalarProperty Name="strSegundoNumero" ColumnName="strSegundoNumero" />
+          <ScalarProperty Name="strTercerNumero" ColumnName="strTercerNumero" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="strPais" ColumnName="strPais" />
+          <ScalarProperty Name="strCiudad" ColumnName="strCiudad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntosCargadosReconocimiento">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntosCargadosReconocimiento">
+        <MappingFragment StoreEntitySet="tblBFPuntosCargadosReconocimiento">
+          <ScalarProperty Name="IdPuntos" ColumnName="IdPuntos" />
+          <ScalarProperty Name="IdTipoReconocimiento" ColumnName="IdTipoReconocimiento" />
+          <ScalarProperty Name="intPuntosPostulador" ColumnName="intPuntosPostulador" />
+          <ScalarProperty Name="intPuntosPostulado" ColumnName="intPuntosPostulado" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdTipoPunto" ColumnName="IdTipoPunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntosDispEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntosDispEmpleado">
+        <MappingFragment StoreEntitySet="tblBFPuntosDispEmpleado">
+          <ScalarProperty Name="IdPuntosEmpleado" ColumnName="IdPuntosEmpleado" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="intPuntosDisponibles" ColumnName="intPuntosDisponibles" />
+          <ScalarProperty Name="intPuntosAsignados" ColumnName="intPuntosAsignados" />
+          <ScalarProperty Name="intMes" ColumnName="intMes" />
+          <ScalarProperty Name="intAnno" ColumnName="intAnno" />
+          <ScalarProperty Name="intReconocimientoGrupal" ColumnName="intReconocimientoGrupal" />
+          <ScalarProperty Name="dtmFechaReconocimientoGrupal" ColumnName="dtmFechaReconocimientoGrupal" />
+          <ScalarProperty Name="intPuntosDisponiblesECO" ColumnName="intPuntosDisponiblesECO" />
+          <ScalarProperty Name="IdPoliticaAplicada" ColumnName="IdPoliticaAplicada" />
+          <ScalarProperty Name="LogAsignado" ColumnName="LogAsignado" />
+          <ScalarProperty Name="IdTipoPunto" ColumnName="IdTipoPunto" />
+          <ScalarProperty Name="intPuntosDeBaja" ColumnName="intPuntosDeBaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntosRemanentesEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntosRemanentesEmpleado">
+        <MappingFragment StoreEntitySet="tblBFPuntosRemanentesEmpleado">
+          <ScalarProperty Name="IdPuntosRemanente" ColumnName="IdPuntosRemanente" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="intPuntosRemanentes" ColumnName="intPuntosRemanentes" />
+          <ScalarProperty Name="IdFechaCierre" ColumnName="IdFechaCierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntosRemanentesJefe">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntosRemanentesJefe">
+        <MappingFragment StoreEntitySet="tblBFPuntosRemanentesJefe">
+          <ScalarProperty Name="IdPuntos" ColumnName="IdPuntos" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+          <ScalarProperty Name="intPuntos" ColumnName="intPuntos" />
+          <ScalarProperty Name="IdPeriodo" ColumnName="IdPeriodo" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPuntosRolMes">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPuntosRolMes">
+        <MappingFragment StoreEntitySet="tblBFPuntosRolMes">
+          <ScalarProperty Name="IdPuntosMes" ColumnName="IdPuntosMes" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="IntMes" ColumnName="IntMes" />
+          <ScalarProperty Name="intAnno" ColumnName="intAnno" />
+          <ScalarProperty Name="intPuntos" ColumnName="intPuntos" />
+          <ScalarProperty Name="intPuntosDisponibles" ColumnName="intPuntosDisponibles" />
+          <ScalarProperty Name="intPuntosAsignados" ColumnName="intPuntosAsignados" />
+          <ScalarProperty Name="intPesoPunto" ColumnName="intPesoPunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFReconocimientoArea">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFReconocimientoArea">
+        <MappingFragment StoreEntitySet="tblBFReconocimientoArea">
+          <ScalarProperty Name="IdReconocimientoArea" ColumnName="IdReconocimientoArea" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="IdEmpleadoReconoce" ColumnName="IdEmpleadoReconoce" />
+          <ScalarProperty Name="dtmFechaReconocimiento" ColumnName="dtmFechaReconocimiento" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="intPeso" ColumnName="intPeso" />
+          <ScalarProperty Name="strJustificacion" ColumnName="strJustificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFReconocimientoEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFReconocimientoEmpleado">
+        <MappingFragment StoreEntitySet="tblBFReconocimientoEmpleado">
+          <ScalarProperty Name="IdReconocimientoEmpl" ColumnName="IdReconocimientoEmpl" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdEmpleadoReconoce" ColumnName="IdEmpleadoReconoce" />
+          <ScalarProperty Name="dtmFechaReconocimiento" ColumnName="dtmFechaReconocimiento" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="intPeso" ColumnName="intPeso" />
+          <ScalarProperty Name="strJustificacion" ColumnName="strJustificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFReporteEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFReporteEmpleado">
+        <MappingFragment StoreEntitySet="tblBFReporteEmpleado">
+          <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdConcepto" ColumnName="IdConcepto" />
+          <ScalarProperty Name="dtmFechaReporte" ColumnName="dtmFechaReporte" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFRespuestaExperiencia">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFRespuestaExperiencia">
+        <MappingFragment StoreEntitySet="tblBFRespuestaExperiencia">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="IdComentario" ColumnName="IdComentario" />
+          <ScalarProperty Name="strRespuesta" ColumnName="strRespuesta" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="dtmFechaRespuesta" ColumnName="dtmFechaRespuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFRespuestaInscripcionEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFRespuestaInscripcionEmpleado">
+        <MappingFragment StoreEntitySet="tblBFRespuestaInscripcionEmpleado">
+          <ScalarProperty Name="IdRespuestaEmpleado" ColumnName="IdRespuestaEmpleado" />
+          <ScalarProperty Name="IdInscripcion" ColumnName="IdInscripcion" />
+          <ScalarProperty Name="IdEvento" ColumnName="IdEvento" />
+          <ScalarProperty Name="IdPregunta" ColumnName="IdPregunta" />
+          <ScalarProperty Name="strRespuesta" ColumnName="strRespuesta" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFRol">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFRol">
+        <MappingFragment StoreEntitySet="tblBFRol">
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="strNombreRol" ColumnName="strNombreRol" />
+          <ScalarProperty Name="logEsJefe" ColumnName="logEsJefe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFSede">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFSede">
+        <MappingFragment StoreEntitySet="tblBFSede">
+          <ScalarProperty Name="IdSede" ColumnName="IdSede" />
+          <ScalarProperty Name="strSede" ColumnName="strSede" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFTipoAdministrador">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFTipoAdministrador">
+        <MappingFragment StoreEntitySet="tblBFTipoAdministrador">
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="strTipoAdministrador" ColumnName="strTipoAdministrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFTipoNotificacion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFTipoNotificacion">
+        <MappingFragment StoreEntitySet="tblBFTipoNotificacion">
+          <ScalarProperty Name="IdNotificacion" ColumnName="IdNotificacion" />
+          <ScalarProperty Name="strTipoNotificacion" ColumnName="strTipoNotificacion" />
+          <ScalarProperty Name="strMensaje" ColumnName="strMensaje" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="LogSms" ColumnName="LogSms" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFTrimestre">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFTrimestre">
+        <MappingFragment StoreEntitySet="tblBFTrimestre">
+          <ScalarProperty Name="IdTrimestre" ColumnName="IdTrimestre" />
+          <ScalarProperty Name="dtmFechaInicio" ColumnName="dtmFechaInicio" />
+          <ScalarProperty Name="dtmFechaFinal" ColumnName="dtmFechaFinal" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFUsuarioProveedor">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFUsuarioProveedor">
+        <MappingFragment StoreEntitySet="tblBFUsuarioProveedor">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="strUsuario" ColumnName="strUsuario" />
+          <ScalarProperty Name="strContrasena" ColumnName="strContrasena" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFVariable">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFVariable">
+        <MappingFragment StoreEntitySet="tblBFVariable">
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="strVariable" ColumnName="strVariable" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFVariablePunto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFVariablePunto">
+        <MappingFragment StoreEntitySet="tblBFVariablePunto">
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="dtmFechaInicio" ColumnName="dtmFechaInicio" />
+          <ScalarProperty Name="dtmFechaFinal" ColumnName="dtmFechaFinal" />
+          <ScalarProperty Name="strValorPunto" ColumnName="strValorPunto" />
+          <ScalarProperty Name="IdTipoPunto" ColumnName="IdTipoPunto" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFWizard">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFWizard">
+        <MappingFragment StoreEntitySet="tblBFWizard">
+          <ScalarProperty Name="IdWizard" ColumnName="IdWizard" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="NombrePanel" ColumnName="NombrePanel" />
+          <ScalarProperty Name="DescripcionPanel" ColumnName="DescripcionPanel" />
+          <ScalarProperty Name="logFinalizado" ColumnName="logFinalizado" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCHComentarioEmpleadoProducto">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblCHComentarioEmpleadoProducto">
+        <MappingFragment StoreEntitySet="tblCHComentarioEmpleadoProducto">
+          <ScalarProperty Name="IdComentario" ColumnName="IdComentario" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="dtmFechaComentario" ColumnName="dtmFechaComentario" />
+          <ScalarProperty Name="strComentario" ColumnName="strComentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCHEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblCHEmpleado">
+        <MappingFragment StoreEntitySet="tblCHEmpleado">
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="IdProfesion" ColumnName="IdProfesion" />
+          <ScalarProperty Name="strProfesion" ColumnName="strProfesion" />
+          <ScalarProperty Name="strCargo" ColumnName="strCargo" />
+          <ScalarProperty Name="IdRol" ColumnName="IdRol" />
+          <ScalarProperty Name="IdBarrio" ColumnName="IdBarrio" />
+          <ScalarProperty Name="strBarrio" ColumnName="strBarrio" />
+          <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+          <ScalarProperty Name="strUnidad" ColumnName="strUnidad" />
+          <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
+          <ScalarProperty Name="strRegional" ColumnName="strRegional" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="strProceso" ColumnName="strProceso" />
+          <ScalarProperty Name="IdSubProceso" ColumnName="IdSubProceso" />
+          <ScalarProperty Name="strSubProceso" ColumnName="strSubProceso" />
+          <ScalarProperty Name="IdJefe" ColumnName="IdJefe" />
+          <ScalarProperty Name="strNombreJefe" ColumnName="strNombreJefe" />
+          <ScalarProperty Name="dtmFechaRetiro" ColumnName="dtmFechaRetiro" />
+          <ScalarProperty Name="LogClienteProveedor" ColumnName="LogClienteProveedor" />
+          <ScalarProperty Name="LogGerenteRecursosH" ColumnName="LogGerenteRecursosH" />
+          <ScalarProperty Name="intSecuencia" ColumnName="intSecuencia" />
+          <ScalarProperty Name="LogEvaluar" ColumnName="LogEvaluar" />
+          <ScalarProperty Name="strUsuario" ColumnName="strUsuario" />
+          <ScalarProperty Name="strContrasena" ColumnName="strContrasena" />
+          <ScalarProperty Name="logObjetivosLegalizados" ColumnName="logObjetivosLegalizados" />
+          <ScalarProperty Name="logHabilitarIngresoObjPeriodoCerrado" ColumnName="logHabilitarIngresoObjPeriodoCerrado" />
+          <ScalarProperty Name="logSuperUsuario" ColumnName="logSuperUsuario" />
+          <ScalarProperty Name="strGrupoPago" ColumnName="strGrupoPago" />
+          <ScalarProperty Name="strUbicacion" ColumnName="strUbicacion" />
+          <ScalarProperty Name="intNivel" ColumnName="intNivel" />
+          <ScalarProperty Name="strSexo" ColumnName="strSexo" />
+          <ScalarProperty Name="strRutaImagenEmpleado" ColumnName="strRutaImagenEmpleado" />
+          <ScalarProperty Name="intPuntosCaritas" ColumnName="intPuntosCaritas" />
+          <ScalarProperty Name="logObjetivosAprobadosJefe" ColumnName="logObjetivosAprobadosJefe" />
+          <ScalarProperty Name="strUsuarioRed" ColumnName="strUsuarioRed" />
+          <ScalarProperty Name="tipoContrato" ColumnName="tipoContrato" />
+          <ScalarProperty Name="strTipoAfiliacion" ColumnName="strTipoAfiliacion" />
+          <ScalarProperty Name="logPermisoEntrega" ColumnName="logPermisoEntrega" />
+          <ScalarProperty Name="intPuntosKilo" ColumnName="intPuntosKilo" />
+          <ScalarProperty Name="LogAdministrarEcoPuntos" ColumnName="LogAdministrarEcoPuntos" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strCorreo" ColumnName="strCorreo" />
+          <ScalarProperty Name="strNumeroMovil" ColumnName="strNumeroMovil" />
+          <ScalarProperty Name="IdTipoAdministrador" ColumnName="IdTipoAdministrador" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="dtmFechaIngreso" ColumnName="dtmFechaIngreso" />
+          <ScalarProperty Name="intPuntosCorazones" ColumnName="intPuntosCorazones" />
+          <ScalarProperty Name="intPuntosBombillo" ColumnName="intPuntosBombillo" />
+          <ScalarProperty Name="strImagenEmpleado64" ColumnName="strImagenEmpleado64" />
+          <ScalarProperty Name="LogEsJefe" ColumnName="LogEsJefe" />
+          <ScalarProperty Name="LogPresidencia" ColumnName="LogPresidencia" />
+          <ScalarProperty Name="LogApruebaTerminos" ColumnName="LogApruebaTerminos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCHNoticia">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblCHNoticia">
+        <MappingFragment StoreEntitySet="tblCHNoticia">
+          <ScalarProperty Name="IdNoticia" ColumnName="IdNoticia" />
+          <ScalarProperty Name="strRutaImagenNoticia" ColumnName="strRutaImagenNoticia" />
+          <ScalarProperty Name="strDescripcionNoticia" ColumnName="strDescripcionNoticia" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="strTituloNoticia" ColumnName="strTituloNoticia" />
+          <ScalarProperty Name="strRutaImagenVideo" ColumnName="strRutaImagenVideo" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCHTipoNotificacion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblCHTipoNotificacion">
+        <MappingFragment StoreEntitySet="tblCHTipoNotificacion">
+          <ScalarProperty Name="IdTipoNotificacion" ColumnName="IdTipoNotificacion" />
+          <ScalarProperty Name="strTipoNotificacion" ColumnName="strTipoNotificacion" />
+          <ScalarProperty Name="strMensaje" ColumnName="strMensaje" />
+          <ScalarProperty Name="logTipoActivo" ColumnName="logTipoActivo" />
+          <ScalarProperty Name="strPlantilla" ColumnName="strPlantilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRespuestaSms">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblRespuestaSms">
+        <MappingFragment StoreEntitySet="tblRespuestaSms">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="dtmFechaRespuesta" ColumnName="dtmFechaRespuesta" />
+          <ScalarProperty Name="strRespuesta" ColumnName="strRespuesta" />
+          <ScalarProperty Name="strNumeroEnviado" ColumnName="strNumeroEnviado" />
+          <ScalarProperty Name="LogEnviado" ColumnName="LogEnviado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultadoDesempeno">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.ResultadoDesempeno">
+        <MappingFragment StoreEntitySet="ResultadoDesempeno">
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="strUnidad" ColumnName="strUnidad" />
+          <ScalarProperty Name="strCargo" ColumnName="strCargo" />
+          <ScalarProperty Name="strProceso" ColumnName="strProceso" />
+          <ScalarProperty Name="strSubProceso" ColumnName="strSubProceso" />
+          <ScalarProperty Name="IdObjetivo" ColumnName="IdObjetivo" />
+          <ScalarProperty Name="strObjetivo" ColumnName="strObjetivo" />
+          <ScalarProperty Name="strMeta" ColumnName="strMeta" />
+          <ScalarProperty Name="dblPesoObjetivo" ColumnName="dblPesoObjetivo" />
+          <ScalarProperty Name="dblCalificacionObjetivo" ColumnName="dblCalificacionObjetivo" />
+          <ScalarProperty Name="strLogro" ColumnName="strLogro" />
+          <ScalarProperty Name="strMedida" ColumnName="strMedida" />
+          <ScalarProperty Name="dblValoracionObjetivo" ColumnName="dblValoracionObjetivo" />
+          <ScalarProperty Name="ResultadoDesempenno" ColumnName="ResultadoDesempenno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResumenEvaluacion">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.ResumenEvaluacion">
+        <MappingFragment StoreEntitySet="ResumenEvaluacion">
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="IdVariable" ColumnName="IdVariable" />
+          <ScalarProperty Name="strNombreVariable" ColumnName="strNombreVariable" />
+          <ScalarProperty Name="intEje" ColumnName="intEje" />
+          <ScalarProperty Name="IdComponente" ColumnName="IdComponente" />
+          <ScalarProperty Name="strNombreComponente" ColumnName="strNombreComponente" />
+          <ScalarProperty Name="intNroPregunta" ColumnName="intNroPregunta" />
+          <ScalarProperty Name="strDescripcionPregunta" ColumnName="strDescripcionPregunta" />
+          <ScalarProperty Name="CalAutoEval" ColumnName="CalAutoEval" />
+          <ScalarProperty Name="CalPersonasAcargo" ColumnName="CalPersonasAcargo" />
+          <ScalarProperty Name="CalCompas" ColumnName="CalCompas" />
+          <ScalarProperty Name="CalJefe" ColumnName="CalJefe" />
+          <ScalarProperty Name="CalCliente" ColumnName="CalCliente" />
+          <ScalarProperty Name="CalPromGeneral" ColumnName="CalPromGeneral" />
+          <ScalarProperty Name="CalGenEval" ColumnName="CalGenEval" />
+          <ScalarProperty Name="CalGenAuto" ColumnName="CalGenAuto" />
+          <ScalarProperty Name="CalGenACargo" ColumnName="CalGenACargo" />
+          <ScalarProperty Name="CalGenCompas" ColumnName="CalGenCompas" />
+          <ScalarProperty Name="CalGenJefe" ColumnName="CalGenJefe" />
+          <ScalarProperty Name="CalGenCliente" ColumnName="CalGenCliente" />
+          <ScalarProperty Name="PesoAuto" ColumnName="PesoAuto" />
+          <ScalarProperty Name="PesoJefe" ColumnName="PesoJefe" />
+          <ScalarProperty Name="PesoCompas" ColumnName="PesoCompas" />
+          <ScalarProperty Name="PesoClientes" ColumnName="PesoClientes" />
+          <ScalarProperty Name="PesoACargo" ColumnName="PesoACargo" />
+          <ScalarProperty Name="CalPromedio" ColumnName="CalPromedio" />
+          <ScalarProperty Name="CalEvalEqui" ColumnName="CalEvalEqui" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFAdministradores">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFAdministradores">
+        <MappingFragment StoreEntitySet="tblBFAdministradores">
+          <ScalarProperty Name="IdAdministrador" ColumnName="IdAdministrador" />
+          <ScalarProperty Name="IdTipoAdministrador" ColumnName="IdTipoAdministrador" />
+          <ScalarProperty Name="LogActivo" ColumnName="LogActivo" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFAreasEcopuntos">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFAreasEcopuntos">
+        <MappingFragment StoreEntitySet="tblBFAreasEcopuntos">
+          <ScalarProperty Name="IdAreaEcopuntos" ColumnName="IdAreaEcopuntos" />
+          <ScalarProperty Name="strUnidad" ColumnName="strUnidad" />
+          <ScalarProperty Name="logPermiteVisualizar" ColumnName="logPermiteVisualizar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFECPuntosDispEmpleado">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFECPuntosDispEmpleado">
+        <MappingFragment StoreEntitySet="tblBFECPuntosDispEmpleado">
+          <ScalarProperty Name="IdPuntosEmpleado" ColumnName="IdPuntosEmpleado" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="strDescripcionReconocimiento" ColumnName="strDescripcionReconocimiento" />
+          <ScalarProperty Name="strNumeroEcopuntos" ColumnName="strNumeroEcopuntos" />
+          <ScalarProperty Name="strMes" ColumnName="strMes" />
+          <ScalarProperty Name="strAnno" ColumnName="strAnno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFImagenSlider">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFImagenSlider">
+        <MappingFragment StoreEntitySet="tblBFImagenSlider">
+          <ScalarProperty Name="IdImagen" ColumnName="IdImagen" />
+          <ScalarProperty Name="strNombreImagen" ColumnName="strNombreImagen" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strTextoImagen" ColumnName="strTextoImagen" />
+          <ScalarProperty Name="strDescripcionImagen" ColumnName="strDescripcionImagen" />
+          <ScalarProperty Name="strNombreImagenBase64" ColumnName="strNombreImagenBase64" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFIntegrantesGrupoCompra">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFIntegrantesGrupoCompra">
+        <MappingFragment StoreEntitySet="tblBFIntegrantesGrupoCompra">
+          <ScalarProperty Name="IdGrupoCompra" ColumnName="IdGrupoCompra" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="logEsAdmon" ColumnName="logEsAdmon" />
+          <ScalarProperty Name="logApruebaConformarGrupo" ColumnName="logApruebaConformarGrupo" />
+          <ScalarProperty Name="dtmFechaInvitacion" ColumnName="dtmFechaInvitacion" />
+          <ScalarProperty Name="intPuntosAportados" ColumnName="intPuntosAportados" />
+          <ScalarProperty Name="dtmFechaAportePuntos" ColumnName="dtmFechaAportePuntos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFNoticia">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFNoticia">
+        <MappingFragment StoreEntitySet="tblBFNoticia">
+          <ScalarProperty Name="IdNoticia" ColumnName="IdNoticia" />
+          <ScalarProperty Name="strRuta" ColumnName="strRuta" />
+          <ScalarProperty Name="strDescripcionNoticia" ColumnName="strDescripcionNoticia" />
+          <ScalarProperty Name="dtmFechaRegistro" ColumnName="dtmFechaRegistro" />
+          <ScalarProperty Name="strTituloNoticia" ColumnName="strTituloNoticia" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="strExtension" ColumnName="strExtension" />
+          <ScalarProperty Name="strDescripcionCorta" ColumnName="strDescripcionCorta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBFPoliticaDatos">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblBFPoliticaDatos">
+        <MappingFragment StoreEntitySet="tblBFPoliticaDatos">
+          <ScalarProperty Name="IdPolitica" ColumnName="IdPolitica" />
+          <ScalarProperty Name="strPolitica" ColumnName="strPolitica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblECBloqueoDias">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblECBloqueoDias">
+        <MappingFragment StoreEntitySet="tblECBloqueoDias">
+          <ScalarProperty Name="IdBloqueo" ColumnName="IdBloqueo" />
+          <ScalarProperty Name="dtmFecha" ColumnName="dtmFecha" />
+          <ScalarProperty Name="logActivo" ColumnName="logActivo" />
+          <ScalarProperty Name="strDiaBloqueado" ColumnName="strDiaBloqueado" />
+          <ScalarProperty Name="intMes" ColumnName="intMes" />
+          <ScalarProperty Name="intAnno" ColumnName="intAnno" />
+          <ScalarProperty Name="intDia" ColumnName="intDia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProveedor">
+      <EntityTypeMapping TypeName="BienestarAlaCartaMultiEmpresaDesarrolloModel.tblProveedor">
+        <MappingFragment StoreEntitySet="tblProveedor">
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="strNombreProveedor" ColumnName="strNombreProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
