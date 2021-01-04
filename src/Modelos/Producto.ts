@@ -1,0 +1,33 @@
+export interface Producto {
+  IdProducto: number;
+  strDescripcion: string;
+  intNroPuntosReq: number;
+  strImagenProducto: string;
+  logActivo: boolean;
+  intNroCompras: number;
+  IdCategoria: number;
+  strDetalle: string;
+  strLink: string;
+  strArchivo: string;
+  strTipoAfiliacion: string;
+  logIlimitado: boolean;
+  fCalificacionProm: number;
+  logApruebaJefe: boolean;
+  IdEmpresa: number;
+  IdProveedor: number;
+  logTiempo: boolean;
+  intDiasPromesaEntrega: number;
+  strImagenProducto64: string;
+  logRequiereInscripcion: boolean;
+  logHoras: boolean;
+  IntTopeHoras: number;
+  IdTipoPuntos: number;
+  LogCodigo: boolean;
+  strRutaFormato: string;
+  LogVistaCodigo: boolean;
+  logEsGrupal: boolean;
+  intTiempoVigenciaProductoGrupal: number;
+  strFormatoCodigo: string;
+  cantidad: number;
+  nombreCategoria: string;
+}

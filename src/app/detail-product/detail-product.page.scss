@@ -1,0 +1,210 @@
+.text-center {
+    text-align: center!important;
+    font-size: small;
+    font-family: 'Ionicons';
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.seccion {
+    height: 3.75rem;
+    padding: 1.3125rem 0.25rem;
+    display: inline-flex;
+    width: 100%;
+}
+
+.seccion img {
+    width: 2.5rem;
+    margin-right: 0.625rem;
+}
+
+.seccion p {
+    color: #c1c1c1;
+    font-family: "Akrobat", sans-serif;
+    /* font-size: x-large; */
+    /* font-weight: 700; */
+    line-height: 0;
+    text-transform: uppercase;
+    font-size: revert;
+    font-weight: 700;
+    margin: 0.875rem 0 1.625rem;
+}
+
+.title {
+    font-family: ui-rounded;
+    text-transform: uppercase;
+    font-size: large;
+}
+
+article h3,
+.respuesta h3 {
+    color: #333333;
+    font-size: revert;
+    font-weight: 700;
+    margin: 0.875rem 0 0.625rem;
+    text-transform: uppercase;
+}
+
+article p,
+.respuesta p {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+article .puntos .puntaje,
+.respuesta .puntos .puntaje {
+    background: #ffffffb8;
+    border-radius: 0 0 8px 8px;
+    width: 4.875rem;
+    height: 5.75rem;
+    position: absolute;
+    right: 0%;
+    padding: 0.5rem 0;
+}
+
+article .puntos .puntaje img,
+.respuesta .puntos .puntaje img {
+    width: 1.875rem;
+}
+
+article .puntos .puntaje p,
+.respuesta .puntos .puntaje p {
+    color: #e15f29;
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+.stars {
+    margin-top: 0.3125rem;
+}
+
+.stars img {
+    width: 1.875rem;
+    margin: 0 0.1875rem;
+}
+
+.return img {
+    width: 1.75rem;
+    transform: translate(65px, 1px);
+}
+
+.mg-top-5 {
+    margin-top: 5px;
+}
+
+.mg-top-10 {
+    margin-top: 10px;
+}
+
+.mg-top-20 {
+    margin-top: 20px;
+}
+
+.mg-top-30 {
+    margin-top: 30px;
+}
+
+.mg-top-40 {
+    margin-top: 40px;
+}
+
+.mg-top-50 {
+    margin-top: 50px;
+}
+
+.mg-top-60 {
+    margin-top: 60px;
+}
+
+.mg-top-70 {
+    margin-top: 70px;
+}
+
+.mg-top-80 {
+    margin-top: 80px;
+}
+
+.mg-top-100 {
+    margin-top: 100px;
+}
+
+.mg-top-150 {
+    margin-top: 150px;
+}
+
+.mg-left-10 {
+    margin-left: 10px;
+}
+
+.mg-left-20 {
+    margin-left: 10px;
+}
+
+.mg {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.mg0 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.bg-aquamarine {
+    background: #29b0be;
+}
+
+.bg-sky {
+    background: #78a6d2;
+}
+
+.bg-green {
+    background: #47a760;
+}
+
+.bg-pink {
+    background: #db7ca2;
+}
+
+.bg-orange {
+    background: #e15f29;
+}
+
+.bg-yellow {
+    background: #ed9d2d;
+}
+
+.bg-red {
+    background: #661e33;
+}
+
+.choose p {
+    margin: 0.75rem 0;
+    font-size: 1.25rem;
+}
+
+.choose button {
+    border: none;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.choose button img {
+    width: 24px;
+    transform: translate(-15px, -2px);
+}
+
+.choose select {
+    width: 5.625rem;
+    height: 2.5rem;
+    border: solid 1px #9b9b9b;
+    border-radius: 0.5rem;
+    margin: 0.3125rem 0.625rem;
+    padding: 0 0.3125rem;
+    text-align: center;
+}

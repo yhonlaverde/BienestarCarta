@@ -1,0 +1,224 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+.header {
+    border-top: solid 5px #fff;
+    height: 7.0625rem;
+}
+
+.header .recuadro img {
+    width: 100%;
+    margin: -1.375rem auto;
+    display: inline-flex;
+    height: auto;
+}
+
+.recuadro {
+    height: 6.25rem;
+    width: 14.75rem;
+    background: #fff;
+    border-radius: 0 0 0.625rem 0.625rem;
+    margin: 4px auto;
+    padding: 12px;
+}
+
+.profile {
+    width: 150px;
+}
+
+.profile .car {
+    right: 23%;
+    height: 1.875rem;
+}
+
+.profile .car img {
+    width: 1.875rem;
+}
+
+.profile .you {
+    right: 0.9375rem;
+    height: 2.8125rem;
+}
+
+.profile .you img {
+    width: 2.8125rem;
+    border: solid 3px #ccc;
+    border-radius: 50%;
+}
+
+.vert-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider {
+    position: relative;
+}
+
+.slider .title-btm {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    inline-size: -webkit-min-content;
+    inline-size: -moz-min-content;
+    inline-size: -webkit-fill-available;
+}
+
+.slider .title-btm h3,
+.slider .title-btm p {
+    color: #fff;
+    font-family: "Akrobat", sans-serif;
+    font-size: inherit;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0px 2px #333333
+}
+
+ion-footer p {
+    color: #000;
+    font-family: "Akrobat", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1;
+}
+
+.pad-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pad-left-0 {
+    padding-left: 0;
+}
+
+.pad-right-0 {
+    padding-right: 0;
+}
+
+.pad-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pad-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pad-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.pad-btm-10 {
+    padding-bottom: 10px;
+}
+
+.pad-btm-20 {
+    padding-bottom: 20px;
+}
+
+.pad-btm-30 {
+    padding-bottom: 30px;
+}
+
+.pad-btm-100 {
+    padding-bottom: 100px;
+}
+
+.pad-top-5 {
+    padding-top: 5px;
+}
+
+.pad-top-10 {
+    padding-top: 10px;
+}
+
+.pad-top-20 {
+    padding-top: 20px;
+}
+
+.pad-top-30 {
+    padding-top: 30px;
+}
+
+.pad-top-70 {
+    padding-top: 30px;
+}
+
+.pad-lt-rt {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.text-center {
+    text-align: center!important;
+    font-size: small;
+    font-family: 'Ionicons';
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.my-custom-class {
+    --background: #222;
+    --spinner-color: #fff;
+    color: #fff;
+}
+
+.seccion {
+    height: 3.75rem;
+    padding: 1.3125rem 0.25rem;
+    display: inline-flex;
+    width: 100%;
+}
+
+.seccion img {
+    width: 2.5rem;
+    margin-right: 0.625rem;
+}
+
+.seccion p {
+    color: #c1c1c1;
+    font-family: "Akrobat", sans-serif;
+    font-size: smaller;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.title {
+    text-align: initial;
+    font-family: ui-rounded;
+    text-transform: uppercase;
+    font-size: smaller;
+}

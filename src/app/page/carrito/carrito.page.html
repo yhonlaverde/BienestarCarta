@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar>
+        <a class="seccion" style="background-color: #29b0be;">
+            <ion-buttons fill="clear" color="dark" (click)="Salir()">
+                <ion-icon name="close" slot="start"></ion-icon>
+            </ion-buttons>
+            <div class="profile left-auto">
+                <a class="vert-center car">
+                    <img class="" src="../../assets/img/carrito-b.svg" alt="Shop">
+                    <ion-badge color="danger" slot="end">{{numCarrito}}</ion-badge>
+                </a>
+                <ion-title class="title"> Mi carrito</ion-title>
+            </div>
+        </a>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <article *ngFor="let item of carrito">
+            <h4>{{item.strDescripcion}}</h4>
+            <div class="d-flex">
+                <div class="col-4 pad-0">
+                    <img class="w-100" [src]="item.strImagenProducto64" alt="">
+                </div>
+                <div class="col-7">
+                    <p><strong>Categoria:</strong> {{item.nombreCategoria}}</p>
+                    <p><strong>Puntos:</strong> {{item.cantidad * item.intNroPuntosReq}}</p>
+                    <ion-grid>
+                        <ion-row class="ion-aling-items-center">
+                            <ion-col size="3" class="ion-aling-self-center">
+                                <ion-button color="medium" fill="clear" (click)="bajarCantidad(item)">
+                                    <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                            <ion-col size="2" id="cantidad" class="ion-aling-self-center">
+                                {{item.cantidad}}
+                            </ion-col>
+
+                            <ion-col size="3" class="ion-aling-self-center">
+                                <ion-button color="medium" fill="clear" (click)="aunmentarCantidad(item)">
+                                    <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div class="stars d-flex">
+                        <img src="../../assets/img/star.svg" alt="">
+                        <img src="../../assets/img/star.svg" alt="">
+                        <img src="../../assets/img/star.svg" alt="">
+                        <img src="../../assets/img/star.svg" alt="">
+                        <img src="../../assets/img/star.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex mg-top-5 edit">
+                <ion-row>
+                    <ion-col offset-4>
+                        <div>
+                            <ion-button (click)="removerCarritoItem(item)" color="secondary" expand="full">
+                                Eliminar
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </ion-button>
+                        </div>
+                    </ion-col>
+                    <ion-col>
+                        <div>
+                            <ion-button color="tertiary" expand="full">
+
+                                REDIMIR AHORA
+                                <ion-icon name="refresh-circle-outline"></ion-icon>
+                                <!-- <img class="float-right" src="../../assets/img/refresh.svg" width="18%" height="auto" alt=""> -->
+                            </ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <!-- <ion-row>
+                    <ion-col offset-4>
+                        <ion-button color="secondary">
+                            Eliminar
+                            <img class="float-right" src="../../assets/img/delete.svg" width="18%" height="auto" alt="">
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button color="warning">
+                            REDIMIR AHORA
+                            <img class="float-right" src="../../assets/img/refresh.svg" width="18%" height="auto" alt="">
+                        </ion-button>
+                    </ion-col>
+                </ion-row> -->
+            </div>
+        </article>
+        <hr>
+    </ion-row>
+</ion-content>

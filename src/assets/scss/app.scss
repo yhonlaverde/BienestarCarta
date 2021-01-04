@@ -1,0 +1,695 @@
+// Function for converting a px based font-size to rem.
+@function remcalc($size) {
+    $remSize: $size / 16px;
+//Default font size on html element is 100%, equivalent to 16px;
+@return #{$remSize}rem;
+}
+    
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: remcalc($size);
+}
+
+$rel: relative;
+$fix: fixed;
+$abs: absolute;
+
+$thin: 100;
+$light: 200;
+$regular: 500;
+$semi: 600;
+$bold: 700;
+$bblack: 900;
+
+$grey: #333333;
+$grey2: #9b9b9b;
+$silver: #ccc;
+$white: #fff;
+$black: #000;
+$orange: #e15f29;
+$marine: #29b0be;
+$sky: #78a6d2;
+$green: #47a760;
+
+$font: 'Akrobat', sans-serif;
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-ExtraLight.woff2') format('woff2'),
+        url('fonts/Akrobat-ExtraLight.woff') format('woff'),
+        url('fonts/Akrobat-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-Bold.woff2') format('woff2'),
+        url('fonts/Akrobat-Bold.woff') format('woff'),
+        url('fonts/Akrobat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-SemiBold.woff2') format('woff2'),
+        url('fonts/Akrobat-SemiBold.woff') format('woff'),
+        url('fonts/Akrobat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-Black.woff2') format('woff2'),
+        url('fonts/Akrobat-Black.woff') format('woff'),
+        url('fonts/Akrobat-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-Light.woff2') format('woff2'),
+        url('fonts/Akrobat-Light.woff') format('woff'),
+        url('fonts/Akrobat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-ExtraBold.woff2') format('woff2'),
+        url('fonts/Akrobat-ExtraBold.woff') format('woff'),
+        url('fonts/Akrobat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-Thin.woff2') format('woff2'),
+        url('fonts/Akrobat-Thin.woff') format('woff'),
+        url('fonts/Akrobat-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('fonts/Akrobat-Regular.woff2') format('woff2'),
+        url('fonts/Akrobat-Regular.woff') format('woff'),
+        url('fonts/Akrobat-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary{
+    font-family: $font;
+}
+p, span{
+    font-size: remcalc(16px);
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+a:hover{
+    text-decoration: none;
+}
+.bg-aquamarine {
+    background: $marine;
+}
+.bg-sky{
+    background: $sky;
+}
+.bg-green{
+    background: $green;
+}
+.bg-pink{
+    background: #db7ca2;
+}
+.bg-orange{
+    background: $orange;
+}
+.bg-yellow{
+    background: #ed9d2d;
+}
+.bg-red{
+    background: #661e33;
+}
+.border-0{
+    border: none;
+}
+.pad-0{
+    padding-left: 0;
+    padding-right: 0;
+}
+.pad-left-0{
+    padding-left: 0;
+}
+.pad-right-0{
+    padding-right: 0;
+}
+.pad-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pad-20{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pad-30{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.pad-btm-10{
+    padding-bottom: 10px;
+}
+.pad-btm-20{
+    padding-bottom: 20px;
+}
+.pad-btm-30{
+    padding-bottom: 30px;
+}
+.pad-btm-100{
+    padding-bottom: 100px;
+}
+.pad-top-5{
+    padding-top: 5px;
+}
+.pad-top-10{
+    padding-top: 10px;
+}
+.pad-top-20{
+    padding-top: 20px;
+}
+.pad-top-30{
+    padding-top: 30px;
+}
+.pad-top-70{
+    padding-top: 30px;
+}
+.pad-lt-rt{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.mg-top-5{
+    margin-top: 5px;
+}
+.mg-top-10{
+    margin-top: 10px;
+}
+.mg-top-20{
+    margin-top: 20px;
+}
+.mg-top-30{
+    margin-top: 30px;
+}
+.mg-top-40{
+    margin-top: 40px;
+}
+.mg-top-50{
+    margin-top: 50px;
+}
+.mg-top-60{
+    margin-top: 60px;
+}
+.mg-top-70{
+    margin-top: 70px;
+}
+.mg-top-80{
+    margin-top: 80px;
+}
+.mg-top-100{
+    margin-top: 100px;
+}
+.mg-top-150{
+    margin-top: 150px;
+}
+.mg-left-10{
+    margin-left: 10px;
+}
+.mg-left-20{
+    margin-left: 10px;
+}
+.mg{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.mg0{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.top{
+    top: 30%;
+}
+.align-top{
+    vertical-align: top;
+}
+.float-right{
+    float: right;
+}
+.float-left{
+    float: left;
+}
+.auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.left-auto{
+    margin-left: auto;
+}
+.right-auto{
+    margin-right: auto;
+}
+.center-absolute{
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.vert-center{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+#login{
+    height: remcalc(600px);
+}
+.fields{
+    width: remcalc(300px);
+    height: remcalc(45px);
+    border: solid 1px $grey2;
+    border-radius: remcalc(8px);
+    font-family: $font;
+    font-size: remcalc(17px);
+    padding-left: remcalc(10px);
+}
+button{
+    width: remcalc(300px);
+    height: remcalc(45px);
+    background: $orange;
+    border: solid 1px $orange;
+    border-radius: remcalc(8px);
+    color: $white;
+    font-family: $font;
+    font-size: remcalc(21px);
+    font-weight: $bold;
+    text-transform: uppercase;
+}
+strong{
+    font-weight: $bold;
+}
+.log{
+    width: remcalc(250px);
+
+    a:nth-child(2){
+        float: right;
+    }
+    a{
+        text-decoration: none;
+
+        span{
+            color: $grey;
+            font-family: $font;
+            font-size: remcalc(17px);
+            font-weight: $regular;
+        }
+    }
+}
+footer{
+    p{
+        color: $black;
+        font-family: $font;
+        font-size: remcalc(15px);
+    }
+}
+header{
+    background: $orange;
+    border-top: solid 5px $white;
+    height: remcalc(145px);
+
+    .recuadro{
+        img{
+            width: remcalc(210px);
+            margin: remcalc(10px) auto;
+            display: block;
+        }
+    }
+}
+.recuadro{
+    height: remcalc(100px);
+    width: remcalc(300px);
+    background: #fff;
+    border-radius: 0 0 remcalc(10px) remcalc(10px);
+    margin: 0 auto;
+    padding: 4px;
+}
+nav{
+    height: 60px;
+    padding: 0 15px;
+    position: relative;
+}
+#menuToggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: remcalc(15px);
+    z-index: 10;
+    cursor: pointer;
+    transform: translateY(-50%); 
+    transition: ease-in-out .5s;
+
+    span {
+        display: block;
+        width: 2.25rem;
+        height: 0.3125rem;
+        margin-bottom: 0.3125rem;
+        position: relative;
+        background: $marine;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; 
+
+        &:first-child {
+            transform-origin: 0% 0%;
+        }
+        &:nth-last-child(2) {
+            transform-origin: 0% 100%; 
+        }
+    }
+    &.active{
+        span:first-child {
+            transform-origin: 0% 0%;
+            transform: rotate(45deg);
+            left: 4px;
+            top: -3px;
+        }
+        span:nth-last-child(2) {
+            display: none;
+        }
+        span:last-child {
+            transform-origin: 0% 0%;
+            transform: rotate(-45deg);
+            left: 0;
+            top: 13px;
+        }
+    }
+}
+.profile{
+    width: 150px;
+
+    .car{
+        right: 20%; 
+        height: remcalc(30px);
+        img{
+            width: remcalc(30px);
+        } 
+    }
+    .you{
+        right: remcalc(15px);
+        height: remcalc(45px);
+        img{
+            width: remcalc(45px);
+            border: solid 3px $silver;
+            border-radius: 50%;
+        }
+    }
+}
+.slider{
+    position: $rel;
+
+    .title-btm{
+        width: 100%;
+        position: $abs;
+        bottom: 10%;
+
+        h3, p{
+            color: $white;
+            font-family: $font;
+            font-size: remcalc(27px);
+            font-weight: $bblack;
+            line-height: 1;
+            text-shadow: 2px 2px $grey;
+        }
+    }
+}
+#menu{
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    right: 100%;
+    transition: ease-in-out .5s;
+    z-index: 99;
+
+    h3{
+        color: $white;
+        font-family: $font;
+        font-size: remcalc(23px);
+        font-weight: $regular;
+        text-transform: uppercase;
+    }
+    hr{
+        border-color: #555;
+    }
+
+    .item{
+        list-style: none;
+        margin: remcalc(20px) remcalc(10px);
+
+        img{
+            width: 55px;
+            padding: 0 remcalc(20px) 0 0;
+        }
+        span{
+            color: #999;
+            font-family: $font;
+            font-size: remcalc(23px);
+            font-weight: $bold;
+            vertical-align: super;
+            text-transform: uppercase;
+
+            &.active{
+                color: $marine;
+            }
+        }
+        .submenu{
+            padding-left: remcalc(35px);
+            li{
+                list-style: none;
+                margin: remcalc(5px) 0;
+
+                img{
+                    width: 40px;
+                }
+                span{
+                    color: $white;
+                    font-size: remcalc(21px);
+                    font-weight: $regular;
+                    vertical-align: text-bottom;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    &.active{
+        right: 0%;
+    }
+}
+.bnr{
+    height: remcalc(130px);
+    img{
+        height: 100%;
+    }
+}
+.seccion {
+    height: remcalc(60px);
+    padding: remcalc(5px) remcalc(20px);
+    display: inline-flex;
+    width: 100%;
+
+    img{
+        width: remcalc(40px);
+        margin-right: remcalc(10px);
+    }
+    p{
+        color: $white;
+        font-family: $font;
+        font-size: remcalc(27px);
+        font-weight: $bold;
+        line-height: remcalc(52px);
+        text-transform: uppercase;
+    }
+}
+article, .respuesta{
+    h3{
+        color: $grey;
+        font-size: remcalc(27px);
+        font-weight: $bold;
+        margin: remcalc(30px) 0 remcalc(10px);
+        text-transform: uppercase;
+    }
+    p{
+        font-size: remcalc(20px);
+        line-height: 1.2;
+    }
+    .puntos{
+        .puntaje{
+            background: $white;
+            border-radius: 0 0 8px 8px;
+            width: remcalc(110px);
+            height: remcalc(60px);
+            position: absolute;
+            right: 10%;
+            padding: remcalc(8px) 0;
+
+            img{
+                width: remcalc(30px);
+            }
+            p{
+                color: $orange;
+                font-size: remcalc(15px);
+                font-weight: $bold;
+            }
+        }
+    } 
+}
+.stars{
+    margin-top: remcalc(5px);
+    img{
+        width: remcalc(30px);
+        margin: 0 remcalc(3px);
+    }
+}
+.choose{
+    p{
+        margin: remcalc(12px) 0;
+        font-size: remcalc(20px);
+    }
+    button{
+        border: none;
+        font-size: remcalc(17px);
+        font-weight: $bold;
+        text-transform: uppercase;
+
+        img{
+            width: 24px;
+            transform: translate(-15px, -2px);
+        }
+    }
+    select{
+        width: remcalc(90px);
+        height: remcalc(40px);
+        border: solid 1px $grey2;
+        border-radius: remcalc(8px);
+        margin: remcalc(5px) remcalc(10px);
+        padding: 0 remcalc(5px);
+        text-align: center;
+    }
+}
+.edit{
+    button{
+        border: none;
+        font-size: remcalc(17px);
+        font-weight: $bold;
+        text-transform: uppercase;
+
+        img{
+            width: remcalc(18px);
+            transform: translate(-15px, -2px);
+        }
+    }
+}  
+textarea{
+    border: solid 1px $grey2;
+    border-radius: remcalc(10px);
+    padding: remcalc(5px);
+}
+.n-page {
+    width: remcalc(40px);
+    height: remcalc(40px);
+    background: #e9e9e9;
+    border-radius: remcalc(8px);
+    color: #c5c5c5;
+    cursor: pointer;
+    font-family: $font;
+    font-size: remcalc(17px);
+    line-height: remcalc(40px);
+    margin: 0 remcalc(5px);
+    text-align: center;
+    transition: ease-in-out .5s;
+
+    &.active, &:hover{
+        background: $orange;
+        color: $white;
+    }
+}
+.return{
+    img{
+        width: remcalc(28px);
+        transform: translate(65px, 1px);
+    }
+}
+.dates{
+    img{
+        width: remcalc(27px);
+    }
+    p{
+        color: #858585;
+        font-size: remcalc(17px);
+        font-weight: $regular;
+        margin-left: remcalc(8px);
+        margin-top: remcalc(5px);
+    }
+}
+.field {
+    width: 100%;
+    height: 40px;
+    color: $black;
+    font-family: $font;
+    font-size: remcalc(17px);
+    border: solid 1.5px $silver;
+    border-radius: 8px;
+    padding: 0 8px;
+    margin-top: remcalc(5px);
+
+    &:disabled{
+        background: $silver;
+        cursor: no-drop;
+    }
+}
+.sucess{
+    color: $black;
+    font-size: remcalc(20px);
+    font-weight: $bold;
+}

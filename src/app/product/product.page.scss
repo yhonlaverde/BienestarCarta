@@ -1,0 +1,439 @@
+ion-menu-button {
+    color: var(--ion-color-primary);
+}
+
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+.header {
+    border-top: solid 5px #fff;
+    height: 7.0625rem;
+}
+
+.header .recuadro img {
+    width: 13.125rem;
+    margin: 0.625rem auto;
+    display: block;
+}
+
+.recuadro {
+    height: 5.25rem;
+    width: 13.75rem;
+    background: #fff;
+    border-radius: 0 0 0.625rem 0.625rem;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+.profile {
+    width: 150px;
+}
+
+.profile .car {
+    right: 23%;
+    height: 1.875rem;
+}
+
+.profile .car img {
+    width: 1.875rem;
+}
+
+.profile .you {
+    right: -0.0625rem;
+    height: 2.8125rem;
+}
+
+.profile .you img {
+    width: 2.8125rem;
+    border: solid 3px #ccc;
+    border-radius: 50%;
+}
+
+.vert-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider {
+    position: relative;
+}
+
+.slider .title-btm {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    inline-size: -webkit-min-content;
+    inline-size: -moz-min-content;
+    inline-size: -webkit-fill-available;
+}
+
+.slider .title-btm h3,
+.slider .title-btm p {
+    color: #fff;
+    font-family: "Akrobat", sans-serif;
+    font-size: inherit;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0px 2px #333333
+}
+
+ion-footer p {
+    color: #000;
+    font-family: "Akrobat", sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1;
+}
+
+.pad-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pad-left-0 {
+    padding-left: 0;
+}
+
+.pad-right-0 {
+    padding-right: 0;
+}
+
+.pad-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pad-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pad-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.pad-btm-10 {
+    padding-bottom: 10px;
+}
+
+.pad-btm-20 {
+    padding-bottom: 20px;
+}
+
+.pad-btm-30 {
+    padding-bottom: 30px;
+}
+
+.pad-btm-100 {
+    padding-bottom: 100px;
+}
+
+.pad-top-5 {
+    padding-top: 5px;
+}
+
+.pad-top-10 {
+    padding-top: 10px;
+}
+
+.pad-top-20 {
+    padding-top: 20px;
+}
+
+.pad-top-30 {
+    padding-top: 30px;
+}
+
+.pad-top-70 {
+    padding-top: 30px;
+}
+
+.pad-lt-rt {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.text-center {
+    text-align: center!important;
+    font-size: small;
+    font-family: 'Ionicons';
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.my-custom-class {
+    --background: #222;
+    --spinner-color: #fff;
+    color: #fff;
+}
+
+.seccion {
+    height: 3.75rem;
+    padding: 1.3125rem 0.25rem;
+    display: inline-flex;
+    width: 100%;
+}
+
+.title {
+    text-align: initial;
+    font-family: ui-rounded;
+    text-transform: uppercase;
+    font-size: smaller;
+    padding-right: 41px;
+    padding-left: 0px
+}
+
+.seccion img {
+    width: 2.5rem;
+    margin-right: 0.625rem;
+}
+
+.seccion p {
+    color: #c1c1c1;
+    font-family: "Akrobat", sans-serif;
+    /* font-size: x-large; */
+    /* font-weight: 700; */
+    line-height: 0;
+    text-transform: uppercase;
+    font-size: revert;
+    font-weight: 700;
+    margin: 0.875rem 0 1.625rem;
+}
+
+.bnr {
+    height: 8.125rem;
+}
+
+.bnr img {
+    height: 100%;
+}
+
+// .seccion {
+//     height: 3.75rem;
+//     padding: 0.3125rem 1.25rem;
+//     display: inline-flex;
+//     width: 100%;
+// }
+// .seccion img {
+//     width: 2.5rem;
+//     margin-right: 0.625rem;
+// }
+// .seccion p {
+//     color: black;
+//     font-family: "Akrobat", sans-serif;
+//     font-size: 1.6875rem;
+//     font-weight: 700;
+//     line-height: 3.25rem;
+//     text-transform: uppercase;
+// }
+.mg-top-5 {
+    margin-top: 5px;
+}
+
+.mg-top-10 {
+    margin-top: 10px;
+}
+
+.mg-top-20 {
+    margin-top: 20px;
+}
+
+.mg-top-30 {
+    margin-top: 30px;
+}
+
+.mg-top-40 {
+    margin-top: 40px;
+}
+
+.mg-top-50 {
+    margin-top: 50px;
+}
+
+.mg-top-60 {
+    margin-top: 60px;
+}
+
+.mg-top-70 {
+    margin-top: 70px;
+}
+
+.mg-top-80 {
+    margin-top: 80px;
+}
+
+.mg-top-100 {
+    margin-top: 100px;
+}
+
+.mg-top-150 {
+    margin-top: 150px;
+}
+
+.mg-left-10 {
+    margin-left: 10px;
+}
+
+.mg-left-20 {
+    margin-left: 10px;
+}
+
+.mg {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.mg0 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.bg-aquamarine {
+    background: #29b0be;
+}
+
+.bg-sky {
+    background: #78a6d2;
+}
+
+.bg-green {
+    background: #47a760;
+}
+
+.bg-pink {
+    background: #db7ca2;
+}
+
+.bg-orange {
+    background: #e15f29;
+}
+
+.bg-yellow {
+    background: #ed9d2d;
+}
+
+.bg-red {
+    background: #661e33;
+}
+
+article h3,
+.respuesta h3 {
+    color: #333333;
+    font-size: revert;
+    font-weight: 700;
+    margin: 0.875rem 0 0.625rem;
+    text-transform: uppercase;
+}
+
+article p,
+.respuesta p {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+article .puntos .puntaje,
+.respuesta .puntos .puntaje {
+    background: #ffffffb8;
+    border-radius: 0 0 8px 8px;
+    width: 4.875rem;
+    height: 5.75rem;
+    position: absolute;
+    right: 0%;
+    padding: 0.5rem 0;
+}
+
+article .puntos .puntaje img,
+.respuesta .puntos .puntaje img {
+    width: 1.875rem;
+}
+
+article .puntos .puntaje p,
+.respuesta .puntos .puntaje p {
+    color: #e15f29;
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+.stars {
+    margin-top: 0.3125rem;
+}
+
+.stars img {
+    width: 1.875rem;
+    margin: 0 0.1875rem;
+}
+
+.choose p {
+    margin: 0.75rem 0;
+    font-size: 1.25rem;
+}
+
+.choose button {
+    border: none;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.choose button img {
+    width: 24px;
+    transform: translate(-15px, -2px);
+}
+
+.choose select {
+    width: 5.625rem;
+    height: 2.5rem;
+    border: solid 1px #9b9b9b;
+    border-radius: 0.5rem;
+    margin: 0.3125rem 0.625rem;
+    padding: 0 0.3125rem;
+    text-align: center;
+}
+
+.n-page {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #e9e9e9;
+    border-radius: 0.5rem;
+    color: #c5c5c5;
+    cursor: pointer;
+    font-family: "Akrobat", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 2.5rem;
+    margin: 0 0.3125rem;
+    text-align: center;
+    transition: ease-in-out .5s;
+}
+
+.n-page.active,
+.n-page:hover {
+    background: #e15f29;
+    color: #fff;
+}

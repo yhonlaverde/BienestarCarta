@@ -1,0 +1,67 @@
+<ion-app>
+    <ion-header *ngIf="strColorEmpresa" class="header" [ngStyle]="{background:strColorEmpresa}">
+        <div class="recuadro">
+            <img *ngIf="srtLogoEmpresa" [src]="srtLogoEmpresa" [alt]="srtNombreEmpresa" width="50%" height="auto">
+            <!-- <img *ngIf="srtLogoEmpresa" src="../../assets/img/bienestar.svg" width="50%" height="auto"> -->
+
+        </div>
+    </ion-header>
+    <ion-header *ngIf="!strColorEmpresa" class="header" style="background-color: rgb(223, 148, 94);">
+        <div class="recuadro">
+            <!-- <img *ngIf="srtLogoEmpresa" [src]="srtLogoEmpresa" [alt]="srtNombreEmpresa" width="50%" height="auto"> -->
+            <img *ngIf="!srtLogoEmpresa == null" src="../../assets/img/bienestar.svg" width="50%" height="auto">
+            <img *ngIf="srtLogoEmpresa == null" src="../../assets/img/bienestar.svg" width="50%" height="auto">
+        </div>
+    </ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="tittle">Inicio</ion-title>
+        <div class="profile left-auto">
+            <a class="vert-center car" (click)="verCarrito()">
+                <img class="" src="../../assets/img/carrito.svg" alt="Shop">
+                <ion-badge color="danger" slot="end">{{numCarrito}}</ion-badge>
+            </a>
+            <a class="vert-center you" href="#">
+                <img class="" src="../../assets/img/profile.png" alt="Your profile">
+            </a>
+        </div>
+    </ion-toolbar>
+    <ion-content [fullscreen]="true">
+        <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide *ngFor="let item of users.sliders">
+                <div class="slider">
+                    <img [src]="item.strNombreImagenBase64" />
+                    <div class="title-btm center">
+                        <h3 class="text-center">{{item.strDescripcionImagen}}</h3>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slides>
+        <ion-toolbar>
+            <div *ngFor="let categoria of users.categorias">
+                <a (click)="producto(categoria)" class="seccion" [ngClass]="categoria.strEstiloBoton" [ngStyle]="{background:categoria.strEstiloCuadro}">
+                    <img [src]="categoria.strImagenCategoria" alt="">
+                    <p>{{categoria.strCategoria}}</p>
+                </a>
+            </div>
+        </ion-toolbar>
+    </ion-content>
+    <ion-footer class="ion-no-border">
+        <ion-toolbar>
+            <img class="w-50 mg-top-30 center" src="../../assets/img/compensar.svg" width="50%" height="auto" alt="Compensar">
+            <div class="text-center pad-0">
+                <p class="text" style="    font-size: small;
+                text-align: center;
+                font-family: 'Ionicons';"><strong>COMPENSAR - BIENESTAR A LA CARTA</strong></p>
+                <p class="text" style="    font-size: small;
+                text-align: center;
+                font-family: 'Ionicons';">&copy;Todos los derechos reservados - 2020</p>
+                <p class="text" style="    font-size: small;
+                text-align: center;
+                font-family: 'Ionicons';">Desarrollado por <strong>ADN Software</strong></p>
+            </div>
+        </ion-toolbar>
+    </ion-footer>
+</ion-app>

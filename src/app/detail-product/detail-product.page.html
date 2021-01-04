@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+
+        <a class="seccion" [ngClass]="strEstiloBoton" [ngStyle]="{background:strEstiloCuadro}">
+            <ion-title class="title"> {{nombreCategoria}} </ion-title>
+        </a>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-button (click)="Salir()" color="primary" expand="full">
+        Salir
+    </ion-button> -->
+    <ion-row>
+        <ion-col>
+            <article>
+                <h3>{{nombreProducto}}</h3>
+                <div class="puntos">
+                    <div class="puntaje">
+                        <img class="center" src="../../assets/img/like-b.svg" alt="">
+                        <p class="text-center">{{puntos}} PUNTOS</p>
+                    </div>
+                    <img class="w-100" [src]="imagenProducto" alt="">
+                </div>
+
+                <div class="detalle mg-top-10">
+                    <p><strong>Producto:</strong> {{nombreProducto}}</p>
+                    <p><strong>Categoria:</strong> {{nombreCategoria}}</p>
+                    <p><strong>Puntos:</strong> {{puntos}}</p>
+
+                    <p class="mg-top-20"><strong>Descripción:</strong> {{detalleProducto}}
+                    </p>
+                </div>
+
+                <hr>
+                <div class="stars d-flex">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                    <img src="../../assets/img/star.svg" alt="">
+                </div>
+                <div class="d-flex mg-top-10 choose">
+                    <div class="col-6">
+                        <p *ngIf="productoLimite"><strong>Existencias:</strong><br> Ilimitado</p>
+                        <p *ngIf="!productoLimite"><strong>Existencias:</strong><br> limitado</p>
+                    </div>
+                </div>
+                <div class="d-flex mg-top-10 choose">
+                    <ion-item>
+                        <ion-label position="stacked">
+                            Cantidad
+                        </ion-label>
+                        <ion-select placeholder="Seleccione Cantidad">
+                            <ion-select-option value="1">1 </ion-select-option>
+                            <ion-select-option value="2">2 </ion-select-option>
+                            <ion-select-option value="3">3 </ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+                <ion-button (click)="Salir()" slot="end" color="success" class="return mg-top-30 center w-75" expand="full">
+                    <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+                    ADICIONAR
+                </ion-button>
+                <ion-button (click)="Salir()" slot="end" color="tertiary" class="return mg-top-30 center w-75" expand="full">
+                    <ion-icon slot="icon-only" name="arrow-undo-outline"></ion-icon>
+                    REGRESAR
+                </ion-button>
+            </article>
+        </ion-col>
+    </ion-row>
+</ion-content>
