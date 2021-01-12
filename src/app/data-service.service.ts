@@ -6,7 +6,7 @@ import { BehaviorSubject, from, Observable, of, Subject } from 'rxjs';
 import { Plugins } from '@capacitor/core';
 import { UsuarioLogin } from 'src/Modelos/Usuario';
 import { Producto } from 'src/Modelos/Producto';
-
+import {Evento} from 'src/Modelos/Evento';
 
 const { Storage } = Plugins;
  
@@ -182,5 +182,10 @@ export class DataServiceService {
   //Productos
   ObtenerIngformacionProducto(IdCategoria: number) {
     return this.http.get<Producto[]>(this.strUrl + 'GetProductoByCategoria/' + IdCategoria);
+  }
+
+  //Eventos 
+  obtenerInformacionEvento(idEmpresa: number){
+    return this.http.get<Evento[]>(this.strUrl + 'GetInfoEvento/' + idEmpresa)
   }
 }

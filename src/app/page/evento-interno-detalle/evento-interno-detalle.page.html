@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <a class="seccion bg-pink">
+            <ion-buttons fill="clear" color="dark" (click)="Salir()">
+                <ion-icon name="close" slot="start"></ion-icon>
+            </ion-buttons>
+            <img src="../../assets/img/eventos-int.svg" width="14%" height="auto" alt="">
+            <p>EVENTOS INTERNOS</p>
+        </a>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <article>
+            <h3>CAMINATA ECOLOGICA</h3>
+
+            <p class="mg-top-20"><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.</p>
+
+            <textarea class="w-100 mg-top-10" cols="30" rows="10" placeholder="Describa su experiencia en el evento"></textarea>
+
+            <div class="d-flex stars">
+                <div class="col-6 pad-left-0">
+                    <p class="mg-top-5">Calificacion del evento</p>
+                </div>
+                <div class="col-6 pad-right-0 d-flex">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                    <img src="../../assets/img/star-line.svg" alt="">
+                </div>
+            </div>
+            <div class="ion-padding">
+                <ion-button (click)="pickFile()" expand="full" color="dark">Selecciona Archivo</ion-button>
+                <div>
+                    {{returnpath}}
+                </div>
+            </div>
+
+            <ion-button size="large" style="background-color: #e15f29;" expand="block">PUBLICAR EXPERIENCIA</ion-button>
+        </article>
+    </ion-row>
+    <ion-row>
+        <h3>RESPONDER</h3>
+
+        <textarea class="w-100 mg-top-10" cols="30" rows="10" placeholder="Describa su expereincia en el evento"></textarea>
+
+        <ion-button size="large" expand="block" style="background-color: #e15f29;">RESPONDER</ion-button>
+    </ion-row>
+
+</ion-content>

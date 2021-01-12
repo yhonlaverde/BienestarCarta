@@ -1,5 +1,5 @@
 ion-menu ion-content {
-    --background: var(--ion-item-background, var(--ion-background-color, rgb(255, 255, 255)));
+    --background: var(--ion-item-background, var(--ion-background-color, rgba(0, 0, 0, 0.95)));
 }
 
 ion-menu.md ion-content {
@@ -11,6 +11,7 @@ ion-menu.md ion-content {
 
 ion-menu.md ion-list {
     padding: 20px 0;
+    background-color: rgb(13 13 13);
 }
 
 ion-menu.md ion-note {
@@ -35,7 +36,7 @@ ion-menu.md ion-list#inbox-list ion-list-header {
 ion-menu.md ion-list#labels-list ion-list-header {
     font-size: 16px;
     margin-bottom: 18px;
-    color: #757575;
+    color: #010713e8;
     min-height: 26px;
 }
 
@@ -43,6 +44,7 @@ ion-menu.md ion-item {
     --padding-start: 10px;
     --padding-end: 10px;
     border-radius: 4px;
+    --background: auto;
 }
 
 ion-menu.md ion-item.selected {
@@ -54,11 +56,12 @@ ion-menu.md ion-item.selected ion-icon {
 }
 
 ion-menu.md ion-item ion-icon {
-    color: #616e7e;
+    color: #f2f2f2;
 }
 
 ion-menu.md ion-item ion-label {
     font-weight: 500;
+    color: #f2f2f2;
 }
 
 ion-menu.ios ion-content {
@@ -78,6 +81,7 @@ ion-menu.ios ion-item {
     --padding-start: 16px;
     --padding-end: 16px;
     --min-height: 50px;
+    --background: rgba(0, 0, 0, 0.95);
 }
 
 ion-menu.ios ion-item.selected ion-icon {
@@ -106,7 +110,7 @@ ion-menu.ios ion-note {
 ion-note {
     display: contents;
     font-size: 20px;
-    color: #1e1e1e;
+    color: #f2f2f2;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -200,4 +204,26 @@ ion-item.selected {
 .sub-item {
     padding-left: 20px;
     font-size: small;
+}
+
+.item.sc-ion-label-ios-h,
+.item .sc-ion-label-ios-h {
+    --color: blanchedalmond;
+    display: block;
+    color: blanchedalmond;
+    font-family: var(--ion-font-family, inherit);
+    font-size: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.toolbar-container {
+    padding-left: unset;
+    padding-right: unset;
+    padding-inline-start: var(--padding-start);
+    padding-inline-end: var(--padding-end);
+    background-color: #0d0d0d;
 }

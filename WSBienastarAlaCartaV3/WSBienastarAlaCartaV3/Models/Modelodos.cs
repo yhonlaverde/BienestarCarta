@@ -23,17 +23,19 @@ namespace WSBienastarAlaCartaV3.Models
         public virtual DbSet<tblBFEHistoricoPuntosAcumEmpleado> tblBFEHistoricoPuntosAcumEmpleado { get; set; }
         public virtual DbSet<tblBFEmpresa> tblBFEmpresa { get; set; }
         public virtual DbSet<tblBFEmpresas> tblBFEmpresas { get; set; }
-       
-       public virtual DbSet<tblBFImagenProducto> tblBFImagenProducto { get; set; }
-     
+
+        public virtual DbSet<tblBFImagenProducto> tblBFImagenProducto { get; set; }
+
         public virtual DbSet<tblBFProducto> tblBFProducto { get; set; }
         public virtual DbSet<tblBFProductoCiudad> tblBFProductoCiudad { get; set; }
         public virtual DbSet<tblBFProductoCompraEmpleado> tblBFProductoCompraEmpleado { get; set; }
         public virtual DbSet<tblBFProductoProveedor> tblBFProductoProveedor { get; set; }
-      
+
         public virtual DbSet<tblCHEmpleado> tblCHEmpleado { get; set; }
-        
+
         public virtual DbSet<tblBFImagenSlider> tblBFImagenSlider { get; set; }
+
+        public virtual DbSet<tblBFEvento> tblBFEvento { get; set; }
       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

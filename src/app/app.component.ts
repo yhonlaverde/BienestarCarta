@@ -5,7 +5,7 @@ import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { DataServiceService } from "./data-service.service";
 import { Observable } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: "Inicio",
-      // url: '/folder',
+      url: '/folder',
       icon: "home",
     },
     {
@@ -27,9 +27,7 @@ export class AppComponent implements OnInit {
       children:[
         {
           icon: 'thumbs-up',
-          title:  'Puntos'
-
-          
+          title:  'Puntos'     
         },
         {
           icon: 'happy',
@@ -49,18 +47,52 @@ export class AppComponent implements OnInit {
     },
     {
       title: "Mis Compras",
-      // url: '/folder/Favorites',
-      icon: "heart",
+      url: '/folder/Favorites',
+      icon: "cart",
     },
     {
       title: "mis Bonos",
-      // url: '/folder/Archived',
-      icon: "archive",
+      url: '/folder/Archived',
+      icon: "bookmarks",
     },
     {
       title: "Promociones",
       url: "/folder/Trash",
-      icon: "trash",
+      icon: "pricetags",
+    },
+    {
+      title: "Eventos Internos",
+      url: "eventos-internos",
+      icon: "megaphone",
+    },
+    {
+      title: "Administración",
+      childrens:[
+        {
+          icon: 'business',
+          title:  'Empresa'     
+        },
+        {
+          icon: 'person',
+          title: 'Colaboradores'
+        },
+        {
+          icon: 'gift',
+          title: 'Gestione sus Beneficios'
+        },
+        {
+          icon: 'bag',
+          title: 'Puntos'
+        },
+        {
+          icon: 'megaphone',
+          title: 'Eventos y Noticias'
+        },
+        {
+          icon: 'settings',
+          title: 'Configuración'
+        }
+      ]
     }
   ];
   public intPuntosCaritas: any;
@@ -80,6 +112,7 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private service: DataServiceService,
     private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.initializeApp();
     console.log(this.activatedRoute.snapshot.paramMap.get("id"));
@@ -87,12 +120,14 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
     });
   }
 
   ngOnInit() {
+
+
     
   console.log(this.appPages);
     
@@ -105,6 +140,13 @@ export class AppComponent implements OnInit {
     }
     //La idea inicial es cuando el usuario este autentificado se consuma este servicio antes de entrar al inicio de la pagina 1020463917
      
+  }
+
+  urlForm(item){
+    console.log(item);
+    if (item.title === "Eventos y Noticias") {
+      this.router.navigate(['evento']);
+    }
   }
 
 

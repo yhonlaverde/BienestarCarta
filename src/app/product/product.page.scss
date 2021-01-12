@@ -61,7 +61,7 @@ ion-menu-button {
 }
 
 .profile .you {
-    right: -0.0625rem;
+    right: -0.0700rem;
     height: 2.8125rem;
 }
 
@@ -360,7 +360,7 @@ ion-card p,
 
 ion-card .puntos .puntaje,
 .respuesta .puntos .puntaje {
-    background: #ffffffb8;
+    background: #d7d8dad9;
     border-radius: 0 0 8px 8px;
     width: 4.875rem;
     height: 5.75rem;
@@ -436,4 +436,32 @@ ion-card .puntos .puntaje p,
 .n-page:hover {
     background: #e15f29;
     color: #fff;
+}
+
+ion-fab-button {
+    margin-left: 202px;
+    overflow: visible;
+    position: relative;
+}
+
+ion-fab-list {
+    ion-label {
+        position: relative;
+        top: 156px;
+        right: -44px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        line-height: 30px;
+        padding: 7px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
+ion-fab {
+    ion-badge {
+        position: relative;
+        top: 10px;
+        left: 50px;
+    }
 }

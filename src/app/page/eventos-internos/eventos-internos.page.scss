@@ -1,0 +1,107 @@
+.header {
+    border-top: solid 5px #fff;
+    height: 7.0625rem;
+}
+
+.header .recuadro img {
+    width: 13.125rem;
+    margin: 0.625rem auto;
+    display: block;
+}
+
+.recuadro {
+    height: 5.25rem;
+    width: 13.75rem;
+    background: #fff;
+    border-radius: 0 0 0.625rem 0.625rem;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+.profile {
+    width: 150px;
+}
+
+.profile .car {
+    right: 23%;
+    height: 1.875rem;
+}
+
+.profile .car img {
+    width: 1.875rem;
+}
+
+.profile .you {
+    right: -0.0700rem;
+    height: 2.8125rem;
+}
+
+.profile .you img {
+    width: 2.8125rem;
+    border: solid 3px #ccc;
+    border-radius: 50%;
+}
+
+.vert-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bnr {
+    height: remcalc(130px);
+    img {
+        height: 100%;
+    }
+}
+
+.seccion {
+    height: 52px;
+    display: inline-flex;
+    width: 100%;
+    img {
+        width: remcalc(40px);
+        margin-right: remcalc(10px);
+    }
+    p {
+        color: white;
+        font-family: font;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+}
+
+.bg-pink {
+    background: #db7ca2;
+}
+
+.dates img {
+    width: 1.6875rem;
+}
+
+.dates p {
+    color: #858585;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    margin-top: 0.3125rem;
+}
+
+ion-card-title {
+    text-transform: uppercase;
+    text-align: initial;
+    font-family: fantasy;
+    padding-right: 10px;
+}
+
+section {
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+}
+
+section:not(.full-width),
+.full-width>header {
+    padding: 0 10px;
+}

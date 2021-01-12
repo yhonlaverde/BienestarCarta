@@ -23,6 +23,7 @@ import { Storage } from '@ionic/storage';
 export class FolderPage implements OnInit {
   public folder: string;
   public idEmpleado: string = "";
+  public idEmpresa: string = "";
   public nombreEmpleado: string;
   public srtLogoEmpresa: string;
   public srtNombreEmpresa: string;
@@ -73,6 +74,9 @@ export class FolderPage implements OnInit {
           console.log("/", this.users);
           this.empleado = this.users["empleado"];
           this.nombreEmpleado = this.users["empleado"].strNombre;
+          this.idEmpresa = this.users["empleado"].IdEmpresa;
+          console.log(this.idEmpresa)
+          this.storage.set('IdEmpresa', this.idEmpresa);
           this.srtLogoEmpresa = this.users["empleado"][
             "tblBFEmpresa"
           ].strLogo64;
@@ -125,6 +129,11 @@ export class FolderPage implements OnInit {
       message,
     });
     return this.loading.present();
+  }
+
+  irEvento(){
+      this.appcom.cargarEmpleado(this.users['empleado']);
+      this.router.navigate(['eventos-internos']);
   }
 
   producto(categoria){

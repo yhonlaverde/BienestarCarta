@@ -254,6 +254,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -275,6 +276,7 @@
     <Compile Include="Models\tblBFEHistoricoPuntosAcumEmpleado.cs" />
     <Compile Include="Models\tblBFEmpresa.cs" />
     <Compile Include="Models\tblBFEmpresas.cs" />
+    <Compile Include="Models\tblBFEvento.cs" />
     <Compile Include="Models\tblBFImagenProducto.cs" />
     <Compile Include="Models\tblBFImagenSlider.cs" />
     <Compile Include="Models\tblBFProducto.cs" />

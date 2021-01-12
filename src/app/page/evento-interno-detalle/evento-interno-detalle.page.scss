@@ -1,0 +1,124 @@
+.seccion {
+    height: 52px;
+    display: inline-flex;
+    width: 100%;
+    img {
+        width: remcalc(40px);
+        margin-right: remcalc(10px);
+    }
+    p {
+        color: white;
+        font-family: font;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+}
+
+.bg-pink {
+    background: #db7ca2;
+}
+
+article h3,
+.respuesta h3 {
+    color: #333333;
+    font-size: revert;
+    font-weight: 700;
+    margin: 0.875rem 0 0.625rem;
+    text-transform: uppercase;
+}
+
+article p,
+.respuesta p {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+article .puntos .puntaje,
+.respuesta .puntos .puntaje {
+    background: #ffffffb8;
+    border-radius: 0 0 8px 8px;
+    width: 4.875rem;
+    height: 5.75rem;
+    position: absolute;
+    right: 0%;
+    padding: 0.5rem 0;
+}
+
+article .puntos .puntaje img,
+.respuesta .puntos .puntaje img {
+    width: 1.875rem;
+}
+
+article .puntos .puntaje p,
+.respuesta .puntos .puntaje p {
+    color: #e15f29;
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+.stars {
+    margin-top: 0.3125rem;
+}
+
+.stars img {
+    width: 1.875rem;
+    margin: 0 0.1875rem;
+}
+
+.bg-aquamarine {
+    background: #29b0be;
+}
+
+.bg-sky {
+    background: #78a6d2;
+}
+
+.bg-green {
+    background: #47a760;
+}
+
+.bg-pink {
+    background: #db7ca2;
+}
+
+.bg-orange {
+    background: #e15f29;
+}
+
+.bg-yellow {
+    background: #ed9d2d;
+}
+
+.bg-red {
+    background: #661e33;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

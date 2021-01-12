@@ -12,6 +12,7 @@ import { Empleado } from 'src/Modelos/Empleado';
 import { Producto } from "src/Modelos/Producto";
 import { IonInfiniteScroll } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { ConsoleReporter } from "jasmine";
 
 
 @Component({
@@ -32,6 +33,7 @@ export class ProductPage implements OnInit {
   public strEstiloCuadro: string;
   public IdCategoria: number;
   public nombreCategoria: string;
+  mostrarCategoria: boolean = false;
   term = "";
 
   users: any[];
@@ -79,6 +81,18 @@ export class ProductPage implements OnInit {
     });
   }
 
+  // formataNumero(e: any, separador: string = '.', decimais: number = 2) {
+  //   let a:any = e.value.split('');
+  //   let ns:string = '';
+  //   a.forEach((c:any) => { if (!isNaN(c)) ns = ns + c; });
+  //   ns = parseInt(ns).toString();
+  //   if (ns.length < (decimais+1)) { ns = ('0'.repeat(decimais+1) + ns); ns = ns.slice((decimais+1)*-1); }
+  //   let ans = ns.split('');
+  //   let r = '';
+  //   for (let i=0; i < ans.length; i++) if (i == ans.length - decimais) r = r + separador + ans[i]; else r = r + ans[i];
+  //   e.value = r;
+  // }
+
   async initializeItems(): Promise<any> {
     this.presentLoading("Espera...");
     this.IdCategoria = parseInt(
@@ -89,8 +103,8 @@ export class ProductPage implements OnInit {
       .subscribe((dataPro) => {
         this.loading.dismiss();
         this.productos = dataPro["productos"];
+        console.log('productos', this.productos)
         this.categorialist = dataPro["categoria"];
-        console.log(dataPro["productos"]);
         this.nombreCategoria = dataPro["categoria"].strCategoria;
         this.strEstiloBoton = dataPro["categoria"].strEstiloBoton;
         this.strEstiloCuadro = `#${dataPro["categoria"].strEstiloCuadro}`;
@@ -135,6 +149,7 @@ export class ProductPage implements OnInit {
                 "strImagenCategoria"
               ] = `../../assets/${i["strImagenCategoria"]}`;
               this.categorias.push(i);
+              this.mostrarCategoria = true;
             }
           }
           
@@ -190,6 +205,24 @@ export class ProductPage implements OnInit {
     toast.present();
   }
 
+  cargarCategoria(item){
+    console.log(item);
+    this.presentLoading("Espera...");
+    this.IdCategoria = item.IdCategoria;
+    this.service
+      .ObtenerIngformacionProducto(this.IdCategoria)
+      .subscribe((dataPro) => {
+        this.loading.dismiss();
+        this.productos = dataPro["productos"];
+        this.categorialist = dataPro["categoria"];
+        console.log(dataPro["productos"]);
+        this.nombreCategoria = dataPro["categoria"].strCategoria;
+        this.strEstiloBoton = dataPro["categoria"].strEstiloBoton;
+        this.strEstiloCuadro = `#${dataPro["categoria"].strEstiloCuadro}`;
+
+        this.itemsProduct = this.productos;
+      });
+  }
 
   async abrirModal(dato) {
     const modal = await this.modalController.create({
